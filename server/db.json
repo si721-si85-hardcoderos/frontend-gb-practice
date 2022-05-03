@@ -1,0 +1,44 @@
+{
+  "profiles":[
+    {
+      "id": 1,
+      "nickname": "Estoico",
+      "name": "Omar",
+      "lastname": "Alvarado",
+      "role": "Rusher",
+      "heroes": "Skyler",
+      "tournaments": "LigaFF",
+      "bibliography": "Developer"
+    },
+    {
+      "id": 2,
+      "nickname": " ",
+      "name": " ",
+      "lastname": " ",
+      "role": " ",
+      "heroes": " ",
+      "tournaments": " ",
+      "bibliography": " "
+    },
+    {
+      "id": 3,
+      "nickname": " ",
+      "name": " ",
+      "lastname": " ",
+      "role": " ",
+      "heroes": " ",
+      "tournaments": " ",
+      "bibliography": " "
+    },
+    {
+      "id": 4,
+      "nickname": " ",
+      "name": " ",
+      "lastname": " ",
+      "role": " ",
+      "heroes": " ",
+      "tournaments": " ",
+      "bibliography": " "
+    }
+  ]
+}
