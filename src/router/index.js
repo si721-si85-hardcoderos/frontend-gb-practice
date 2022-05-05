@@ -21,6 +21,11 @@ const router = createRouter({
       path: "/students",
       name: "students",
       component: () => import("../users/coach/coach-students/pages/coach-students.component.vue")
+    },
+    {
+      path: "/tournaments",
+      name: "tournaments",
+      component: () => import("../users/coach/coach-tournament/pages/coach-tournaments.component.vue")
     }
   ]
 })
