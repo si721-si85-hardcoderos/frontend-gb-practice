@@ -18,8 +18,8 @@ const router = createRouter({
       component: () => import("../users/coach/coach-advisory/pages/coach-advisory.component.vue")
     },
     {
-      path: "/coach-students",
-      name: "coach-students",
+      path: "/students",
+      name: "students",
       component: () => import("../users/coach/coach-students/pages/coach-students.component.vue")
     }
   ]
