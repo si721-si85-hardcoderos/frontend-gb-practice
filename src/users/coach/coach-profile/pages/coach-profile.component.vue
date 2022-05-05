@@ -16,58 +16,30 @@
             class="p-button-success mr-2"
             @click="openNew"
           />
-          <h1> HOLAAAAAAAAAAAAAAA </h1>
-
-
+          <h1>Hola </h1>
+          
+          
 
 
         </template>
+        
       </pv-toolbar>
-
-
-      <pv-data-table
-        ref="dt"
-        :value="profiles"
-        dataKey="id"
-        :paginator="true"
-        :rows="10"
-        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-        :rowsPerPageOptions="[5, 10, 15]"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} tutorials"
-        responsiveLayout="scroll"
-      >
-        <template #header>
-          <div
-            class="table-header flex flex-column md:flex-row md:justify-content-between"
-          >
-            <h5 class="mb-2 md:m-0 p-as-md-center text-xl">Manage Profiles1</h5>
-          </div>
-        </template>
-        <pv-column
-          selectionMode="multiple"
-          style="width: 3rem"
-          :exportable="false"
-        ></pv-column>
-        <pv-column
-          field="id"
-          header="Id"
-          :sortable="true"
-          style="min-width: 12rem"
-        ></pv-column>
-        <pv-column
-          field="nickname"
-          header="nickname"
-          :sortable="true"
-          style="min-width: 16rem"
-        ></pv-column>
-      </pv-data-table>
+          <input v-if="coach" v-model="coach.name"/>
+          <input v-if="coach" v-model="coach.nickname"/>
+          <input v-if="coach" v-model="coach.lastname"/>
+          <input v-if="coach" v-model="coach.role"/>
+          <input v-if="coach" v-model="coach.heroes"/>
+          <input v-if="coach" v-model="coach.tournaments"/>
+          <input v-if="coach" v-model="coach.bibliography"/>
+          
+          <pv-button label="Update Profile" @click="update"/>      
 
     </div>
   </div>
 </template>
 
 <script>
-import { coachProfileService } from "../services/coach-profile.service";
+import CoachesService from '../../services/coaches.service.js'
 
 export default {
   name: "coach-profile",
@@ -77,22 +49,34 @@ export default {
       coachDialog: false,
       submitted: false,
       coachService: null,
-      coach: {},
-      coachId: 1,
+      coaches: [],
+      coach:{},
+      coachId: 2,
     };
   },
 
-  created() {
+  mounted() {
+    CoachesService.getAll().then((response)=>{
+      this.coaches=response.data.map(this.getStorableCoach);
+      this.coach=this.coaches.find(x=>(x.id==this.coachId));
+      console.log(this.coach);
+    });
+    /*
     this.coachService = new coachProfileService();
     this.coachService.getAll().then((response) => {
       this.profiles = response.data;
       this.coach = response.data;
 
       console.log(this.profiles);
-    });
+    });*/
 
   },
   methods: {
+    update(){
+      CoachesService.update(this.coachId,this.coach).then((response)=>{
+        //Agregar Notificacion
+      })
+    },
     getStorableCoach(coach) {
       return {
         id: coach.id,

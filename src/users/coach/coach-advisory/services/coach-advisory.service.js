@@ -5,7 +5,7 @@ export class coachAdvisoryService {
     return http.get("/advisoryes");
   }
   getById(id) {
-    return http.get(`/advisoryes/${id}`);
+    return http.get(`/advisoryes/?id=${id}`);
   }
   update(id, data) {
     return http.put(`/advisoryes/${id}`, data);

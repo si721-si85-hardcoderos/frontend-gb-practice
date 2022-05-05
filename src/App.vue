@@ -1,4 +1,5 @@
 <script>
+
 export default {
   data() {
     return {
@@ -8,7 +9,7 @@ export default {
         { label: "Advisory", to: "/advisoryes" }
       ],
     };
-  },
+  }
 };
 </script>
 

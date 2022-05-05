@@ -1,46 +1,5 @@
 {
-  "profiles":[
-    {
-      "id": 1,
-      "nickname": "Estoico",
-      "name": "Omar",
-      "lastname": "Alvarado",
-      "role": "Rusher",
-      "heroes": "Skyler",
-      "tournaments": "LigaFF",
-      "bibliography": "Developer"
-    },
-    {
-      "id": 2,
-      "nickname": " ",
-      "name": " ",
-      "lastname": " ",
-      "role": " ",
-      "heroes": " ",
-      "tournaments": " ",
-      "bibliography": " "
-    },
-    {
-      "id": 3,
-      "nickname": " ",
-      "name": " ",
-      "lastname": " ",
-      "role": " ",
-      "heroes": " ",
-      "tournaments": " ",
-      "bibliography": " "
-    },
-    {
-      "id": 4,
-      "nickname": " ",
-      "name": " ",
-      "lastname": " ",
-      "role": " ",
-      "heroes": " ",
-      "tournaments": " ",
-      "bibliography": " "
-    }
-  ],
+  
   "advisoryes":[
     {
       "id": 1,
@@ -71,6 +30,51 @@
       "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "coachId": 1
 
+    }
+  ],
+
+  "coaches": [
+    {
+      "id": 1,
+      "nickname": "Estoico",
+      "name": "Omar",
+      "lastname": "Alvarado",
+      "role": "Rusher",
+      "heroes": "Skyler",
+      "tournaments": "LigaFF",
+      "bibliography": "Developer"
+    },
+    {
+      "id": 2,
+      "nickname": "Nick",
+      "name": "Omar",
+      "lastname": "Alvar",
+      "role": "Rusher",
+      "heroes": "Skyler",
+      "tournaments": "LigaFF",
+      "bibliography": "Developer"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "nickname": "Estoico",
+      "name": "Omar",
+      "lastname": "Alvarado",
+      "role": "Rusher",
+      "heroes": "Skyler",
+      "tournaments": "LigaFF",
+      "bibliography": "Developer"
+    },
+    {
+      "id": 2,
+      "nickname": "Nickname1",
+      "name": "Omar",
+      "lastname": "Alvarado",
+      "role": "Rusher",
+      "heroes": "Skyler",
+      "tournaments": "LigaFF",
+      "bibliography": "Developer"
     }
   ]
 }
