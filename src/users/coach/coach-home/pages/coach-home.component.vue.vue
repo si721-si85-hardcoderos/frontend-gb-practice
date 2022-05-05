@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import {coachHomeService} from "../services/coach-home.service.js";
+import {coachHomeService} from "../services/coach-home.service";
 
 export default {
   name: "coach-home",
