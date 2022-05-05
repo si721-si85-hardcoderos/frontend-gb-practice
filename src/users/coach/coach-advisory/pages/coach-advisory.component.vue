@@ -2,31 +2,127 @@
 
 <template>
 
-      <h1>Asesorías</h1>
-  <pv-button class="p-button-lg" label="+Programar Asesoría"  align="Center" />
-  <pv-divider/>
-  <pv-card class="p-card">
-
-    <template #header>
-
-      <pv-avatar image="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
-       size= "xlarge" />  <p>Coach name</p>
-
-      <h3>Titulo:</h3>
-      <h3>Horario:</h3>
-      <h3>Servidor De discord:</h3>
-      <h3>Adjuntos:</h3>
-      <pv-image
-        src="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg"
-        alt="image advisory"
-        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-        width="275"
-        height="275"
-        preview
+  <div>
+    <pv-button
+        class="p-button-lg"
+        label="New Advisory"
+        icon="pi pi-plus"
+        align="Center"
+        @click="openNew"
     />
-    </template>
+    <pv-divider/>
+    <pv-card class="p-card">
 
-  </pv-card>
+      <template #header>
+
+        <div>
+          <pv-avatar image="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
+                     size= "xlarge" />
+        </div>
+        <div>
+          <h2>Coach name</h2>
+        </div>
+        <h3>Title:</h3>
+        <h3>Schedule:</h3>
+        <h3>Chanel</h3>
+        <h3>Media:</h3>
+        <pv-image
+            src="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg"
+            alt="image advisory"
+            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+            width="275"
+            height="275"
+            preview
+        />
+      </template>
+
+    </pv-card>
+    <pv-dialog
+      v-model:visible="advisoryDialog"
+      :style="{ width: '500px'}"
+      header="Advisory Information"
+      :modal="true"
+      class="p-fluid"
+    >
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+            type="text"
+            id="title"
+            v-model.trim="advisory.title"
+            required="true"
+            autofocus
+            :class="{'p-invalid':submitted && !advisory.title}"
+          />
+          <label for="title">Title</label>
+          <samll class="p-error" v-if="submitted && !advisory.title"
+                 >Title is required</samll>
+
+        </span>
+
+      </div>
+      <div class="field">
+        <span class="p-float-label">
+          <pv-calendar
+              id="multiple"
+              v-model="advisory.schedule"
+              selectionMode="multiple"
+              required="true"
+              :manualInput="false"
+          />
+          <label for="schedule">Schedule</label>
+          <samll class="p-error" v-if="submitted && !advisory.schedule"
+          >Schedule is required</samll>
+        </span>
+      </div>
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              type="text"
+              id="title"
+              v-model.trim="advisory.chanel"
+              required="true"
+              autofocus
+              :class="{'p-invalid':submitted && !advisory.chanel}"
+          />
+          <label for="chanel">Chanel</label>
+          <samll class="p-error" v-if="submitted && !advisory.chanel"
+          >Title is required</samll>
+
+        </span>
+
+      </div>
+      <div class="field">
+        <span class="p-float-label">
+          <pv-textarea
+              id="description"
+              v-model="advisory.media"
+              required="false"
+              rows="2"
+              cols="2"
+          />
+          <label for="media">media</label>
+        </span>
+      </div>
+
+      <template #footer>
+        <pv-button
+            label="Cancel"
+            icon="pi pi-times"
+            class="p-button-text"
+            @click="hideDialog"
+        />
+        <pv-button
+            label="Save"
+            icon="pi pi-check"
+            class="p-button-text"
+            @click="saveCoachAdvisory"
+        />
+      </template>
+
+    </pv-dialog>
+  </div>
+
 
 </template>
 
@@ -43,6 +139,7 @@ export default {
       advisoryService: null,
       advisory: {},
       advisoryId: 1,
+      advisoryDialog: false,
     };
   },
   created() {
@@ -58,11 +155,10 @@ export default {
     getStorableAdvisory(advisory) {
       return {
         id: advisory.id,
-        nickname: advisory.nickname,
-        name: advisory.name,
-        description: advisory.description,
-        coach: advisory.coach,
-        tournaments: advisory.tournaments,
+        schedule: advisory.schedule,
+        title: advisory.title,
+        chanel: advisory.chanel,
+        media: advisory.media,
       };
     },
 
@@ -71,8 +167,17 @@ export default {
     },
 
     editCoachAdvisory(advisory) {
-      this.coach = { ...advisory };
-      this.coachDialog = true;
+      this.advisory = { ...advisory };
+      this.advisoryDialog = true;
+    },
+    openNew() {
+      this.advisory = {};
+      this.submitted = false;
+      this.advisoryDialog = true;
+    },
+    hideDialog() {
+      this.advisoryDialog = false;
+      this.submitted = false;
     },
     saveCoachAdvisory() {
       this.submitted = true;
