@@ -76,5 +76,36 @@
       "tournaments": "LigaFF",
       "bibliography": "Developer"
     }
+  ],
+  "publications": [
+    {
+      "id": 1,
+      "nickname": "Estoico",
+      "userId": 1,
+      "imageAvatar": "https://static.wikia.nocookie.net/dragonsracetotheedge/images/6/6a/Estoico_el_Vasto..jpg/revision/latest?cb=20180206201445&path-prefix=es",
+      "imagePublication":"https://elcomercio.pe/tecnologia/videojuegos/copa-softnyx-ganadores-torneo-videojuegos-repartieron-62-000-soles-noticia-606520-noticia",
+      "urlPublication":"https://elcomercio.pe/tecnologia/videojuegos/copa-softnyx-ganadores-torneo-videojuegos-repartieron-62-000-soles-noticia-606520-noticia/#:~:text=Los%20premios%20sumaron%20S%2F.,Operation%207%20y%20LoveRitmo%2C%20respectivamente.",
+      "title": "Copa Softnyx | Finalistas del torneo de videojuegos se repartieron 62.000 soles",
+      "description": "Tras cuatro años, la Copa Softnyx volvió. El domingo 10 de febrero se llevó a cabo las finales regionales de la Copa Softnyx. El escenario elegido fue el Reserclub de Pueblo Libre y hubo cuatro juegos en competencia: Rakion, Wolfteam, Operation 7 y LoveRitmo. Los premios sumaron S/. 62.000 para los participantes. Los equipos de Spektrum, Loberos, Reborn y Los Papus resultaron campeones de Rakion, Wolfteam, Operation 7 y LoveRitmo, respectivamente. "
+    },
+    {
+      "id": 2,
+      "nickname": "Seven Scissors",
+      "userId": 3,
+      "imageAvatar": "https://media.redadn.es/series/capi/capitulo_186492.jpg",
+      "imagePublication":"https://apkelite.org/wp-content/uploads/2021/10/1633283355_Lista-de-niveles-de-heroes-de-Mobile-Legends-de-octubre.jpg",
+      "urlPublication": "https://apkelite.org/blog/lista-de-niveles-de-heroes-de-mobile-legends-de-octubre-de-2021/",
+      "title": "Mira la lista de niveles de héroes de Mobile Legends de octubre de 2021",
+      "description": "Leyendas móviles Bang Bang acaba de terminar con Temporada 21 moviéndose a Temporada 22. Con una base de jugadores tan grande y solidaria que continúa creciendo, ML seguramente será uno de los más populares MOBA por mucho tiempo. Sin embargo, para esta temporada, echemos un vistazo a la lista de niveles de héroes de Mobile Legends para la temporada 22 en curso, para octubre de 2021, que ayudaría a los jugadores a comprender el meta actual dándoles una ventaja adicional mientras suben de rango después del restablecimiento de rango"
+    },
+    { "id": 3,
+      "nickname": "Nickname1",
+      "userId": 2,
+      "imageAvatar": "https://i.pinimg.com/originals/0a/60/bc/0a60bc05b97180bf77a29d734d655223.jpg",
+      "imagePublication":"https://depor.com/resizer/Lkt-JPjl9HxH5GZ_X4bSKmrmpxY=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Z4ACFMKYZVFZHPPR7PQE74TB2E.jpg",
+      "urlPublication": "https://esports.xataka.com/dota-2/dota-2-para-dummies-iniciacion-a-la-defensa-de-los-ancestros",
+      "title": "Quiero compartirles información relevante sobre el videojuego de Dota 2",
+      "description":"¿Alguna vez te has interesado por DOTA 2, pero te has sentido abrumado por la cantidad de nuevos conceptos, por la interfaz, por lo extenso de su canon? No te preocupes, es más común de lo que parece. Lo que os proponemos hoy es la primera parte de nuestra guía para recién llegados a DOTA 2."
+    }
   ]
 }
