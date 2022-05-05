@@ -1,6 +1,6 @@
-import http from "../../../core/services/http-common.js"
-export class CoachesService {
-    endPoint='/coaches';
+import http from "../../../../core/services/http-common.js"
+export class AdvisoriesService {
+    endPoint='/advisories';
 
     getAll() {
         return http.get(`${this.endPoint}`);
@@ -14,13 +14,13 @@ export class CoachesService {
     }
 
     delete(id) {
-        return http.delete(`${this.endPoint }/${id}`);
+        return http.delete(`${this.endPoint}/${id}`);
     }
 
     update(id,updateTutorialDto) {
-        return http.put(`${this.endPoint }/${id}`,updateTutorialDto);
+        return http.put(`${this.endPoint}/${id}`,updateTutorialDto);
     
     }
 }
 
-export default new CoachesService();
+export default new AdvisoriesService();

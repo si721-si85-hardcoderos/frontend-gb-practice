@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
 
 <template>
 
@@ -11,7 +10,7 @@
         @click="openNew"
     />
     <pv-divider/>
-    <pv-card class="p-card">
+    <pv-card class="p-card" v-for="advisory of coachAdvisories">
 
       <template #header>
 
@@ -22,10 +21,11 @@
         <div>
           <h2>Coach name</h2>
         </div>
-        <h3>Title:</h3>
-        <h3>Schedule:</h3>
-        <h3>Chanel</h3>
-        <h3>Media:</h3>
+        <h3>Title: {{advisory.title}}</h3>
+        <h3>Schedule: {{advisory.date}}</h3>
+        <h3>Chanel: {{advisory.discordServer}}</h3>
+        <h3>Media: {{advisory.attaches}}</h3>
+        <pv-button label="Delete Advisory" @click="deleteAdvisory(advisory.id)"/>
         <pv-image
             src="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg"
             alt="image advisory"
@@ -54,7 +54,7 @@
             autofocus
             :class="{'p-invalid':submitted && !advisory.title}"
           />
-          <label for="title">Title</label>
+          <label for="advisoryTitle">Title</label>
           <samll class="p-error" v-if="submitted && !advisory.title"
                  >Title is required</samll>
 
@@ -63,16 +63,17 @@
       </div>
       <div class="field">
         <span class="p-float-label">
-          <pv-calendar
+          <pv-input-text
               id="multiple"
-              v-model="advisory.schedule"
+              v-model="advisory.date"
               selectionMode="multiple"
               required="true"
               :manualInput="false"
           />
-          <label for="schedule">Schedule</label>
-          <samll class="p-error" v-if="submitted && !advisory.schedule"
-          >Schedule is required</samll>
+          <label for="advisoryDate">Date</label>
+          
+          <samll class="p-error" v-if="submitted && !advisory.date"
+          >Date is required</samll>
         </span>
       </div>
       <div class="field">
@@ -80,13 +81,13 @@
           <pv-input-text
               type="text"
               id="title"
-              v-model.trim="advisory.chanel"
+              v-model.trim="advisory.discordServer"
               required="true"
               autofocus
-              :class="{'p-invalid':submitted && !advisory.chanel}"
+              :class="{'p-invalid':submitted && !advisory.discordServer}"
           />
-          <label for="chanel">Chanel</label>
-          <samll class="p-error" v-if="submitted && !advisory.chanel"
+          <label for="advisoryDiscordServer">Chanel</label>
+          <samll class="p-error" v-if="submitted && !advisory.discordServer"
           >Title is required</samll>
 
         </span>
@@ -96,12 +97,12 @@
         <span class="p-float-label">
           <pv-textarea
               id="description"
-              v-model="advisory.media"
+              v-model="advisory.attaches"
               required="false"
               rows="2"
               cols="2"
           />
-          <label for="media">media</label>
+          <label for="advisoryAttaches">Attaches</label>
         </span>
       </div>
 
@@ -121,50 +122,80 @@
       </template>
 
     </pv-dialog>
+
+    
   </div>
 
 
 </template>
 
 <script>
-import { coachAdvisoryService } from "../services/coach-advisory.service";
-
+import AdvisoriesService from '../services/advisories.service.js'
 export default {
   name: "coach-advisory",
   data() {
     return {
-      advisoryes: [],
+      advisories: [],
+      coachAdvisories: [],
+      coachId:1,
+      advisoryTitle: '',
+      advisoryDate: '',
+      advisoryDiscordServer: '',
+      advisoryAtacches: '',
+      advisoryNew: {},
+      advisory: {},
+
+
       coachDialog: false,
       submitted: false,
       advisoryService: null,
-      advisory: {},
       advisoryId: 1,
       advisoryDialog: false,
     };
   },
   mounted() {
+    this.retrieveAdvisories();
     
+    /*
     this.advisoryService.getById()
     this.advisoryService.getAll().then((response) => {
       this.advisoryes = response.data;
       this.advisory = response.data;
 
       console.log(this.advisoryes);
-    });
+    });*/
   },
   methods: {
+    retrieveAdvisories(){
+      AdvisoriesService.getAll().then((response)=>{
+        this.advisories=response.data.map(this.getStorableAdvisory);
+        this.coachAdvisories=[];
+        for(let Advisory of this.advisories){
+          if(Advisory.coachId==this.coachId){
+            this.coachAdvisories.push(Advisory);
+          }
+        }
+      })
+    },
+    deleteAdvisory(advisoryId){
+      AdvisoriesService.delete(Number(advisoryId)).then(()=>{
+        this.retrieveAdvisories();
+      })
+    },
     getStorableAdvisory(advisory) {
       return {
         id: advisory.id,
-        schedule: advisory.schedule,
         title: advisory.title,
-        chanel: advisory.chanel,
-        media: advisory.media,
+        date: advisory.date,
+        discordServer: advisory.discordServer,
+        attaches: advisory.attaches,
+        cyberimage: advisory.cyberimage,
+        coachId: advisory.coachId,
       };
     },
 
     findIndexById(id) {
-      return this.advisoryes.findIndex((advisory) => advisory.id === id);
+      return this.advisories.findIndex((advisory) => advisory.id === id);
     },
 
     editCoachAdvisory(advisory) {
@@ -181,23 +212,29 @@ export default {
       this.submitted = false;
     },
     saveCoachAdvisory() {
-      this.submitted = true;
-      this.advisory = this.getStorableCoach(this.advisory);
-      this.advisoryService
-        .update(this.advisory.id, this.advisory)
-        .then((response) => {
-          this.profiles[this.findIndexById(response.data.id)] =
-            this.response.data;
-          this.$toast.add({
-            severity: "success",
-            summary: "Successful",
-            detail: "Coach Profile Updated",
-            life: 3000,
-          });
-          console.log(response);
-        });
-      this.coachDialog = false;
-      this.coach = {};
+      this.advisory.id=0;
+      this.advisory.cyberimage="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg";
+      this.advisory.coachId=this.coachId;
+      this.advisory=this.getStorableAdvisory(this.advisory);
+      AdvisoriesService.create(this.advisory).then((response)=>{
+        this.retrieveAdvisories();
+      })
+      /*this.submitted = true;
+      this.advisoryNew={
+        id:0,
+        title: this.advisoryTitle,
+        date: this.advisoryDate,
+        discordServer: this.advisoryDiscordServer,
+        attaches: this.advisoryAtacches,
+        cyberimage: "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+        coachId: this.coachId
+      }
+      this.advisoryNew = this.getStorableCoach(this.advisoryNew);
+      AdvisoriesService.create(this.advisoryNew).then((response)=>{
+        this.retrieveAdvisories();
+      })
+      
+      this.coachDialog = false;*/
     },
   },
 };

@@ -6,7 +6,7 @@ export default {
 
       items: [
         { label: "Profile", to: "/profiles" },
-        { label: "Advisory", to: "/advisoryes" }
+        { label: "advisory", to: "/advisories" }
       ],
     };
   }
@@ -39,7 +39,7 @@ export default {
             <pv-button
               class="p-button"
               :href="href"
-              @clcik="navigate"
+              @click="navigate"
               >{{ item.label }}</pv-button
             >
           </router-link>
