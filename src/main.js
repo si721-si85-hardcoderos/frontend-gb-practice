@@ -16,7 +16,10 @@ import Column from 'primevue/column';
 import Card from "primevue/card";
 import Avatar from 'primevue/avatar';
 import Divider from 'primevue/divider';
-
+import Dialog from "primevue/dialog";
+import InputText from "primevue/inputtext";
+import Textarea from "primevue/textarea";
+import Calendar from 'primevue/calendar';
 const app = createApp(App);
 
 app.use(router);
@@ -35,5 +38,9 @@ app.component("pv-column", Column);
 app.component("pv-card", Card);
 app.component("pv-avatar", Avatar);
 app.component("pv-divider", Divider);
+app.component("pv-dialog", Dialog);
+app.component("pv-input-text", InputText);
+app.component("pv-textarea",Textarea);
+app.component("pv-calendar",Calendar);
 
 app.mount("#app");

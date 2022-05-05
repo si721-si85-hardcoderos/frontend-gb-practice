@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      redirect: "profiles"
+      redirect: "advisoryes"
     },
     {
       path: "/profiles",
@@ -18,8 +17,6 @@ const router = createRouter({
       name: "advisoryes",
       component: () => import("../users/coach/coach-advisory/pages/coach-advisory.component.vue")
     }
-
-
   ]
 })
 
