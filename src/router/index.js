@@ -12,7 +12,14 @@ const router = createRouter({
       path: "/profiles",
       name: "profiles",
       component: () => import("../users/coach/coach-profile/pages/coach-profile.component.vue"),
+    },
+    {
+      path: "/advisoryes",
+      name: "advisoryes",
+      component: () => import("../users/coach/coach-advisory/pages/coach-advisory.component.vue")
     }
+
+
   ]
 })
 
