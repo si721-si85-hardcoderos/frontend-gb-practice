@@ -6,7 +6,8 @@ export default {
 
       items: [
         { label: "Profile", to: "/profiles" },
-        { label: "advisory", to: "/advisories" }
+        { label: "advisory", to: "/advisories" },
+        { label: "students", to: "/students"}
       ],
     };
   }

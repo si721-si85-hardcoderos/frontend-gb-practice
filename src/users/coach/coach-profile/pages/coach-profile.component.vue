@@ -1,64 +1,42 @@
 <template>
-<div>
-  <pv-divider></pv-divider>
-    <pv-card class="p-card">
-      <template #header>
+  <div>
+    <div class="card">
+      <pv-toolbar class="mb-auto">
+        <template #start>
           <pv-image
-              class="pv-image-holder"
-              imageClass="pv-image-circle"
             src="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
             alt="Image Coach"
             width="275"
             height="275"
             preview
           />
+          <pv-button
+            label="New"
+            icon="pi pi-plus"
+            class="p-button-success mr-2"
+            @click="openNew"
+          />
+          <h1>Hola </h1>
+          
+          
 
 
-      </template>
-
-
-
-      <template #content>
-           <i class="pi pi-user"></i>
-          <pv-p class="pv-p">First Name:</pv-p>
-          <pv-input-text  v-if="coach" v-model="coach.name"/>
-          <pv-divider></pv-divider>
-
-      <i class="pi pi-user"></i>
-      <pv-p class="pv-p">Nickname:</pv-p>
-          <pv-input-text v-if="coach" v-model="coach.nickname"/>
-      <pv-divider></pv-divider>
-
-      <i class="pi pi-user"></i>
-      <pv-p class="pv-p">Last Name:</pv-p>
-          <pv-input-text v-if="coach" v-model="coach.lastname"/>
-      <pv-divider></pv-divider>
-      <i class="pi pi-tag"></i>
-      <pv-p class="pv-p">Role:</pv-p>
-          <pv-input-text v-if="coach" v-model="coach.role"/>
-      <pv-divider></pv-divider>
-      <i class="pi pi-star"></i>
-      <pv-p class="pv-p">Heroes:</pv-p>
-      <pv-input-text v-if="coach" v-model="coach.heroes"/>
-      <pv-divider></pv-divider>
-
-      <i class="pi pi-ticket"></i>
-      <pv-p class="pv-p">Tournaments:</pv-p>
-      <pv-input-text v-if="coach" v-model="coach.tournaments"/>
-      <pv-divider></pv-divider>
-
-      <i class="pi pi-briefcase"></i>
-      <pv-p class="pv-p">Bibliography:</pv-p>
-      <pv-input-text v-if="coach" v-model="coach.bibliography"/>
-      <pv-divider></pv-divider>
-
-          <pv-button label="Update Profile" @click="update"/>
-      </template>
-
-    </pv-card>
+        </template>
+        
+      </pv-toolbar>
+          <input v-if="coach" v-model="coach.name"/>
+          <input v-if="coach" v-model="coach.nickname"/>
+          <input v-if="coach" v-model="coach.lastname"/>
+          <input v-if="coach" v-model="coach.role"/>
+          <input v-if="coach" v-model="coach.heroes"/>
+          <input v-if="coach" v-model="coach.tournaments"/>
+          <input v-if="coach" v-model="coach.bibliography"/>
+          
+          <pv-button label="Update Profile" @click="update"/>      
 
     </div>
-  </template>
+  </div>
+</template>
 
 <script>
 import CoachesService from '../../services/coaches.service.js'
@@ -138,30 +116,3 @@ export default {
   },
 };
 </script>
-<style>
-
-.pv-image-circle{
-  border-radius: 30%;
-  margin-left: auto;
-
-}
-
-.pv-p{
-  font-family: Roboto;
-  font-size: x-large;
-  size: 100px;
-  font-weight: bold;
-}
-.p-card{
-  box-shadow: 0 4px 20px 20px rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
-  width: 70%;
-  padding-left: 20px;
-  padding-top: 20px;
-  margin:auto;
-  margin-top:20px;
-}
-
-
-</style>

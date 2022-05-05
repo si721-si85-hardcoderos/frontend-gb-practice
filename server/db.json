@@ -37,7 +37,11 @@
       "role": "Rusher",
       "heroes": "Skyler",
       "tournaments": "LigaFF",
-      "bibliography": "Developer"
+      "bibliography": "Developer",
+      "studentsId":[
+        1,
+        2
+      ]
     },
     {
       "id": 2,
@@ -47,7 +51,8 @@
       "role": "Rusher",
       "heroes": "Skyler",
       "tournaments": "LigaFF",
-      "bibliography": "Developer"
+      "bibliography": "Developer",
+      "studentsId":[]
     }
   ],
   "students": [

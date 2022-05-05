@@ -16,6 +16,11 @@ const router = createRouter({
       path: "/advisories",
       name: "advisories",
       component: () => import("../users/coach/coach-advisory/pages/coach-advisory.component.vue")
+    },
+    {
+      path: "/coach-students",
+      name: "coach-students",
+      component: () => import("../users/coach/coach-students/pages/coach-students.component.vue")
     }
   ]
 })
