@@ -45,8 +45,9 @@ export default {
       advisoryId: 1,
     };
   },
-  created() {
-    this.advisoryService = new coachAdvisoryService();
+  mounted() {
+    
+    this.advisoryService.getById()
     this.advisoryService.getAll().then((response) => {
       this.advisoryes = response.data;
       this.advisory = response.data;
