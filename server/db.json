@@ -1,6 +1,5 @@
 {
-  
-  "advisoryes":[
+  "advisories": [
     {
       "id": 1,
       "title": "La Real RAA",
@@ -9,7 +8,6 @@
       "attaches": "Rusher",
       "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "coachId": 1
-
     },
     {
       "id": 2,
@@ -19,7 +17,6 @@
       "attaches": "dfsdf",
       "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "coachId": 1
-
     },
     {
       "id": 3,
@@ -29,10 +26,8 @@
       "attaches": "XD",
       "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "coachId": 1
-
     }
   ],
-
   "coaches": [
     {
       "id": 1,
