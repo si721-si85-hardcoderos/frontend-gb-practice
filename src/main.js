@@ -13,6 +13,10 @@ import Toolbar from "primevue/toolbar";
 import Image from "primevue/image";
 import DataTable from "primevue/datatable";
 import Column from 'primevue/column';
+import Card from "primevue/card";
+import Avatar from 'primevue/avatar';
+import Divider from 'primevue/divider';
+
 const app = createApp(App);
 
 app.use(router);
@@ -21,10 +25,15 @@ app.use(PrimeVue, { ripple: true });
 // Toast Service
 app.use(ToastService);
 // PrimeVue Components
+
 app.component("pv-data-table", DataTable);
 app.component("pv-toast", Toast);
 app.component("pv-button", Button);
 app.component("pv-toolbar", Toolbar);
 app.component("pv-image", Image);
 app.component("pv-column", Column);
+app.component("pv-card", Card);
+app.component("pv-avatar", Avatar);
+app.component("pv-divider", Divider);
+
 app.mount("#app");

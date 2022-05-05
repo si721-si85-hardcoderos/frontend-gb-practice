@@ -2,8 +2,10 @@
 export default {
   data() {
     return {
+
       items: [
-        { label: "Profile", to: "/profiles" }
+        { label: "Profile", to: "/profiles" },
+        { label: "Advisory", to: "/advisoryes" }
       ],
     };
   },
@@ -31,9 +33,10 @@ export default {
             custom
             v-slot="{ navigate, href }"
             :key="item.label"
+
           >
             <pv-button
-              class="p-button-text text-white"
+              class="p-button"
               :href="href"
               @clcik="navigate"
               >{{ item.label }}</pv-button
@@ -43,11 +46,16 @@ export default {
       </template>
     </pv-toolbar>
   </header>
+  <pv-sidebar v-model:visible="drawer"></pv-sidebar>
   <RouterView />
 </template>
 
 <style scoped>
 .toolbar{
-  background-color: #ffffff;
+  background-color: #000000;
+}
+.p-button{
+  color: #ffffff;
+  background-color: #000000;
 }
 </style>
