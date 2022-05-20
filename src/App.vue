@@ -5,7 +5,7 @@ export default {
     return {
 
       items: [
-        { label: "Home", to: "/home" },
+        { label: "home", to: "/home" },
         { label: "Profile", to: "/profiles" },
         { label: "advisory", to: "/advisories" },
         { label: "students", to: "/students"}
