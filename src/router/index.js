@@ -26,6 +26,11 @@ const router = createRouter({
       path: "/tournaments",
       name: "tournaments",
       component: () => import("../users/coach/coach-tournament/pages/coach-tournaments.component.vue")
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: () => import("../users/coach/coach-home/pages/coach-home.component.vue")
     }
   ]
 })
