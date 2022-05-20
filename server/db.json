@@ -107,6 +107,15 @@
       "title": "Quiero compartirles información relevante sobre el videojuego de Dota 2",
       "description":"¿Alguna vez te has interesado por DOTA 2, pero te has sentido abrumado por la cantidad de nuevos conceptos, por la interfaz, por lo extenso de su canon? No te preocupes, es más común de lo que parece. Lo que os proponemos hoy es la primera parte de nuestra guía para recién llegados a DOTA 2."
     }
+  ],
+  "tournaments": [
+    {
+      "id": 1,
+      "title": "asd",
+      "schedule": "Sdasdsad",
+      "chanel": "asdasdasdasd",
+      "media": "asdasdasds"
+    }
   ]
 
 }

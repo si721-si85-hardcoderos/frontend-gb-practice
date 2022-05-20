@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-for="tournament of tournaments">
     <pv-button
         class="p-button-lg"
         label="New Tournament"
@@ -22,10 +22,10 @@
         <div>
           <h2>Coach name</h2>
         </div>
-    <h3>Title: </h3>
-    <h3>Schedule: </h3>
-    <h3>Chanel: </h3>
-    <h3>Media: </h3>
+    <h3>Title: {{tournament.title}}</h3>
+    <h3>Schedule: {{tournament.schedule}}</h3>
+    <h3>Chanel: {{tournament.chanel}}</h3>
+    <h3>Media: {{tournament.media}}</h3>
     <pv-dialog
         v-model:visible="advisoryDialog"
         :style="{ width: '500px'}"
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {TournamentsService} from "../services/tournaments.service";
+import TournamentsService from "../services/tournaments.service";
 export default {
   name: "coach-tournament",
   data() {
@@ -52,7 +52,6 @@ export default {
       tournamentDate:'',
       tournamentAttacches:'',
       tournamentNew:{},
-      tournament:{},
 
 
       coachDialog: false,
@@ -61,6 +60,22 @@ export default {
       tournamentId:1,
       tournamentDialog:false,
     };
+  },
+  mounted(){
+    TournamentsService.getAll().then((response)=>{
+      this.tournaments=response.data.map(this.getStorableAdvisory);
+    });
+  },
+  methods:{
+    getStorableAdvisory(advisory){
+      return {
+        id: advisory.id,
+        title: advisory.title,
+        schedule:advisory.schedule,
+        chanel: advisory.chanel,
+        media: advisory.media
+      };
+    }
   }
 };
 
