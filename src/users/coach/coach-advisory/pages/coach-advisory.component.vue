@@ -1,6 +1,4 @@
-
 <template>
-
   <div>
     <pv-button
         class="p-button-lg"
@@ -38,25 +36,25 @@
 
     </pv-card>
     <pv-dialog
-      v-model:visible="advisoryDialog"
-      :style="{ width: '500px'}"
-      header="Advisory Information"
-      :modal="true"
-      class="p-fluid"
+        v-model:visible="advisoryDialog"
+        :style="{ width: '500px'}"
+        header="Advisory Information"
+        :modal="true"
+        class="p-fluid"
     >
       <div class="field">
         <span class="p-float-label">
           <pv-input-text
-            type="text"
-            id="title"
-            v-model.trim="advisory.title"
-            required="true"
-            autofocus
-            :class="{'p-invalid':submitted && !advisory.title}"
+              type="text"
+              id="title"
+              v-model.trim="advisory.title"
+              required="true"
+              autofocus
+              :class="{'p-invalid':submitted && !advisory.title}"
           />
           <label for="advisoryTitle">Title</label>
           <samll class="p-error" v-if="submitted && !advisory.title"
-                 >Title is required</samll>
+          >Title is required</samll>
 
         </span>
 
@@ -71,7 +69,7 @@
               :manualInput="false"
           />
           <label for="advisoryDate">Date</label>
-          
+
           <samll class="p-error" v-if="submitted && !advisory.date"
           >Date is required</samll>
         </span>
@@ -121,9 +119,9 @@
         />
       </template>
 
+    </pv-dialog>
 
 
-    
   </div>
 
 
@@ -155,7 +153,7 @@ export default {
   },
   mounted() {
     this.retrieveAdvisories();
-    
+
     /*
     this.advisoryService.getById()
     this.advisoryService.getAll().then((response) => {
@@ -216,7 +214,7 @@ export default {
       this.advisory.cyberimage="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg";
       this.advisory.coachId=this.coachId;
       this.advisory=this.getStorableAdvisory(this.advisory);
-      AdvisoriesService.create(this.advisory).then((response)=>{
+        AdvisoriesService.create(this.advisory).then((response)=>{
         this.retrieveAdvisories();
       })
       /*this.submitted = true;
@@ -241,7 +239,7 @@ export default {
 </script>
 <style>
 .p-button-lg{
- background-color: #C4C4C4;
+  background-color: #C4C4C4;
   display: block;
   width: 70%;
   height: 100px;
