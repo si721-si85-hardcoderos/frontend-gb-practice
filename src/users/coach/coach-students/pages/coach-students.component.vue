@@ -11,7 +11,7 @@
         <template #subtitle v-if="student">
           {{student.nickname}}
         </template>
-        <template #header>
+        <template #header v-if="student">
           <pv-image v-bind:src="student.urlToImage"
                     size= "large"
                     alt="image student"
@@ -20,10 +20,10 @@
                     height="200"
                     preview/>
         </template>
-        <template #content>
+        <template #content v-if="student">
           {{student.bibliography}}
         </template>
-        <template #footer>
+        <template #footer v-if="student">
           <h4>{{student.tournaments}} | {{student.heroes}} | {{student.role}}</h4>
 
         </template>
