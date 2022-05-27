@@ -23,35 +23,35 @@
       <template #content>
            <i class="pi pi-user"></i>
           <p class="pv-p">First Name:</p>
-          <pv-input-text  v-if="coach" v-model="coach.name"/>
+          <pv-input-text   v-model="coach.name"/>
           <pv-divider></pv-divider>
 
       <i class="pi pi-user"></i>
       <p class="pv-p">Nickname:</p>
-          <pv-input-text v-if="coach" v-model="coach.nickname"/>
+          <pv-input-text  v-model="coach.nickname"/>
       <pv-divider></pv-divider>
 
       <i class="pi pi-user"></i>
       <p class="pv-p">Last Name:</p>
-          <pv-input-text v-if="coach" v-model="coach.lastname"/>
+          <pv-input-text  v-model="coach.lastname"/>
       <pv-divider></pv-divider>
       <i class="pi pi-tag"></i>
       <p class="pv-p">Role:</p>
-          <pv-input-text v-if="coach" v-model="coach.role"/>
+          <pv-input-text  v-model="coach.role"/>
       <pv-divider></pv-divider>
       <i class="pi pi-star"></i>
       <p class="pv-p">Heroes:</p>
-      <pv-input-text v-if="coach" v-model="coach.heroes"/>
+      <pv-input-text  v-model="coach.heroes"/>
       <pv-divider></pv-divider>
 
       <i class="pi pi-ticket"></i>
       <p class="pv-p">Tournaments:</p>
-      <pv-input-text v-if="coach" v-model="coach.tournaments"/>
+      <pv-input-text  v-model="coach.tournaments"/>
       <pv-divider></pv-divider>
 
       <i class="pi pi-briefcase"></i>
       <p class="pv-p">Bibliography:</p>
-      <pv-input-text v-if="coach" v-model="coach.bibliography"/>
+      <pv-input-text  v-model="coach.bibliography"/>
       <pv-divider></pv-divider>
 
           <pv-button label="Update Profile" @click="update"/>
