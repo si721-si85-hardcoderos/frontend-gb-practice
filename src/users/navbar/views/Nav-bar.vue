@@ -7,11 +7,12 @@ export default {
         return {
 
         items: [
-            { label: "home", to: "/home" },
+            { label: "Home", to: "/home" },
             { label: "Profile", to: "/profiles" },
-            { label: "advisory", to: "/advisories" },
-            { label: "students", to: "/students"},
-            { label: "tournaments", to: "/tournaments"}
+            { label: "Advisory", to: "/advisories" },
+            { label: "Students", to: "/students"},
+            { label: "Tournaments", to: "/tournaments"},
+            { label: "Sign Out", to: "/log-in"}
         ],
         };
     }

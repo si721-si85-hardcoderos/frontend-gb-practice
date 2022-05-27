@@ -47,6 +47,21 @@
         1,
         2
       ]
+    },
+    {
+      "id": 2,
+      "nickname": "Estoico",
+      "name": "Omar",
+      "lastname": "Alvarado",
+      "role": "Rusher",
+      "heroes": "Skyler",
+      "tournaments": "LigaFF",
+      "bibliography": "Developer",
+      "studentsId":[
+        1,
+        2,
+        3
+      ]
     }
   ],
   "students": [
