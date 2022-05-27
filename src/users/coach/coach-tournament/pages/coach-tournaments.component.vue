@@ -56,8 +56,8 @@
               :class="{'p-invalid':submitted && !tournament.title}"
           />
           <label for="tournamentTitle">Title</label>
-          <samll class="p-error" v-if="submitted && !tournament.title"
-          >Title is required</samll>
+          <small class="p-error" v-if="submitted && !tournament.title"
+          >Title is required</small>
         </span>
       </div>
 
@@ -97,8 +97,8 @@
               :manualInput="false"
           />
           <label for="tournamentChanel">Channel</label>
-          <samll class="p-error" v-if="submitted && !tournament.channel"
-          >Channel is required</samll>
+          <small class="p-error" v-if="submitted && !tournament.channel"
+          >Channel is required</small>
         </span>
       </div>
 
@@ -112,8 +112,8 @@
               :manualInput="false"
           />
           <label for="tournamentMedia">Media</label>
-          <samll class="p-error" v-if="submitted && !tournament.media"
-          >Media is required</samll>
+          <small class="p-error" v-if="submitted && !tournament.media"
+          >Media is required</small>
         </span>
       </div>
 

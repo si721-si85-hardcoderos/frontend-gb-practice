@@ -73,8 +73,8 @@
               :class="{'p-invalid':submitted && !advisory.title}"
           />
           <label for="advisoryTitle">Title</label>
-          <samll class="p-error" v-if="submitted && !advisory.title"
-          >Title is required</samll>
+          <small class="p-error" v-if="submitted && !advisory.title"
+          >Title is required</small>
         </span>
       </div>
 
@@ -101,8 +101,8 @@
               :manualInput="false"
           />
           <label for="advisoryDate">Date</label>
-          <samll class="p-error" v-if="submitted && !advisory.date"
-          >Date is required</samll>
+          <small class="p-error" v-if="submitted && !advisory.date"
+          >Date is required</small>
         </span>
       </div>
 
@@ -116,8 +116,8 @@
               :manualInput="false"
           />
           <label for="advisoryDate">Hour</label>
-          <samll class="p-error" v-if="submitted && !advisory.hour"
-          >Hour is required</samll>
+          <small class="p-error" v-if="submitted && !advisory.hour"
+          >Hour is required</small>
         </span>
       </div>
 
@@ -131,8 +131,8 @@
               :manualInput="false"
           />
           <label for="advisoryUrlToImage">Url to Image</label>
-          <samll class="p-error" v-if="submitted && !advisory.urlToImage"
-          >Url is required</samll>
+          <small class="p-error" v-if="submitted && !advisory.urlToImage"
+          >Url is required</small>
         </span>
       </div>
 
@@ -147,8 +147,8 @@
               :class="{'p-invalid':submitted && !advisory.studentName}"
           />
           <label for="advisoryDiscordServer">StudentName</label>
-          <samll class="p-error" v-if="submitted && !advisory.studentName"
-          >DiscordServer is required</samll>
+          <small class="p-error" v-if="submitted && !advisory.studentName"
+          >DiscordServer is required</small>
         </span>
       </div>
 
@@ -163,8 +163,8 @@
               :class="{'p-invalid':submitted && !advisory.discordServer}"
           />
           <label for="advisoryDiscordServer">Channel</label>
-          <samll class="p-error" v-if="submitted && !advisory.discordServer"
-          >DiscordServer is required</samll>
+          <small class="p-error" v-if="submitted && !advisory.discordServer"
+          >DiscordServer is required</small>
         </span>
       </div>
 

@@ -50,7 +50,6 @@ export default {
       </template>
     </pv-toolbar>
   </header>
-  <pv-sidebar v-model:visible="drawer"></pv-sidebar>
   <RouterView />
 </template>
 

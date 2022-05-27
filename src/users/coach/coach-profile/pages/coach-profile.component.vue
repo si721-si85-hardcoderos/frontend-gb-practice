@@ -20,35 +20,35 @@
 
       <template #content>
            <i class="pi pi-user"></i>
-          <pv-p class="pv-p">First Name:</pv-p>
+          <p class="pv-p">First Name:</p>
           <pv-input-text  v-if="coach" v-model="coach.name"/>
           <pv-divider></pv-divider>
 
       <i class="pi pi-user"></i>
-      <pv-p class="pv-p">Nickname:</pv-p>
+      <p class="pv-p">Nickname:</p>
           <pv-input-text v-if="coach" v-model="coach.nickname"/>
       <pv-divider></pv-divider>
 
       <i class="pi pi-user"></i>
-      <pv-p class="pv-p">Last Name:</pv-p>
+      <p class="pv-p">Last Name:</p>
           <pv-input-text v-if="coach" v-model="coach.lastname"/>
       <pv-divider></pv-divider>
       <i class="pi pi-tag"></i>
-      <pv-p class="pv-p">Role:</pv-p>
+      <p class="pv-p">Role:</p>
           <pv-input-text v-if="coach" v-model="coach.role"/>
       <pv-divider></pv-divider>
       <i class="pi pi-star"></i>
-      <pv-p class="pv-p">Heroes:</pv-p>
+      <p class="pv-p">Heroes:</p>
       <pv-input-text v-if="coach" v-model="coach.heroes"/>
       <pv-divider></pv-divider>
 
       <i class="pi pi-ticket"></i>
-      <pv-p class="pv-p">Tournaments:</pv-p>
+      <p class="pv-p">Tournaments:</p>
       <pv-input-text v-if="coach" v-model="coach.tournaments"/>
       <pv-divider></pv-divider>
 
       <i class="pi pi-briefcase"></i>
-      <pv-p class="pv-p">Bibliography:</pv-p>
+      <p class="pv-p">Bibliography:</p>
       <pv-input-text v-if="coach" v-model="coach.bibliography"/>
       <pv-divider></pv-divider>
 
@@ -58,7 +58,7 @@
     </pv-card>
 
     </div>
-  </template>
+</template>
 
 <script>
 import CoachesService from '../../services/coaches.service.js'
