@@ -18,7 +18,7 @@
                      size= "xlarge" />
         </div>
         <div style="width: 80%; float:left">
-          <h3>Coach name</h3>
+          <h3>Coach name {{coachName}}</h3>
         </div>
       </template>
       <template #title>
@@ -31,7 +31,7 @@
       <template #content>
         <div style="width: 50%; float:left">
           <pv-image
-              src="https://codigoesports.com/wp-content/uploads/2020/04/gh-350x263.jpg"
+              v-bind:src="advisory.urlToImage"
               alt="image advisory"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               width="290"
@@ -124,6 +124,21 @@
       <div class="field">
         <span class="p-float-label">
           <pv-input-text
+              id="multiple"
+              v-model="advisory.urlToImage"
+              selectionMode="multiple"
+              required="true"
+              :manualInput="false"
+          />
+          <label for="advisoryUrlToImage">Url to Image</label>
+          <samll class="p-error" v-if="submitted && !advisory.urlToImage"
+          >Url is required</samll>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
               type="text"
               id="title"
               v-model.trim="advisory.studentName"
@@ -178,6 +193,7 @@
 </template>
 
 <script>
+import CoachesService from '../../services/coaches.service.js';
 import AdvisoriesService from '../services/advisories.service.js'
 export default {
   name: "coach-advisory",
@@ -193,7 +209,9 @@ export default {
       advisoryDiscordServer: '',
       advisoryNew: {},
       advisory: {},
-
+      coach: {},
+      coaches:[],
+      coachName: '',
 
       coachDialog: false,
       submitted: false,
@@ -204,6 +222,11 @@ export default {
   },
   mounted() {
     this.retrieveAdvisories();
+    CoachesService.getById(this.coachId).then((response)=>{
+
+      this.coaches=response.data.map(this.getStorableCoach);
+      this.coachName=this.coaches[0].name;
+    })
 
     /*
     this.advisoryService.getById()
@@ -217,7 +240,7 @@ export default {
   methods: {
     retrieveAdvisories(){
       AdvisoriesService.getAll().then((response)=>{
-        this.advisories=response.data.map(this.getStorableAdvisory);
+        this.advisories=response.data;
         this.coachAdvisories=[];
         for(let Advisory of this.advisories){
           if(Advisory.coachId==this.coachId){
@@ -227,9 +250,21 @@ export default {
       })
     },
     deleteAdvisory(advisoryId){
-      AdvisoriesService.delete(Number(advisoryId)).then(()=>{
+      AdvisoriesService.delete((advisoryId)).then(()=>{
         this.retrieveAdvisories();
       })
+    },
+    getStorableCoach(coach) {
+      return {
+        id: coach.id,
+        nickname: coach.nickname,
+        name: coach.name,
+        lastname: coach.lastname,
+        role: coach.role,
+        heroes: coach.heroes,
+        tournaments: coach.tournaments,
+        bibliography: coach.bibliography,
+      };
     },
     getStorableAdvisory(advisory) {
       return {
@@ -268,6 +303,7 @@ export default {
       this.advisory.coachId=this.coachId;
       this.advisory=this.getStorableAdvisory(this.advisory);
         AdvisoriesService.create(this.advisory).then((response)=>{
+          this.hideDialog();
         this.retrieveAdvisories();
       })
       /*this.submitted = true;

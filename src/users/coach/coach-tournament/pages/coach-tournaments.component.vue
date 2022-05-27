@@ -12,7 +12,7 @@
 
     <pv-card v-for="tournament of tournaments" style="width: 395px">
       <template #header>
-        <pv-image src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg"
+        <pv-image v-bind:src="tournament.urlToImage"
                   size= "xlarge"
                   alt="image tournaments"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -33,18 +33,106 @@
         <h4>Media: {{tournament.media}}</h4>
       </template>
       <template #footer>
-        <pv-button>Cancel</pv-button>
+        <pv-button @click="cancelTournament(tournament.id)">Cancel</pv-button>
       </template>
 
     </pv-card>
 
     <pv-dialog
-        v-model:visible="advisoryDialog"
+        v-model:visible="tournamentDialog"
         :style="{ width: '500px'}"
-        header="Advisory Information"
+        header="Tournaments Information"
         :modal="true"
         class="p-fluid"
     >
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              type="text"
+              id="title"
+              v-model.trim="tournament.title"
+              required="true"
+              autofocus
+              :class="{'p-invalid':submitted && !tournament.title}"
+          />
+          <label for="tournamentTitle">Title</label>
+          <samll class="p-error" v-if="submitted && !tournament.title"
+          >Title is required</samll>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-textarea
+              id="urlToImage"
+              v-model="tournament.urlToImage"
+              required="false"
+              rows="2"
+              cols="2"
+          />
+          <label for="tournamentUrlToImage">Url to Image</label>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-textarea
+              id="schedule"
+              v-model="tournament.schedule"
+              required="false"
+              rows="2"
+              cols="2"
+          />
+          <label for="tournamentSchedule">Schedule</label>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              id="multiple"
+              v-model="tournament.chanel"
+              selectionMode="multiple"
+              required="true"
+              :manualInput="false"
+          />
+          <label for="tournamentChanel">Channel</label>
+          <samll class="p-error" v-if="submitted && !tournament.channel"
+          >Channel is required</samll>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              id="multiple"
+              v-model="tournament.media"
+              selectionMode="multiple"
+              required="true"
+              :manualInput="false"
+          />
+          <label for="tournamentMedia">Media</label>
+          <samll class="p-error" v-if="submitted && !tournament.media"
+          >Media is required</samll>
+        </span>
+      </div>
+
+
+      <template #footer>
+        <pv-button
+            label="Cancel"
+            icon="pi pi-times"
+            class="p-button-text"
+            @click="hideDialog"
+        />
+        <pv-button
+            label="Save"
+            icon="pi pi-check"
+            class="p-button-text"
+            @click="saveTournament"
+        />
+      </template>
+
     </pv-dialog>
 
     <br><br>
@@ -58,6 +146,7 @@ export default {
   data() {
     return  {
       tournaments: [],
+      tournament: {},
       coachTournaments:[],
       coachId:1,
       tournamentTitle:'',
@@ -74,11 +163,14 @@ export default {
     };
   },
   mounted(){
-    TournamentsService.getAll().then((response)=>{
-      this.tournaments=response.data.map(this.getStorableAdvisory);
-    });
+    this.retrieveTournaments();
   },
   methods:{
+    retrieveTournaments(){
+      TournamentsService.getAll().then((response)=>{
+      this.tournaments=response.data;
+    });
+    },
     getStorableAdvisory(advisory){
       return {
         id: advisory.id,
@@ -87,7 +179,29 @@ export default {
         chanel: advisory.chanel,
         media: advisory.media
       };
+    },
+    openNew() {
+      this.tournament = {};
+      this.submitted = false;
+      this.tournamentDialog = true;
+    },
+    hideDialog() {
+      this.tournamentDialog = false;
+      this.submitted = false;
+    },
+    saveTournament(){
+      this.tournament.id=0;
+      TournamentsService.create(this.tournament).then((response)=>{
+        this.retrieveTournaments();
+        this.hideDialog();
+      })
+    },
+    cancelTournament(id){
+      TournamentsService.delete(id).then((response)=>{
+        this.retrieveTournaments();
+      })
     }
+
   }
 };
 

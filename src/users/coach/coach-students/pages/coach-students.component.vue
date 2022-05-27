@@ -12,7 +12,7 @@
           {{student.nickname}}
         </template>
         <template #header>
-          <pv-image src="https://e.rpp-noticias.io/normal/2016/10/29/023202_277176.png"
+          <pv-image v-bind:src="student.urlToImage"
                     size= "large"
                     alt="image student"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -56,10 +56,10 @@ export default {
       retrieveStudents(){
         
         StudentsService.getAll().then((response)=>{
-          this.students=response.data.map(this.getDisplayTutorial);
+          this.students=response.data;
         })
         CoachesService.getAll().then((response)=>{
-          this.coaches=response.data.map(this.getDisplayTutorial);
+          this.coaches=response.data;
           console.log(this.coaches);
           for(let studentId of this.coaches.find(x=>(x.id==this.id)).studentsId){
             console.log(studentId);
