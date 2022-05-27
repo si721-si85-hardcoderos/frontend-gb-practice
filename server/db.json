@@ -2,29 +2,33 @@
   "advisories": [
     {
       "id": 1,
-      "title": "La Real RAA",
-      "date": "28-30-2022",
-      "discordServer": "Alvarado",
-      "attaches": "Rusher",
-      "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "title": "Midline Positioning",
+      "description": "Know how to win a hard line",
+      "date": "28-05-2022",
+      "hour": "8:00pm",
+      "studentName": "Sergio Ramirez",
+      "discordServer": "weapons-fire",
+      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "coachId": 1
     },
     {
       "id": 2,
-      "title": "Tudotitagod",
-      "date": "28-30-2022",
-      "discordServer": "Cosito",
-      "attaches": "dfsdf",
-      "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "title": "Support Itemization",
+      "description": "How to build to help your team",
+      "date": "21-07-2022",
+      "hour": "9:30pm",
+      "studentName": "Carlos Choquehuanca",
+      "discordServer": "Quasimodo",
+      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "coachId": 1
     },
     {
       "id": 3,
-      "title": "Estoico",
-      "date": "28-30-2022",
-      "discordServer": "raummm",
-      "attaches": "XD",
-      "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "title": "Learn from the pros",
+      "description": "Meet a pro-gamer to improve your skills",
+      "date": "29-08-2022",
+      "discordServer": "AS - WILD",
+      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "coachId": 1
     }
   ],
@@ -38,9 +42,10 @@
       "heroes": "Skyler",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
-      "studentsId":[
+      "studentsId": [
         1,
-        2
+        2,
+        3
       ]
     },
     {
@@ -51,8 +56,7 @@
       "role": "Rusher",
       "heroes": "Skyler",
       "tournaments": "LigaFF",
-      "bibliography": "Developer",
-      "studentsId":[]
+      "bibliography": "Developer"
     }
   ],
   "students": [
@@ -61,20 +65,30 @@
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
-      "role": "Rusher",
-      "heroes": "Skyler",
+      "role": "Midlaner",
+      "heroes": "Skyler, Invoker",
       "tournaments": "LigaFF",
-      "bibliography": "Developer"
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player."
     },
     {
       "id": 2,
-      "nickname": "Nickname1",
-      "name": "Omar",
-      "lastname": "Alvarado",
-      "role": "Rusher",
-      "heroes": "Skyler",
-      "tournaments": "LigaFF",
-      "bibliography": "Developer"
+      "nickname": "saber_Z",
+      "name": "Carlos",
+      "lastname": "Villanueva",
+      "role": "Offlaner",
+      "heroes": "Axe, Underlord",
+      "tournaments": "DoomTF",
+      "bibliography": "He is widely regarded as the greatest competitive League of Legends player of all time."
+    },
+    {
+      "id": 3,
+      "nickname": "duckfield",
+      "name": "Diego",
+      "lastname": "Cespedes",
+      "role": "sniper",
+      "heroes": "Ghost, Master",
+      "tournaments": "MajorES",
+      "bibliography": "Developer who took interest in games"
     }
   ],
   "publications": [
@@ -83,8 +97,8 @@
       "nickname": "Estoico",
       "userId": 1,
       "imageAvatar": "https://static.wikia.nocookie.net/dragonsracetotheedge/images/6/6a/Estoico_el_Vasto..jpg/revision/latest?cb=20180206201445&path-prefix=es",
-      "imagePublication":"https://elcomercio.pe/tecnologia/videojuegos/copa-softnyx-ganadores-torneo-videojuegos-repartieron-62-000-soles-noticia-606520-noticia",
-      "urlPublication":"https://elcomercio.pe/tecnologia/videojuegos/copa-softnyx-ganadores-torneo-videojuegos-repartieron-62-000-soles-noticia-606520-noticia/#:~:text=Los%20premios%20sumaron%20S%2F.,Operation%207%20y%20LoveRitmo%2C%20respectivamente.",
+      "imagePublication": "https://elcomercio.pe/tecnologia/videojuegos/copa-softnyx-ganadores-torneo-videojuegos-repartieron-62-000-soles-noticia-606520-noticia",
+      "urlPublication": "https://elcomercio.pe/tecnologia/videojuegos/copa-softnyx-ganadores-torneo-videojuegos-repartieron-62-000-soles-noticia-606520-noticia/#:~:text=Los%20premios%20sumaron%20S%2F.,Operation%207%20y%20LoveRitmo%2C%20respectivamente.",
       "title": "Copa Softnyx | Finalistas del torneo de videojuegos se repartieron 62.000 soles",
       "description": "Tras cuatro años, la Copa Softnyx volvió. El domingo 10 de febrero se llevó a cabo las finales regionales de la Copa Softnyx. El escenario elegido fue el Reserclub de Pueblo Libre y hubo cuatro juegos en competencia: Rakion, Wolfteam, Operation 7 y LoveRitmo. Los premios sumaron S/. 62.000 para los participantes. Los equipos de Spektrum, Loberos, Reborn y Los Papus resultaron campeones de Rakion, Wolfteam, Operation 7 y LoveRitmo, respectivamente. "
     },
@@ -93,29 +107,29 @@
       "nickname": "Seven Scissors",
       "userId": 3,
       "imageAvatar": "https://media.redadn.es/series/capi/capitulo_186492.jpg",
-      "imagePublication":"https://apkelite.org/wp-content/uploads/2021/10/1633283355_Lista-de-niveles-de-heroes-de-Mobile-Legends-de-octubre.jpg",
+      "imagePublication": "https://apkelite.org/wp-content/uploads/2021/10/1633283355_Lista-de-niveles-de-heroes-de-Mobile-Legends-de-octubre.jpg",
       "urlPublication": "https://apkelite.org/blog/lista-de-niveles-de-heroes-de-mobile-legends-de-octubre-de-2021/",
       "title": "Mira la lista de niveles de héroes de Mobile Legends de octubre de 2021",
       "description": "Leyendas móviles Bang Bang acaba de terminar con Temporada 21 moviéndose a Temporada 22. Con una base de jugadores tan grande y solidaria que continúa creciendo, ML seguramente será uno de los más populares MOBA por mucho tiempo. Sin embargo, para esta temporada, echemos un vistazo a la lista de niveles de héroes de Mobile Legends para la temporada 22 en curso, para octubre de 2021, que ayudaría a los jugadores a comprender el meta actual dándoles una ventaja adicional mientras suben de rango después del restablecimiento de rango"
     },
-    { "id": 3,
+    {
+      "id": 3,
       "nickname": "Nickname1",
       "userId": 2,
       "imageAvatar": "https://i.pinimg.com/originals/0a/60/bc/0a60bc05b97180bf77a29d734d655223.jpg",
-      "imagePublication":"https://depor.com/resizer/Lkt-JPjl9HxH5GZ_X4bSKmrmpxY=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Z4ACFMKYZVFZHPPR7PQE74TB2E.jpg",
+      "imagePublication": "https://depor.com/resizer/Lkt-JPjl9HxH5GZ_X4bSKmrmpxY=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Z4ACFMKYZVFZHPPR7PQE74TB2E.jpg",
       "urlPublication": "https://esports.xataka.com/dota-2/dota-2-para-dummies-iniciacion-a-la-defensa-de-los-ancestros",
       "title": "Quiero compartirles información relevante sobre el videojuego de Dota 2",
-      "description":"¿Alguna vez te has interesado por DOTA 2, pero te has sentido abrumado por la cantidad de nuevos conceptos, por la interfaz, por lo extenso de su canon? No te preocupes, es más común de lo que parece. Lo que os proponemos hoy es la primera parte de nuestra guía para recién llegados a DOTA 2."
+      "description": "¿Alguna vez te has interesado por DOTA 2, pero te has sentido abrumado por la cantidad de nuevos conceptos, por la interfaz, por lo extenso de su canon? No te preocupes, es más común de lo que parece. Lo que os proponemos hoy es la primera parte de nuestra guía para recién llegados a DOTA 2."
     }
   ],
   "tournaments": [
     {
       "id": 1,
-      "title": "asd",
-      "schedule": "Sdasdsad",
-      "chanel": "asdasdasdasd",
-      "media": "asdasdasds"
+      "title": "Major Tournament Peru",
+      "schedule": "Sab May. 20 - 8:00pm",
+      "chanel": "Youtube",
+      "media": "Av. Arenales"
     }
   ]
-
 }

@@ -1,13 +1,37 @@
 <template>
-    <pv-card style="width: 50rem; margin-bottom: 2em" v-for="student of studentsCoach">
+  <div class="container">
+    <br><br>
+      <h1 style="text-align: center;color: white"> STUDENTS</h1>
+    <div class="container-2">
+      <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="student of studentsCoach">
         <template #title v-if="student">
-            {{student.name}}
+          {{student.lastname}}
+          {{student.name}}
         </template>
-        <template #content v-if="student">
-            {{student.lastname}}
-            {{student.heroes}}
+        <template #subtitle v-if="student">
+          {{student.nickname}}
         </template>
-    </pv-card>
+        <template #header>
+          <pv-image src="https://e.rpp-noticias.io/normal/2016/10/29/023202_277176.png"
+                    size= "large"
+                    alt="image student"
+                    gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                    width="275"
+                    height="200"
+                    preview/>
+        </template>
+        <template #content>
+          {{student.bibliography}}
+        </template>
+        <template #footer>
+          <h4>{{student.tournaments}} | {{student.heroes}} | {{student.role}}</h4>
+
+        </template>
+      </pv-card>
+    </div>
+      <br><br>
+  </div>
+
 </template>
 
 <script>
@@ -66,3 +90,18 @@ export default {
     }
 }
 </script>
+<style>
+.container{
+  background-color: #2455A5;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+.container-2{
+
+}
+
+
+</style>

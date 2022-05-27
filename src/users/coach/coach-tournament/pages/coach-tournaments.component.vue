@@ -1,5 +1,6 @@
 <template>
-  <div v-for="tournament of tournaments">
+  <div class="container">
+    <br><br>
     <pv-button
         class="p-button-lg"
         label="New Tournament"
@@ -9,23 +10,34 @@
     />
     <pv-divider/>
 
+    <pv-card v-for="tournament of tournaments" style="width: 395px">
+      <template #header>
+        <pv-image src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg"
+                  size= "xlarge"
+                  alt="image tournaments"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  width="275"
+                  height="200"
+                  preview/>
+      </template>
+      <template #title>
+        Road to Major
+      </template>
+      <template #subtitle>
+        Cyber: G2-House
+      </template>
+      <template #content>
+        <h4 style="font-type: bold">{{tournament.title}}</h4>
+        <h4>Schedule: {{tournament.schedule}}</h4>
+        <h4>Chanel: {{tournament.chanel}}</h4>
+        <h4>Media: {{tournament.media}}</h4>
+      </template>
+      <template #footer>
+        <pv-button>Cancel</pv-button>
+      </template>
 
-        <div>
-          <pv-image src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg"
-                     size= "xlarge"
-                    alt="image advisory"
-                    gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                    width="275"
-                    height="275"
-                    preview/>
-        </div>
-        <div>
-          <h2>Coach name</h2>
-        </div>
-    <h3>Title: {{tournament.title}}</h3>
-    <h3>Schedule: {{tournament.schedule}}</h3>
-    <h3>Chanel: {{tournament.chanel}}</h3>
-    <h3>Media: {{tournament.media}}</h3>
+    </pv-card>
+
     <pv-dialog
         v-model:visible="advisoryDialog"
         :style="{ width: '500px'}"
@@ -35,7 +47,7 @@
     >
     </pv-dialog>
 
-
+    <br><br>
   </div>
 </template>
 
@@ -85,11 +97,11 @@ export default {
 .p-button-lg{
   background-color: #C4C4C4;
   display: block;
-  width: 70%;
+  width: 40%;
   height: 100px;
   border: none;
   padding: 200px 200px;
-  font-size: 16px;
+  font-size: 50px;
   cursor: pointer;
   text-align: center;
   margin:auto;
@@ -102,6 +114,8 @@ export default {
   padding-left: 20px;
   margin:auto;
 }
+
+
 
 
 </style>

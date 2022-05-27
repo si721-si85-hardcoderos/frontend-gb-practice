@@ -25,8 +25,8 @@ export default {
           alt="Getting Better logo"
           class="logo"
           src="@/assets/logo-gb.png"
-          width="160"
-          height="125"
+          width="150"
+          height="85"
         />
       </template>
       <template #end>
