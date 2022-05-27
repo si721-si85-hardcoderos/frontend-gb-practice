@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "advisories"
+      redirect: "log-in"
     },
     {
       path: "/profiles",
@@ -31,6 +31,16 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: () => import("../users/coach/coach-home/pages/coach-home.component.vue")
+    },
+    {
+      path: '/log-in',
+      name: 'login',
+      component: () => import("../users/log-in/pages/log-in.vue")
+    },
+    {
+      path: '/sign-up',
+      name: 'signup',
+      component: () => import("../users/sign-up/pages/sign-up.vue")
     }
   ]
 })

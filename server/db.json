@@ -52,6 +52,7 @@
   "students": [
     {
       "id": 1,
+      "password": "asdw233",
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",

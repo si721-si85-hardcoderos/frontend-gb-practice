@@ -1,10 +1,20 @@
 <script>
-import NavBar from './users/navbar/views/Nav-bar.vue';
 
 
 export default {
-  components: { NavBar },
-  
+    name:"nav-bar",
+    data() {
+        return {
+
+        items: [
+            { label: "home", to: "/home" },
+            { label: "Profile", to: "/profiles" },
+            { label: "advisory", to: "/advisories" },
+            { label: "students", to: "/students"},
+            { label: "tournaments", to: "/tournaments"}
+        ],
+        };
+    }
 };
 </script>
 
@@ -17,8 +27,8 @@ export default {
           alt="Getting Better logo"
           class="logo"
           src="@/assets/logo-gb.png"
-          width="150"
-          height="85"
+          width="160"
+          height="125"
         />
       </template>
       <template #end>
@@ -42,9 +52,15 @@ export default {
       </template>
     </pv-toolbar>
   </header>
-  <RouterView />
+  <pv-sidebar v-model:visible="drawer"></pv-sidebar>
 </template>
 
 <style scoped>
-
+    .toolbar{
+  background-color: #000000;
+}
+.p-button{
+  color: #ffffff;
+  background-color: #000000;
+}
 </style>

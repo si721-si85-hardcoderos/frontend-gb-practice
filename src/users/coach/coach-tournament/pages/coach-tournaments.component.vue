@@ -1,6 +1,9 @@
 <template>
+<nav-bar/>
+
   <div class="container">
     <br><br>
+
     <pv-button
         class="p-button-lg"
         label="New Tournament"

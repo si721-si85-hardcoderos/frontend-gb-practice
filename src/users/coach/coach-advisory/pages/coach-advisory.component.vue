@@ -1,4 +1,6 @@
 <template>
+  <nav-bar/>
+
   <div class="container">
     <br><br>
     <pv-button

@@ -21,6 +21,8 @@ import Dialog from "primevue/dialog";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
 import Calendar from 'primevue/calendar';
+import Navbar from './users/navbar/views/Nav-bar.vue'
+
 const app = createApp(App);
 
 app.use(router);
@@ -43,6 +45,7 @@ app.component("pv-dialog", Dialog);
 app.component("pv-input-text", InputText);
 app.component("pv-textarea",Textarea);
 app.component("pv-calendar",Calendar);
+app.component("nav-bar",Navbar)
 
 app.mount("#app");
 

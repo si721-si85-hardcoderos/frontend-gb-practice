@@ -2,6 +2,14 @@ import http from "../../../core/services/http-common.js"
 export class CoachesService {
     endPoint='/coaches';
 
+    confirmCredentials(username, password){
+        return http.get(`${this.endPoint}/?email=${username}&password=${password}`)
+    }
+
+    getByUsername(username){
+        return http.get(`${this.endPoint}/?email=${username}`)
+    }
+
     getAll() {
         return http.get(`${this.endPoint}`);
 
