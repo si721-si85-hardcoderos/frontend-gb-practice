@@ -4,6 +4,14 @@
       <template v-slot:title>
         <div style="text-align: center; margin-bottom: 20px; margin-top: 20px">
           <h3>Sign Up</h3>
+
+          <img
+              alt="Getting Better logo"
+              class="logo"
+              src="@/assets/logo-gb.png"
+
+          />
+
           <p style="font-weight: 300; font-size: 1.4rem">
             Ready to join the best community?
           </p>
@@ -14,7 +22,7 @@
           <div
               class="input-data-sign-up flex flex-column align-items-center gap-5"
           >
-            <div class="flex justify-content-center gap-2">
+            <div class="flex justify-content-center gap-5">
               <span class="p-float-label">
                 <pv-input-text
                     id="firstname"
@@ -47,7 +55,7 @@
                   class="input-general"
                   id="email"
                   type="email"
-                  v-model="value"
+                  v-model="email"
               />
               <label for="email">Email</label>
             </span>
@@ -56,7 +64,7 @@
                   class="input-general"
                   id="email"
                   type="password"
-                  v-model="email"
+                  v-model="password"
               />
               <label for="password">Password</label>
             </span>
@@ -84,7 +92,33 @@
         </div>
       </template>
     </pv-card>
+    <div class="layout-footer" >
+      <div class="layout-footer-left">
+        <span>Created By </span>
+
+      </div>
+      <img
+          alt="softweb  logo"
+          class="logo"
+          src="@/assets/softweb.jpg"
+
+      />
+      <div class="layout-footer-right">
+        <a href="https://github.com/Getting-Better" class="mr-3">
+          <i class="pi pi-github"></i>
+        </a>
+        <a href="https://twitter.com/Softweb" class="mr-3">
+          <i class="pi pi-twitter"></i>
+        </a>
+        <a href="https://discord.com/invite/Softweb">
+          <i class="pi pi-discord"></i>
+        </a>
+
+      </div>
+    </div>
+
   </div>
+
 </template>
 
 <script>
@@ -125,11 +159,42 @@ export default {
 </script>
 
 <style scoped>
+.p-float-label{
+  margin-left:10px;
+  margin-top:10px;
+  margin-rigth:10px;
+  margin-bottom:10px;
+}
+
+.logo{
+  max-width: 100px;
+  align-content: center;
+  margin: auto;
+}
+.layout-footer{
+  style: "font-weight: 300; font-size: 1.4rem";
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #181818;
+  color: white;
+  text-align: center;
+
+}
 .input-name {
-  width: 225px;
+  max-width: 225px;
+  margin-left:10px;
+
+  margin-rigth:10px;
+
 }
 .input-general {
-  width: 458px;
+  max-width: 225px;
+  margin-left:10px;
+
+  margin-rigth:10px;
+
 }
 :deep(button.p-button.p-component.p-button-rounded) {
   border: none;
@@ -139,22 +204,42 @@ export default {
 :deep(a) {
   display: inline-block;
 }
+.formregister{
+  margin-top: 150px;
+  width: 400px;
+  align-items: center;
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgb(26, 26, 88);
+  margin-bottom:150px;
+
+}
 .div-register1{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  margin-left:10px;
+  margin-top:10px;
+  margin-rigth:10px;
+  margin-bottom:10px;
 
 }
 
 .div-register2 {
 
-  width:470px;
+  width: auto;
   align-items: center;
   border-style: solid;
   border-width: 5px;
   border-color: #24303c;
+
+  margin-left:10px;
+  margin-top:10px;
+  margin-rigth:10px;
+  margin-bottom:10px;
+
 }
 
 .headercardregister{

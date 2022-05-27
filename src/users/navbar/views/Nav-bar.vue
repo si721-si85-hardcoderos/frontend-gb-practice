@@ -2,7 +2,7 @@
 
 
 export default {
-    name:"nav-bar",
+
     data() {
         return {
 
@@ -21,8 +21,9 @@ export default {
 
 <template>
   <pv-toast></pv-toast>
-  <header>
-    <pv-toolbar class="toolbar bg-primary">
+
+  <header >
+    <pv-toolbar class="toolbar bg-primary"  >
       <template #start>
         <img
           alt="Getting Better logo"
@@ -54,14 +55,29 @@ export default {
     </pv-toolbar>
   </header>
   <pv-sidebar v-model:visible="drawer"></pv-sidebar>
+
 </template>
 
-<style scoped>
-    .toolbar{
-  background-color: #000000;
-}
-.p-button{
-  color: #ffffff;
-  background-color: #000000;
-}
+<style  scoped>
+
+  header {
+
+  }
+    .toolbar {
+      background-color: #000000;
+
+      min-width: 50vh;
+      overflow: hidden;
+      padding: 1rem;
+
+
+    }
+
+    .p-button {
+      color: #ffffff;
+      background-color: #000000;
+    }
+
+
+
 </style>

@@ -2,6 +2,17 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import PrimeVue from "primevue/config";
+
+// Already autoprefixed for vendor prefixes.
+// Also namespaced to avoid collisions.
+import VueFlex from "vue-flex";
+
+import "vue-flex/dist/vue-flex.css";
+
+
+//RESPONSIVE
+import { VueResponsiveComponents } from "vue-responsive-components"
+
 // PrimeVue Theme
 import "primevue/resources/themes/md-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
@@ -24,7 +35,8 @@ import Calendar from 'primevue/calendar';
 import Navbar from './users/navbar/views/Nav-bar.vue'
 
 const app = createApp(App);
-
+app. use(VueFlex);
+app.use(VueResponsiveComponents)
 app.use(router);
 // PrimeVue Configuration
 app.use(PrimeVue, { ripple: true });
