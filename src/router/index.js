@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "advisories"
+      redirect: "log-in"
     },
     {
       path: "/profiles",

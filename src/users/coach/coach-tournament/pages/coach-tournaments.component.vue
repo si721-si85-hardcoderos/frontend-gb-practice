@@ -1,4 +1,5 @@
 <template>
+<nav-bar/>
   <div v-for="tournament of tournaments">
     <pv-button
         class="p-button-lg"

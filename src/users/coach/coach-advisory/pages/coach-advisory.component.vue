@@ -1,4 +1,5 @@
 <template>
+  <nav-bar/>
   <div>
     <pv-button
         class="p-button-lg"

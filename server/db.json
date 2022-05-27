@@ -31,6 +31,8 @@
   "coaches": [
     {
       "id": 1,
+      "email": "assddd@gmail.com",
+      "password": "ad23aa",
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
@@ -45,6 +47,8 @@
     },
     {
       "id": 2,
+      "email": "abcdef@hotmail.com",
+      "password": "xda121",
       "nickname": "Nick",
       "name": "Omar",
       "lastname": "Alvar",
@@ -57,6 +61,7 @@
   "students": [
     {
       "id": 1,
+      "password": "asdw233",
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
@@ -67,6 +72,7 @@
     },
     {
       "id": 2,
+      "password": "a123456789",
       "nickname": "Nickname1",
       "name": "Omar",
       "lastname": "Alvarado",

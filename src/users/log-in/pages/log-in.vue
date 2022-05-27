@@ -56,6 +56,7 @@
             </div>
             <div class="flex justify-content-center mt-3">
               <pv-button
+                  @click="submitLogin()"
                   style="width: 200px"
                   label="Login"
                   class="p-button-rounded"
@@ -86,11 +87,14 @@
 </template>
 
 <script>
+import CoachesService from '../../coach/services/coaches.service'
+import  StudentsService  from '../../student/services/students.service';
+
 export default {
   data() {
     return {
-      username: undefined,
-      password: undefined,
+      username: '',
+      password: '',
       socialLogins: [
         { name: "google", icon: "pi pi-google", color: "#c52525" },
         { name: "facebook", icon: "pi pi-facebook", color: "#1976f2" },
@@ -100,9 +104,18 @@ export default {
   },
   created() {},
   methods: {
+    submitLogin() {
+      CoachesService.confirmCredentials(this.username,this.password).then((response)=>{
+        if(response.data.length>0){
+          this.$router.push("/home")
+        }
+      })
+    },
+
     goToSignUpView() {
       this.$router.push("sign-up");
     },
+
   },
 };
 </script>

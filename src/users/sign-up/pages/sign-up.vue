@@ -80,7 +80,7 @@
             >Login here.</router-link
             >
           </p>
-          <pv-button label="Sign Up" class="p-button-rounded burning-orange" />
+          <pv-button @click="submitSignUp()" label="Sign Up" class="p-button-rounded burning-orange" />
         </div>
       </template>
     </pv-card>
@@ -88,17 +88,39 @@
 </template>
 
 <script>
+import  CoachesService  from '../../coach/services/coaches.service';
 export default {
   data() {
     return {
-      firstName: undefined,
-      lastName: undefined,
-      email: undefined,
-      password: undefined,
-      confirmPassword: undefined,
-      nickname: undefined,
+      user: {
+      },
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      nickname: '',
     };
   },
+  methods: {
+    submitSignUp(){
+      CoachesService.getByUsername(this.nickname).then((response)=>{
+        console.log(response.data);
+        if(response.data==0){
+          this.user.id=0;
+          this.user.firstName=this.firstName;
+          this.user.lastName=this.lastName;
+          this.user.email=this.email;
+          this.user.password=this.password;
+          this.user.nickname=this.nickname;
+          CoachesService.create(this.user).then((response)=>{
+            this.$router.push("/home");
+          })
+        }
+      })
+      CoachesService.create()
+    }
+  }
 };
 </script>
 

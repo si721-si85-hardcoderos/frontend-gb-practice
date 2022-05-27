@@ -1,4 +1,5 @@
 <template>
+<nav-bar/>
     <pv-card style="width: 50rem; margin-bottom: 2em" v-for="student of studentsCoach">
         <template #title v-if="student">
             {{student.name}}
