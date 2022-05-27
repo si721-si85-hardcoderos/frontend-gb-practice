@@ -2,40 +2,43 @@
   "advisories": [
     {
       "id": 1,
-      "title": "La Real RAA",
-      "date": "28-30-2022",
-      "discordServer": "Alvarado",
-      "attaches": "Rusher",
-      "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "title": "Support Itemization",
+      "description": "How to build to help your team",
+      "date": "21-07-2022",
+      "hour": "9:30pm",
+      "studentName": "Carlos Choquehuanca",
+      "discordServer": "Quasimodo",
+      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "urlToImage": "https://staticg.sportskeeda.com/editor/2021/04/45716-16195438439457-800.jpg",
       "coachId": 1
     },
     {
       "id": 2,
-      "title": "Tudotitagod",
-      "date": "28-30-2022",
-      "discordServer": "Cosito",
-      "attaches": "dfsdf",
-      "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "title": "Learn from the pros",
+      "description": "Meet a pro-gamer to improve your skills",
+      "date": "29-08-2022",
+      "discordServer": "AS - WILD",
+      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "urlToImage": "https://dota2freaks.com/wp-content/uploads/sites/10/2020/02/dota-2-recommended-items.jpg",
       "coachId": 1
     },
     {
       "id": 3,
-      "title": "Estoico",
-      "date": "28-30-2022",
-      "discordServer": "raummm",
-      "attaches": "XD",
-      "cyberimage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "title": "Learn from the pros",
+      "description": "Meet a pro-gamer to improve your skills",
+      "date": "29-08-2022",
+      "discordServer": "AS - WILD",
+      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "urlToImage": "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
       "coachId": 1
     }
   ],
   "coaches": [
     {
       "id": 1,
-      "email": "assddd@gmail.com",
-      "password": "ad23aa",
-      "nickname": "Estoico",
+      "nickname": "Nick",
       "name": "Omar",
-      "lastname": "Alvarado",
+      "lastname": "Alvar",
       "role": "Rusher",
       "heroes": "Skyler",
       "tournaments": "LigaFF",
@@ -44,18 +47,6 @@
         1,
         2
       ]
-    },
-    {
-      "id": 2,
-      "email": "abcdef@hotmail.com",
-      "password": "xda121",
-      "nickname": "Nick",
-      "name": "Omar",
-      "lastname": "Alvar",
-      "role": "Rusher",
-      "heroes": "Skyler",
-      "tournaments": "LigaFF",
-      "bibliography": "Developer"
     }
   ],
   "students": [
@@ -65,21 +56,33 @@
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
-      "role": "Rusher",
-      "heroes": "Skyler",
+      "role": "Midlaner",
+      "heroes": "Skyler, Invoker",
       "tournaments": "LigaFF",
-      "bibliography": "Developer"
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg"
     },
     {
       "id": 2,
-      "password": "a123456789",
-      "nickname": "Nickname1",
-      "name": "Omar",
-      "lastname": "Alvarado",
-      "role": "Rusher",
-      "heroes": "Skyler",
-      "tournaments": "LigaFF",
-      "bibliography": "Developer"
+      "nickname": "saber_Z",
+      "name": "Carlos",
+      "lastname": "Villanueva",
+      "role": "Offlaner",
+      "heroes": "Axe, Underlord",
+      "tournaments": "DoomTF",
+      "bibliography": "He is widely regarded as the greatest competitive League of Legends player of all time.",
+      "urlToImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1QDTGY4XAju-jLpJnhADF4QzVjgvV_G5yjfAwiois5O0RKran-exjPaGWgRafp3zXAE&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "nickname": "duckfield",
+      "name": "Diego",
+      "lastname": "Cespedes",
+      "role": "sniper",
+      "heroes": "Ghost, Master",
+      "tournaments": "MajorES",
+      "bibliography": "Developer who took interest in games",
+      "urlToImage": "https://e.rpp-noticias.io/normal/2016/10/29/023202_277176.png"
     }
   ],
   "publications": [
@@ -117,10 +120,27 @@
   "tournaments": [
     {
       "id": 1,
-      "title": "asd",
-      "schedule": "Sdasdsad",
-      "chanel": "asdasdasdasd",
-      "media": "asdasdasds"
+      "title": "Major Tournament Peru",
+      "schedule": "Sab May. 20 - 8:00pm",
+      "chanel": "Youtube",
+      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
+      "media": "Av. Arenales"
+    },
+    {
+      "title": "asdasd",
+      "schedule": "asdsadasd",
+      "chanel": "sadasdas",
+      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
+      "media": "dasdasdsa",
+      "id": 2
+    },
+    {
+      "title": "asdsadasd",
+      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
+      "schedule": "dsadsad",
+      "chanel": "sadsadsaa",
+      "media": "dsadsadsadsa",
+      "id": 3
     }
   ]
 }
