@@ -1,14 +1,11 @@
 <template>
-  <div class="flex justify-content-center">
-    <pv-card style="width: 900px; height: 500px">
+  <div class="logincard div-login-general" >
+    <pv-card class="div-login-center" >
       <template v-slot:content>
         <div class="flex">
           <div
               class="
-              login
-              flex flex-column
-              justify-content-center
-              align-items-center
+              contentlogincard
             "
           >
             <h1>Login to your account</h1>
@@ -64,9 +61,9 @@
             </div>
           </div>
           <div
-              class="not-logged burning-orange flex flex-column justify-content-center align-items-center gap-6"
+              class="contentlogincard"
           >
-            <div class="text-container">
+            <div class=title>
               <h1 class="mb-2">New to Getting Better?</h1>
               <p>
                 Join the <strong>best</strong> and
@@ -148,4 +145,57 @@ export default {
   color: black;
   text-align: center;
 }
+.div-login-general {
+  background: rgb(255, 255, 255);
+  height: 590px;
+
+
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.div-login-center {
+
+  margin-top: 150px;
+  width: 400px;
+  align-items: center;
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgb(26, 26, 88);
+}
+
+.div-login-center img{
+  width: 200px;
+  margin-left: 90px;
+  align-items: center;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(26, 26, 88);
+}
+.logincard{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.contentlogincard{
+  margin-left: 80px;
+}
+.actionslogin{
+  margin-left: 150px;
+}
+.logintitle{
+
+  margin-left: 150px;
+}
+.loginsubtitle{
+
+  margin-left: 165px;
+}
+
+
+
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-content-center">
-    <pv-card style="width: 600px; height: 590px">
+  <div class="div-register1 ">
+    <pv-card class="formregister">
       <template v-slot:title>
         <div style="text-align: center; margin-bottom: 20px; margin-top: 20px">
           <h3>Sign Up</h3>
@@ -10,7 +10,7 @@
         </div>
       </template>
       <template v-slot:content>
-        <div>
+        <div class="div-register2">
           <div
               class="input-data-sign-up flex flex-column align-items-center gap-5"
           >
@@ -139,4 +139,41 @@ export default {
 :deep(a) {
   display: inline-block;
 }
+.div-register1{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.div-register2 {
+
+  width:470px;
+  align-items: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #24303c;
+}
+
+.headercardregister{
+  align-items: center;
+  margin-left: 80px;
+}
+.matconten{
+  width: 100%;
+}
+.actionsregister{
+  align-items: center;
+  margin-left: 100px;
+}
+
+
+
+.formregister{
+  width: 500px;
+}
+
+
 </style>
