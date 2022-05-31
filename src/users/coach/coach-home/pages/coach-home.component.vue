@@ -103,7 +103,7 @@
 
 <script>
 import CoachHomeService from "../services/coach-home.service";
-import CoachEventsService from "../services/coach-events.service";
+//import CoachEventsService from "../services/coach-events.service";
 export default {
   name: "coach-home",
   data() {
