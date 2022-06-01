@@ -59,7 +59,7 @@
             </div>
             <div class="flex justify-content-center mt-3">
               <pv-button
-                  @click="submitLogin()"
+                  onclick="location.href='/coach-home'"
                   style="width: 200px"
                   label="Login"
                   class="p-button-rounded"
