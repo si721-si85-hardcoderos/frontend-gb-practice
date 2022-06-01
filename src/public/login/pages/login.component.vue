@@ -130,7 +130,6 @@ export default {
   name: "general-log-in",
 
   mounted() {
-    this.retrieveStudents();
   },
   methods: {
     submitLogin() {

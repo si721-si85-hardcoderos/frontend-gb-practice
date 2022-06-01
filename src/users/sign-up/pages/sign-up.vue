@@ -122,7 +122,7 @@
 </template>
 
 <script>
-import  CoachesService  from '../../services/coaches.service';
+import  CoachesService  from '../../coach/services/coaches.service';
 export default {
   data() {
     return {
@@ -148,10 +148,11 @@ export default {
           this.user.password=this.password;
           this.user.nickname=this.nickname;
           CoachesService.create(this.user).then((response)=>{
-            this.$router.push("/coach-home");
+            this.$router.push("/home");
           })
         }
       })
+      CoachesService.create()
     }
   }
 };

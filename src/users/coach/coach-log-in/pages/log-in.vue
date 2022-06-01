@@ -162,7 +162,6 @@ export default {
   margin: auto;
 }
 .layout-footer{
-  style: "font-weight: 300; font-size: 1.4rem";
   position: fixed;
   left: 0;
   bottom: 0;
