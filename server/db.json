@@ -57,11 +57,122 @@
       "heroes": "Skyler",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
-      "studentsId":[
+      "studentsId": [
         1,
         2,
         3
       ]
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "id": 20
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "id": 23
+    },
+    {
+      "id": 24
+    },
+    {
+      "id": 25
+    },
+    {
+      "id": 26
+    },
+    {
+      "id": 27
+    },
+    {
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "id": 31
+    },
+    {
+      "id": 32
+    },
+    {
+      "id": 33
+    },
+    {
+      "id": 34
+    },
+    {
+      "id": 35
+    },
+    {
+      "id": 36
+    },
+    {
+      "id": 37
+    },
+    {
+      "id": 38
+    },
+    {
+      "id": 39
     }
   ],
   "students": [
@@ -106,7 +217,7 @@
       "nickname": "Estoico",
       "userId": 1,
       "imageAvatar": "https://64.media.tumblr.com/902316fdb7068bdc73285a6bb912caaa/faeeb477b4443a15-86/s540x810/d9e033cc7487659ceeb6abc6a0281f09a42a8fde.gifv",
-      "imagePublication":"https://elcomercio.pe/resizer/6dGjOYyPkra4uZcR8zY6JcMjLwI=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/TNTRBGKDJBBDLMS37BVDZTEL5I.jpg",
+      "imagePublication": "https://elcomercio.pe/resizer/6dGjOYyPkra4uZcR8zY6JcMjLwI=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/TNTRBGKDJBBDLMS37BVDZTEL5I.jpg",
       "urlPublication": "https://elcomercio.pe/tecnologia/videojuegos/copa-softnyx-ganadores-torneo-videojuegos-repartieron-62-000-soles-noticia-606520-noticia/#:~:text=Los%20premios%20sumaron%20S%2F.,Operation%207%20y%20LoveRitmo%2C%20respectivamente.",
       "title": "Copa Softnyx | Finalistas del torneo de videojuegos se repartieron 62.000 soles",
       "description": "Tras cuatro años, la Copa Softnyx volvió. El domingo 10 de febrero se llevó a cabo las finales regionales de la Copa Softnyx. El escenario elegido fue el Reserclub de Pueblo Libre y hubo cuatro juegos en competencia: Rakion, Wolfteam, Operation 7 y LoveRitmo. Los premios sumaron S/. 62.000 para los participantes. Los equipos de Spektrum, Loberos, Reborn y Los Papus resultaron campeones de Rakion, Wolfteam, Operation 7 y LoveRitmo, respectivamente. "
@@ -156,6 +267,22 @@
       "chanel": "sadsadsaa",
       "media": "dsadsadsadsa",
       "id": 3
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "imagePublication": "https://assets.gamingintelligence.com/wp-content/uploads/sites/4/2022/05/16113943/Nota-de-prensa.jpg",
+      "urlPublication": "https://www.nferias.com/peru-gaming-show/",
+      "title": "Perú Gaming Show: la feria ",
+      "description": "Perú Gaming Show es un evento imperdible para los propietarios y responsables de los casinos, bingos y centros recreativos de Perú y la Región Andina.\n\nHasta allí se desplazan las principales firmas proveedoras de máquinas expendedoras y tragamonedas, sistemas de seguridad o soluciones tecnológicas para estos negocios, entre otros muchos productos y servicios, para presentar sus novedades y generar nuevos contactos comerciales."
+    },
+    {
+      "id": 2,
+      "imagePublication": "https://i.ytimg.com/vi/W5KOaJ8tS1A/maxresdefault.jpg",
+      "urlPublication": "https://www.karlosperu.com/mobile-legends-bang-bang-organiza-su-primer-campeonato-oficial-en-el-peru/",
+      "title": "Mobile Legends: Bang Bang organiza su primer campeonato oficial en el Perú ",
+      "description": "Los ganadores tendrán premios de hasta 25,000 diamantes del videojuego y la posibilidad de enfrentarse a los campeones de la MLBB Copa Challenger Perú"
     }
   ]
 }

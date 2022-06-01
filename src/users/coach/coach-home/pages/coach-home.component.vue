@@ -1,53 +1,109 @@
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
 
 <template >
- <nav-bar/>
- <div class="dv-color">
+  <nav-bar/>
+  <div class="dv-color">
 
-  <h1 style="font-size:40px" >Anuncios</h1>
-  <br>
-  <div class="cards">
+    <h1 style="font-size:40px" >Anuncios</h1>
+    <br>
+    <div class="cards">
 
-    <pv-card class="p-card" v-for="publication of publications">
+      <pv-card class="p-card" v-for="publication of publications">
 
-      <template #header>
-        <div class="card-headboard">
+        <template #header>
+          <div class="card-headboard">
 
-          <img
-              v-bind:src="publication.imageAvatar"
-              alt="image user"
-          />{{publication.title}}
+            <img
+                v-bind:src="publication.imageAvatar"
+                alt="image user"
+            />{{publication.title}}
 
-        </div>
-        <div class="content">
-          <div class="p-card-title">
-            <h3>{{ publication.bibliography }} </h3>
           </div>
-          <div class="card-description">
-            <h5>{{publication.description}}</h5>
-            <pv-image
-                v-bind:src="publication.imagePublication"
-                alt="image announcement"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                width="275"
-                height="275"
-                preview
-            />
-            <br>
-            <div class="pd-a">
-              <a :href= publication.urlPublication class="button">Read More</a>
+          <div class="content">
+            <div class="p-card-title">
+              <h3>{{ publication.bibliography }} </h3>
+            </div>
+            <div class="card-description">
+              <h5>{{publication.description}}</h5>
+              <pv-image
+                  v-bind:src="publication.imagePublication"
+                  alt="image announcement"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  width="275"
+                  height="275"
+                  preview
+              />
+              <br>
+              <div class="pd-a">
+                <a :href= publication.urlPublication class="button">Read More</a>
+              </div>
             </div>
           </div>
-        </div>
-      </template>
-    </pv-card>
+        </template>
+      </pv-card>
+    </div>
+
+    <h1 style="font-size:40px" >Enventos</h1>
+    <div class="cards">
+      <pv-card>
+
+        <template #header>
+          <div class="card-headboard">
+            <h2>Perú Gaming Show: la feria</h2>
+          </div>
+          <div class="content">
+
+            <div class="card-description">
+              <h5>Perú Gaming Show es un evento imperdible para los propietarios y responsables de los casinos, bingos y centros recreativos de Perú y la Región Andina.Hasta allí se desplazan las principales firmas proveedoras de máquinas expendedoras y tragamonedas, sistemas de seguridad o soluciones tecnológicas para estos negocios, entre otros muchos productos y servicios, para presentar sus novedades y generar nuevos contactos comerciales.</h5>
+              <pv-image
+                  src="https://assets.gamingintelligence.com/wp-content/uploads/sites/4/2022/05/16113943/Nota-de-prensa.jpg"
+                  alt="image event"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  width="275"
+                  height="275"
+                  preview
+              />
+              <br>
+              <div class="pd-a">
+                <a href= "https://www.nferias.com/peru-gaming-show/" class="button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </pv-card>
+      <pv-card>
+
+        <template #header>
+          <div class="card-headboard">
+            <h2>Mobile Legends: Bang Bang organiza su primer campeonato oficial en el Perú</h2>
+          </div>
+          <div class="content">
+
+            <div class="card-description">
+              <h5>Los ganadores tendrán premios de hasta 25,000 diamantes del videojuego y la posibilidad de enfrentarse a los campeones de la MLBB Copa Challenger Perú</h5>
+              <pv-image
+                  src="https://i.ytimg.com/vi/W5KOaJ8tS1A/maxresdefault.jpg"
+                  alt="image event"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  width="275"
+                  height="275"
+                  preview
+              />
+              <br>
+              <div class="pd-a">
+                <a href= "https://www.karlosperu.com/mobile-legends-bang-bang-organiza-su-primer-campeonato-oficial-en-el-peru/" class="button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </pv-card>
+    </div>
   </div>
- </div>
 </template>
 
 <script>
 import CoachHomeService from "../services/coach-home.service";
-
+//import CoachEventsService from "../services/coach-events.service";
 export default {
   name: "coach-home",
   data() {
@@ -58,10 +114,18 @@ export default {
       submitted: false,
       advisory: {},
       advisoryId: 1,
+      /*events: [],
+      advisoryesEvents: [],
+      coachDialogEvents: false,
+      submittedEvents: false,
+      advisoryEvents: {},
+      advisoryIdEvents: 1,*/
+
     };
   },
   mounted() {
     this.retrieveData();
+    // this.retrieveDataEvents()
   },
   methods: {
     retrieveData(){
@@ -69,6 +133,11 @@ export default {
         this.publications=response.data.map(this.getStorableAdvisory);
       })
     },
+    /*retrieveDataEvents(){
+      CoachEventsService.getAllEvents().then((response)=>{
+        this.events=response.data.map(this.getStorableAdvisoryEvents);
+      })
+    },*/
     getStorableAdvisory(advisory) {
       return {
         id: advisory.id,
@@ -83,20 +152,36 @@ export default {
       };
     },
 
+    /*   getStorableAdvisoryEvents(advisoryEvents) {
+         return {
+           eventsId: advisoryEvents.eventsId,
+           eventsImagePublication: advisoryEvents. eventsImagePublication,
+           eventsUrlPublication: advisoryEvents.eventsUrlPublication,
+           eventsTitle: advisoryEvents.eventsTitle,
+           eventsDescription: advisoryEvents.eventsDescription
+         };
+       },*/
+
     findIndexById(id) {
       return this.advisoryes.findIndex((advisory) => advisory.id === id);
     },
+
+    /* findIndexByIdEvents(id) {
+       return this.advisoryesEvents.findIndex((advisoryEvents) => advisoryEvents.eventsId === id);
+     },*/
 
     editCoachAdvisory(advisory) {
       this.coach = { ...advisory };
       this.coachDialog = true;
     },
+
     saveCoachAdvisory() {
       this.submitted = true;
       this.advisory = this.getStorableCoach(this.advisory);
       this.coachDialog = false;
       this.coach = {};
     },
+
   },
 };
 </script>

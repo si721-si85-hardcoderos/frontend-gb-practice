@@ -9,6 +9,12 @@
             "
           >
             <h1>Login to your account</h1>
+            <img
+                alt="Getting Better logo"
+                class="logo"
+                src="@/assets/logo-gb.png"
+
+            />
             <div class="input-login-data" style="width: 90%">
               <div class="col mt-4 mb-2">
                 <div class="p-inputgroup">
@@ -80,7 +86,33 @@
         </div>
       </template>
     </pv-card>
+
+    <div class="layout-footer" >
+      <div class="layout-footer-left">
+        <span>Created By </span>
+
+      </div>
+      <img
+          alt="softweb  logo"
+          class="logo"
+          src="@/assets/softweb.jpg"
+
+      />
+      <div class="layout-footer-right">
+        <a href="https://github.com/Getting-Better" class="mr-3">
+          <i class="pi pi-github"></i>
+        </a>
+        <a href="https://twitter.com/Softweb" class="mr-3">
+          <i class="pi pi-twitter"></i>
+        </a>
+        <a href="https://discord.com/invite/Softweb">
+          <i class="pi pi-discord"></i>
+        </a>
+
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -88,7 +120,9 @@ import CoachesService from '../../coach/services/coaches.service'
 import  StudentsService  from '../../student/services/students.service';
 
 export default {
+
   data() {
+
     return {
       username: '',
       password: '',
@@ -118,6 +152,26 @@ export default {
 </script>
 
 <style scoped>
+.flex{
+  align-content: center;
+
+}
+.logo{
+  max-width: 100px;
+  align-content: center;
+  margin: auto;
+}
+.layout-footer{
+  style: "font-weight: 300; font-size: 1.4rem";
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #181818;
+  color: white;
+  text-align: center;
+
+}
 :deep(div.p-card-content) {
   padding: 0;
   margin: 0;
@@ -182,7 +236,13 @@ export default {
 }
 
 .contentlogincard{
-  margin-left: 80px;
+  margin-left:10px;
+  margin-top:10px;
+  margin-rigth:10px;
+  margin-bottom:10px;
+  justify-content: center;
+  text-align-all: center;
+
 }
 .actionslogin{
   margin-left: 150px;
