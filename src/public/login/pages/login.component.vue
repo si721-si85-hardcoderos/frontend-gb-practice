@@ -44,7 +44,7 @@
                              height="150"
                              preview/>
                       </template>
-                      <template #footer><button class="button background2-left-column" onclick="location.href='/log-in'">Login</button></template>
+                      <template #footer><button class="button background2-left-column" onclick="location.href='/coach-log-in'">Login</button></template>
                     </pv-card>
 
                   </div>
@@ -74,7 +74,7 @@
                              height="150"
                              preview/>
                       </template>
-                      <template #footer><button class="button background2-left-column" onclick="location.href='/log-in'">Login</button></template>
+                      <template #footer><button class="button background2-left-column" onclick="location.href='/student-log-in'">Login</button></template>
                     </pv-card>
 
                   </div>
@@ -102,7 +102,7 @@
                              height="150"
                              preview/>
                       </template>
-                      <template #footer><button class="button background2-left-column" onclick="location.href='/log-in'">Login</button></template>
+                      <template #footer><button class="button background2-left-column" onclick="location.href='/cyber-log-in'">Login</button></template>
                     </pv-card>
 
                   </div>
@@ -123,18 +123,18 @@
 
 <script>
 
-import StudentsService from '../../../users/student/services/students.service.js'
+import StudentsService from '../../../users/coach/coach-student/services/students.service.js'
 import CoachesService from '../../../users/coach/services/coaches.service.js'
 import Card from 'primevue/card'
 export default {
-  name: "logeo",
+  name: "general-log-in",
 
   mounted() {
     this.retrieveStudents();
   },
   methods: {
     submitLogin() {
-      this.$router.push("/log-in")
+      this.$router.push("/coach-log-in")
     }
   }
 }
@@ -221,9 +221,6 @@ body {
 }
 
 .left-column {
-
-
-  color: var(--white-text);
 
   flex-direction: column;
   align-items: center;

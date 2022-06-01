@@ -32,7 +32,7 @@ import Dialog from "primevue/dialog";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
 import Calendar from 'primevue/calendar';
-import Navbar from './users/navbar/views/Nav-bar.vue'
+import Navbar from './users/coach/navbar/views/Nav-bar.vue'
 
 const app = createApp(App);
 app. use(VueFlex);

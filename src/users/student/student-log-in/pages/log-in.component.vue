@@ -59,7 +59,7 @@
             </div>
             <div class="flex justify-content-center mt-3">
               <pv-button
-                  @click="submitLogin()"
+                  onclick="location.href='/student-home'"
                   style="width: 200px"
                   label="Login"
                   class="p-button-rounded"
@@ -116,11 +116,11 @@
 </template>
 
 <script>
-import CoachesService from '../../coach/services/coaches.service'
-import  StudentsService  from '../../student/services/students.service';
+import CoachesService from '../../services/coaches.service'
+
 
 export default {
-
+  name: "student-log-in",
   data() {
 
     return {
@@ -144,7 +144,7 @@ export default {
     },
 
     goToSignUpView() {
-      this.$router.push("sign-up");
+      this.$router.push("student-sign-up");
     },
 
   },

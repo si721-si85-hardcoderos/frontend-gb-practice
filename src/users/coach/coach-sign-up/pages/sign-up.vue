@@ -122,7 +122,7 @@
 </template>
 
 <script>
-import  CoachesService  from '../../coach/services/coaches.service';
+import  CoachesService  from '../../services/coaches.service';
 export default {
   data() {
     return {

@@ -37,7 +37,7 @@
 
 <script>
 
-import StudentsService from '../../../student/services/students.service.js'
+import StudentsService from '../../coach-student/services/students.service.js'
 import CoachesService from '../../../coach/services/coaches.service.js'
 
 export default {

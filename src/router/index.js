@@ -5,47 +5,71 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "log-in"
+      redirect: "general-log-in"
     },
     {
-      path: "/profiles",
-      name: "profiles",
+      path: "/coach-profiles",
+      name: "coach-profiles",
       component: () => import("../users/coach/coach-profile/pages/coach-profile.component.vue"),
     },
     {
-      path: "/advisories",
-      name: "advisories",
+      path: "/coach-advisories",
+      name: "coach-advisories",
       component: () => import("../users/coach/coach-advisory/pages/coach-advisory.component.vue")
     },
     {
-      path: "/students",
-      name: "students",
+      path: "/coach-students",
+      name: "coach-students",
       component: () => import("../users/coach/coach-students/pages/coach-students.component.vue")
     },
     {
-      path: "/tournaments",
-      name: "tournaments",
+      path: "/coach-tournaments",
+      name: "coach-tournaments",
       component: () => import("../users/coach/coach-tournament/pages/coach-tournaments.component.vue")
     },
     {
-      path: '/home',
-      name: 'home',
+      path: '/coach-home',
+      name: 'coach-home',
       component: () => import("../users/coach/coach-home/pages/coach-home.component.vue")
     },
-    {
-      path: '/log-in',
-      name: 'login',
-      component: () => import("../users/log-in/pages/log-in.vue")
+    {path: '/coach-events',
+      name: 'coach-events',
+      component: () => import("../users/coach/coach-event/pages/coach-event.component.vue")
     },
     {
-      path: '/sign-up',
-      name: 'signup',
-      component: () => import("../users/sign-up/pages/sign-up.vue")
+      path: '/coach-log-in',
+      name: 'coach-login',
+      component: () => import("../users/coach/coach-log-in/pages/log-in.vue")
     },
     {
-      path: '/logeo',
-      name: 'logeo',
+      path: '/coach-sign-up',
+      name: 'coach-signup',
+      component: () => import("../users/coach/coach-sign-up/pages/sign-up.vue")
+    },
+    {
+      path: '/general-log-in',
+      name: 'general-log-in',
       component: () => import("../public/login/pages/login.component.vue")
+    },
+    {
+      path: "/student-log-in",
+      name: "student-log-in",
+      component:()=>import("../users/student/student-log-in/pages/log-in.component.vue")
+    },
+    {
+      path: "/student-sign-up",
+      name: "student-sign-up",
+      component:()=>import("../users/student/student-sign-up/pages/sign-up.component.vue")
+    },
+    {
+      path: "/cyber-log-in",
+      name: "cyber-log-in",
+      component:()=>import("../users/cyber/cyber-log-in/pages/log-in.component.vue")
+    },
+    {
+      path: "/cyber-sign-up",
+      name: "cyber-sign-up",
+      component:()=>import("../users/cyber/cyber-sign-up/pages/sign-up.component.vue")
     }
 
   ]

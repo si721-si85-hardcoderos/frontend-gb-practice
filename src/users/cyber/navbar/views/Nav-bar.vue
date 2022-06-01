@@ -7,12 +7,12 @@ export default {
         return {
 
         items: [
-            { label: "Home", to: "/home" },
-            { label: "Profile", to: "/profiles" },
-            { label: "Advisory", to: "/advisories" },
-            { label: "Students", to: "/students"},
-            { label: "Tournaments", to: "/tournaments"},
-            { label: "Sign Out", to: "/log-in"}
+            { label: "Home", to: "/coach-home" },
+            { label: "Profile", to: "/coach-profiles" },
+            { label: "Advisory", to: "/coach-advisories" },
+            { label: "Students", to: "/coach-students"},
+            { label: "Tournaments", to: "/coach-tournaments"},
+            { label: "Sign Out", to: "/coach-log-in"}
         ],
         };
     }

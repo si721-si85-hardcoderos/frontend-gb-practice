@@ -4,29 +4,24 @@
   <nav-bar/>
   <div class="dv-color">
 
-    <h1 style="font-size:40px" >Anuncios</h1>
+    <h1 style="font-size:40px" >Eventos</h1>
     <br>
     <div class="cards">
 
-      <pv-card class="p-card" v-for="publication of publications">
+      <pv-card class="p-card" v-for="event of events">
 
         <template #header>
           <div class="card-headboard">
 
-            <img
-                v-bind:src="publication.imageAvatar"
-                alt="image user"
-            />{{publication.title}}
+            <h2>{{event.title }} </h2>
 
           </div>
           <div class="content">
-            <div class="p-card-title">
-              <h3>{{ publication.bibliography }} </h3>
-            </div>
+
             <div class="card-description">
-              <h5>{{publication.description}}</h5>
+              <h5>{{event.description}}</h5>
               <pv-image
-                  v-bind:src="publication.imagePublication"
+                  v-bind:src="event.imagePublication"
                   alt="image announcement"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   width="275"
@@ -35,7 +30,7 @@
               />
               <br>
               <div class="pd-a">
-                <a :href= publication.urlPublication class="button">Read More</a>
+                <a :href= event.urlPublication class="button">Read More</a>
               </div>
             </div>
           </div>
@@ -46,14 +41,14 @@
 </template>
 
 <script>
-import CoachHomeService from "../services/coach-home.service";
+import CoachEventsService from "../services/coach-events.service";
 
 export default {
-  name: "coach-home",
+  name: "coach-events",
   data() {
     return {
       advisoryes: [],
-      publications: [],
+      events: [],
       coachDialog: false,
       submitted: false,
       advisory: {},
@@ -62,34 +57,32 @@ export default {
   },
   mounted() {
     this.retrieveData();
-
   },
   methods: {
     retrieveData(){
-      CoachHomeService.getAll().then((response)=>{
-        this.publications=response.data.map(this.getStorableAdvisory);
+      CoachEventsService.getAll().then((response)=>{
+        this.events=response.data.map(this.getStorableAdvisory);
       })
     },
+
     getStorableAdvisory(advisory) {
       return {
         id: advisory.id,
-        nickname: advisory.nickname,
-        userId:advisory.userId,
         title: advisory.title,
         description: advisory.description,
-        image: advisory.image,
         imagePublication: advisory.imagePublication,
-        imageAvatar: advisory.imageAvatar,
         urlPublication: advisory.urlPublication
       };
     },
     findIndexById(id) {
       return this.advisoryes.findIndex((advisory) => advisory.id === id);
     },
+
     editCoachAdvisory(advisory) {
       this.coach = { ...advisory };
       this.coachDialog = true;
     },
+
     saveCoachAdvisory() {
       this.submitted = true;
       this.advisory = this.getStorableCoach(this.advisory);
