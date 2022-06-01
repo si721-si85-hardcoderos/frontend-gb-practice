@@ -138,11 +138,11 @@ export default {
   },
   methods: {
     submitSignUp(){
-      CoachesService.getByUsername(this.nickname).then((response)=>{
+      CoachesService.getByUsername(this.email).then((response)=>{
         console.log(response.data);
         if(response.data==0){
           this.user.id=0;
-          this.user.firstName=this.firstName;
+          this.user.name=this.firstName;
           this.user.lastName=this.lastName;
           this.user.email=this.email;
           this.user.password=this.password;

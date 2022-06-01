@@ -71,7 +71,6 @@ const router = createRouter({
       name: "cyber-sign-up",
       component:()=>import("../users/cyber/cyber-sign-up/pages/sign-up.component.vue")
     }
-
   ]
 })
 
