@@ -70,6 +70,11 @@ const router = createRouter({
       path: "/cyber-sign-up",
       name: "cyber-sign-up",
       component:()=>import("../users/cyber/cyber-sign-up/pages/sign-up.component.vue")
+    },
+    {
+      path: "/cyber-tournaments",
+      name: "cyber-tournaments",
+      component:()=>import("../users/cyber/cyber-tournament/pages/cyber-tournament.vue")
     }
   ]
 })
