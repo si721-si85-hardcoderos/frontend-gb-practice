@@ -39,6 +39,7 @@
       "nickname": "Nick",
       "name": "Omar",
       "lastname": "Alvar",
+      "selectedGame": "LOL",
       "role": "Rusher",
       "heroes": "Skyler",
       "email": "aaaasd",
@@ -55,6 +56,7 @@
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
+      "selectedGame": "DOTA",
       "role": "Rusher",
       "heroes": "Skyler",
       "email": "asdsadas",
@@ -177,5 +179,30 @@
       "title": "Mobile Legends: Bang Bang organiza su primer campeonato oficial en el Perú ",
       "description": "Los ganadores tendrán premios de hasta 25,000 diamantes del videojuego y la posibilidad de enfrentarse a los campeones de la MLBB Copa Challenger Perú"
     }
-  ]
+  ],
+
+"cybers": [
+{
+"id": 1,
+"password": "asdw233",
+"nickname": "Mapero",
+"name": "Wingo",
+"lastname": "Alvarado",
+
+"bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+"urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+  "address": "centro comercial arenales 252"
+},
+  {
+    "id": 2,
+    "password": "ergerge",
+    "nickname": "Wenil",
+    "name": "Wasaberto",
+    "lastname": "Ramirez",
+    "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+    "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg"
+    "address": "centro comercial arenales 252"
+  }
+]
+
 }
