@@ -32,7 +32,6 @@
       <template #content>
         <h4>Schedule: {{tournament.schedule}}</h4>
         <h4>Location: {{tournament.location}}</h4>
-        <ul v-for="student of students"> - {{student.nickname}}</ul>
       </template>
       <template #footer>
         <pv-button @click="cancelTournament(tournament.id)">Cancel</pv-button>
@@ -143,7 +142,7 @@
 </template>
 
 <script>
-import TournamentsService from "../services/cyber-tournaments.service";
+import TournamentsService from "../../../coach/coach-tournament/services/tournaments.service";
 export default {
   name: "cyber-tournament",
   data() {
@@ -202,6 +201,7 @@ export default {
       })
     },
     cancelTournament(id){
+      console.log(id);
       TournamentsService.delete(id).then((response)=>{
         this.retrieveTournaments();
       })
