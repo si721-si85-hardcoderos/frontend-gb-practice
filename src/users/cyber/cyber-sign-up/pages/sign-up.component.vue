@@ -62,7 +62,16 @@
             <span class="p-float-label">
               <pv-input-text
                   class="input-general"
-                  id="email"
+                  id="address"
+                  type="address"
+                  v-model="address"
+              />
+              <label for="address">Address</label>
+            </span>
+            <span class="p-float-label">
+              <pv-input-text
+                  class="input-general"
+                  id="password"
                   type="password"
                   v-model="password"
               />
@@ -123,6 +132,7 @@
 
 <script>
 import  CoachesService  from '../../services/coaches.service';
+
 export default {
   name: "cyber-sign-up",
   data() {
@@ -132,6 +142,7 @@ export default {
       firstName: '',
       lastName: '',
       email: '',
+      address:'',
       password: '',
       confirmPassword: '',
       nickname: '',
