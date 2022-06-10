@@ -32,8 +32,13 @@ import Dialog from "primevue/dialog";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
 import Calendar from 'primevue/calendar';
+
 import Listbox from 'primevue/listbox';
 import Navbar from './users/coach/navbar/views/Nav-bar.vue'
+
+import NavbarCoach from './users/coach/navbar/views/Nav-bar.vue'
+import NavBarStudent from './users/student/navbar/views/Nav-bar.vue';
+import NavBarCyber from './users/cyber/navbar/views/Nav-bar.vue';
 
 const app = createApp(App);
 app. use(VueFlex);
@@ -59,7 +64,8 @@ app.component("pv-dialog", Dialog);
 app.component("pv-input-text", InputText);
 app.component("pv-textarea",Textarea);
 app.component("pv-calendar",Calendar);
-app.component("nav-bar",Navbar)
-
+app.component("nav-bar-cyber",NavBarCyber);
+app.component("nav-bar-coach",NavbarCoach);
+app.component("nav-bar-student",NavBarStudent)
 app.mount("#app");
 

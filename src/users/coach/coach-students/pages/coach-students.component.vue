@@ -1,5 +1,5 @@
 <template>
-<nav-bar/>
+  <nav-bar-coach/>
   <div class="container">
     <br><br>
       <h1 style="text-align: center;color: white"> STUDENTS</h1>

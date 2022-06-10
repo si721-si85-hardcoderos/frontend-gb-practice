@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <nav-bar/>
+  <nav-bar-coach/>
   <pv-divider></pv-divider>
     <pv-card class="p-card">
       <template #header>
