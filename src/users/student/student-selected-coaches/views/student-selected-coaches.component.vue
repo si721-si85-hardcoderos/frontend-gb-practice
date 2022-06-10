@@ -2,9 +2,9 @@
   <nav-bar/>
   <div class="container">
     <br><br>
-    <h1 style="text-align: center;color: white"> STUDENTS</h1>
+    <h1 style="text-align: center;color: white"> COACHES</h1>
     <div class="container-2">
-      <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="coach of coaches">
+      <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="coach of coachesSelected">
         <template #title v-if="coach">
           {{coach.lastname}}
           {{coach.name}}
@@ -39,26 +39,42 @@
 
 import StudentsService from "../../../coach/coach-student/services/students.service";
 import CoachesService from "../../services/coaches.service";
+import CoachStudentsService from "../services/coach-students.service"
 
 export default {
   name: "student-selected-coaches",
   data: () => ({
 
-    id:1,
+    id:2,
     students: [],
     studentsCoach: [],
     coaches: [],
+    coachesSelected: [],
+    coach_students: [],
   }),
   mounted() {
-    this.retrieveStudents();
+    this.retrieveCoaches();
   },
   methods:{
 
-    retrieveStudents(){
+    retrieveCoaches(){
+      this.coachesSelected = [];
 
-      CoachesService.getAll().then((response)=>{
-        this.coaches=response.data;
+      CoachStudentsService.getByStudentId(this.id).then((response)=>{
+        this.coach_students=response.data;
+        CoachesService.getAll().then((response)=>{
+          this.coaches=response.data;
+          for(let coach_student of this.coach_students){
+            console.log(coach_student);
+            this.coachesSelected.push(this.coaches.find(x=>(x.id==coach_student.coachId)));
+          }
+        })
       })
+
+
+
+
+
 
 
 

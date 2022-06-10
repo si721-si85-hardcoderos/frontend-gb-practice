@@ -108,6 +108,23 @@
       "urlToImage": "https://e.rpp-noticias.io/normal/2016/10/29/023202_277176.png"
     }
   ],
+  "coach-students":[
+    {
+      "id": 1,
+      "coachId": 1,
+      "studentId": 1
+    },
+    {
+      "id": 2,
+      "coachId": 1,
+      "studentId": 3
+    },
+    {
+      "id": 3,
+      "coachId": 2,
+      "studentId": 2
+    }
+  ],
   "publications": [
     {
       "id": 1,
