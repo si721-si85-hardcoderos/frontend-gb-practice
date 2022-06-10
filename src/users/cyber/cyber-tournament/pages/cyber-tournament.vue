@@ -1,5 +1,5 @@
 <template>
-  <nav-bar/>
+  <nav-bar-cyber/>
 
   <div class="container">
     <br><br>
