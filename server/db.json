@@ -32,6 +32,7 @@
       "urlToImage": "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
       "coachId": 1
     }
+
   ],
   "coaches": [
     {
@@ -160,27 +161,33 @@
   "tournaments": [
     {
       "id": 1,
+      "name": "Careperro.net",
       "title": "Major Tournament Peru",
       "schedule": "Sab May. 20 - 8:00pm",
-      "chanel": "Youtube",
+      "location": "CC Arenales, Piso 1, #23",
       "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
-      "media": "Av. Arenales"
+      "studentsId": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
     {
-      "title": "asdasd",
-      "schedule": "asdsadasd",
-      "chanel": "sadasdas",
-      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
-      "media": "dasdasdsa",
-      "id": 2
-    },
-    {
-      "title": "asdsadasd",
-      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
-      "schedule": "dsadsad",
-      "chanel": "sadsadsaa",
-      "media": "dsadsadsadsa",
-      "id": 3
+      "id": 2,
+      "name": "GG Cyber",
+      "title": "Major Tournament Peru Vol 2",
+      "schedule": "Monday June 6 - 5:00pm",
+      "location": "CC Arenales, Piso 1, #23",
+      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
+      "studentsId": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
     }
   ],
   "events": [
@@ -199,29 +206,27 @@
       "description": "Los ganadores tendrán premios de hasta 25,000 diamantes del videojuego y la posibilidad de enfrentarse a los campeones de la MLBB Copa Challenger Perú"
     }
   ],
-
-"cybers": [
-{
-"id": 1,
-"password": "asdw233",
-"nickname": "Mapero",
-"name": "Wingo",
-"lastname": "Alvarado",
-
-"bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
-"urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
-  "address": "centro comercial arenales 252"
-},
-  {
-    "id": 2,
-    "password": "ergerge",
-    "nickname": "Wenil",
-    "name": "Wasaberto",
-    "lastname": "Ramirez",
-    "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
-    "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
-    "address": "centro comercial arenales 252"
-  }
-]
+  "cybers": [
+    {
+      "id": 1,
+      "password": "asdw233",
+      "nickname": "Mapero",
+      "name": "Wingo",
+      "lastname": "Alvarado",
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+      "address": "centro comercial arenales 252"
+    },
+    {
+      "id": 2,
+      "password": "ergerge",
+      "nickname": "Wenil",
+      "name": "Wasaberto",
+      "lastname": "Ramirez",
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+      "address": "centro comercial arenales 252"
+    }
+  ]
 
 }
