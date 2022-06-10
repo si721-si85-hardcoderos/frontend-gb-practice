@@ -141,27 +141,33 @@
   "tournaments": [
     {
       "id": 1,
+      "name": "Careperro.net",
       "title": "Major Tournament Peru",
       "schedule": "Sab May. 20 - 8:00pm",
-      "chanel": "Youtube",
+      "location": "CC Arenales, Piso 1, #23",
       "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
-      "media": "Av. Arenales"
+      "studentsId": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
     {
-      "title": "asdasd",
-      "schedule": "asdsadasd",
-      "chanel": "sadasdas",
-      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
-      "media": "dasdasdsa",
-      "id": 2
-    },
-    {
-      "title": "asdsadasd",
-      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
-      "schedule": "dsadsad",
-      "chanel": "sadsadsaa",
-      "media": "dsadsadsadsa",
-      "id": 3
+      "id": 2,
+      "name": "GG Cyber",
+      "title": "Major Tournament Peru Vol 2",
+      "schedule": "Monday June 6 - 5:00pm",
+      "location": "CC Arenales, Piso 1, #23",
+      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
+      "studentsId": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
     }
   ],
   "events": [
