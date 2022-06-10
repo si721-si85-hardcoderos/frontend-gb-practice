@@ -72,6 +72,12 @@ const router = createRouter({
       component:()=>import("../users/cyber/cyber-sign-up/pages/sign-up.component.vue")
     },
     {
+
+      path: "/student-selected-coaches",
+      name: "student-selected-coaches",
+      component:()=>import("../users/student/student-selected-coaches/views/student-selected-coaches.component.vue")
+    },
+    {
       path: "/student-home",
       name: "student-home",
       component: () => import("../users/student/student-home/pages/student-home.component.vue")
@@ -80,6 +86,7 @@ const router = createRouter({
       path: "/cyber-tournaments",
       name: "cyber-tournaments",
       component:()=>import("../users/cyber/cyber-tournament/pages/cyber-tournament.vue")
+
     }
   ]
 })

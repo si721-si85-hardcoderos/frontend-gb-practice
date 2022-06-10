@@ -47,6 +47,7 @@
       "password": "1234",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
+      "urlToImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1QDTGY4XAju-jLpJnhADF4QzVjgvV_G5yjfAwiois5O0RKran-exjPaGWgRafp3zXAE&usqp=CAU",
       "studentsId": [
         1,
         2
@@ -64,6 +65,7 @@
       "password": "abc123",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
       "studentsId": [
         1,
         2,
@@ -105,6 +107,23 @@
       "tournaments": "MajorES",
       "bibliography": "Developer who took interest in games",
       "urlToImage": "https://e.rpp-noticias.io/normal/2016/10/29/023202_277176.png"
+    }
+  ],
+  "coach-students":[
+    {
+      "id": 1,
+      "coachId": 1,
+      "studentId": 1
+    },
+    {
+      "id": 2,
+      "coachId": 1,
+      "studentId": 3
+    },
+    {
+      "id": 3,
+      "coachId": 2,
+      "studentId": 2
     }
   ],
   "publications": [
@@ -209,4 +228,5 @@
       "address": "centro comercial arenales 252"
     }
   ]
+
 }

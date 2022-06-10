@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
 
 <template >
+
   <nav-bar-student/>
+
   <div class="dv-color">
 
     <h1 style="font-size:40px" >Anuncios</h1>
@@ -46,7 +48,9 @@
 </template>
 
 <script>
-import CoachHomeService from "../../../coach/coach-home/services/coach-home.service";
+
+import CoachHomeService from "../../../coach/coach-home/services/coach-home.service.js"
+
 
 export default {
   name: "student-home",
