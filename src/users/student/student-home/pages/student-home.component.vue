@@ -3,7 +3,6 @@
 <template >
 
   <nav-bar-student/>
-
   <div class="dv-color">
 
     <h1 style="font-size:40px" >Anuncios</h1>
