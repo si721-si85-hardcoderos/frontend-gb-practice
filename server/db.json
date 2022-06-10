@@ -46,6 +46,7 @@
       "password": "1234",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
+      "urlToImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1QDTGY4XAju-jLpJnhADF4QzVjgvV_G5yjfAwiois5O0RKran-exjPaGWgRafp3zXAE&usqp=CAU",
       "studentsId": [
         1,
         2
@@ -63,6 +64,7 @@
       "password": "abc123",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
       "studentsId": [
         1,
         2,
@@ -200,7 +202,7 @@
     "name": "Wasaberto",
     "lastname": "Ramirez",
     "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
-    "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg"
+    "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
     "address": "centro comercial arenales 252"
   }
 ]
