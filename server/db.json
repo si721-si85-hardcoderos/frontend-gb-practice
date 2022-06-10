@@ -39,12 +39,13 @@
       "nickname": "Nick",
       "name": "Omar",
       "lastname": "Alvar",
-      "role": "Rusher",
-      "heroes": "Skyler",
       "email": "aaaasd",
       "password": "1234",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
+      "urlToImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1QDTGY4XAju-jLpJnhADF4QzVjgvV_G5yjfAwiois5O0RKran-exjPaGWgRafp3zXAE&usqp=CAU",
+      "rate": 4.8,
+      "selectedGame": "DOTA",
       "studentsId": [
         1,
         2
@@ -55,16 +56,69 @@
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
-      "role": "Rusher",
-      "heroes": "Skyler",
       "email": "asdsadas",
       "password": "abc123",
       "tournaments": "LigaFF",
-      "bibliography": "Developer",
+      "bibliography": "Former Coach of Elephants Dota 2 team",
+      "urlToImage": "https://estnn.com/wp-content/uploads/2020/09/dota_rotk.jpg",
+      "rate": 5,
+      "selectedGame": "DOTA",
       "studentsId": [
         1,
         2,
         3
+      ]
+    },
+    {
+      "id": 3,
+      "nickname": "Estoico",
+      "name": "Omar",
+      "lastname": "Alvarado",
+      "email": "asdsadas",
+      "password": "abc123",
+      "tournaments": "LigaFF",
+      "bibliography": "Recently coached OG to their The International 2021",
+      "urlToImage": "https://cdn0.gamesports.net/content_teasers/76000/76563.jpg?1543081069",
+      "rate": 5,
+      "selectedGame": "DOTA",
+      "studentsId": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "nickname": "Nick",
+      "name": "Omar",
+      "lastname": "Alvar",
+      "email": "aaaasd",
+      "password": "1234",
+      "tournaments": "The International 2018 | China Dota2 Supermajor",
+      "bibliography": "Ex Virtus.pro Dota 2 Coach",
+      "urlToImage": "https://static.gosugamers.net/92/89/74/034d7a6ea2b87b71b6213b64f0bfd19f54eff7d52ceaf3d4d0babbf1d3.jpg",
+      "rate": 4.5,
+      "selectedGame": "DOTA",
+      "studentsId": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "nickname": "Nick",
+      "name": "Omar",
+      "lastname": "Alvar",
+      "email": "aaaasd",
+      "password": "1234",
+      "tournaments": "LigaFF",
+      "bibliography": "Former Player and Ex OG Coach",
+      "urlToImage": "https://dota2peru.net/wp-content/uploads/2019/11/ceb-no-disfrute-el-dinero-que-gane-im-1.jpg?w=627&h=328",
+      "rate": 4.8,
+      "selectedGame": "DOTA",
+      "studentsId": [
+        1,
+        2
       ]
     }
   ],
