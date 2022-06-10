@@ -18,7 +18,7 @@ import "primevue/resources/themes/md-light-indigo/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 import ToastService from "primevue/toastservice";
-
+import Rating from 'primevue/rating';
 import Toast from "primevue/toast";
 import Button from "primevue/button";
 import Toolbar from "primevue/toolbar";
@@ -64,8 +64,12 @@ app.component("pv-dialog", Dialog);
 app.component("pv-input-text", InputText);
 app.component("pv-textarea",Textarea);
 app.component("pv-calendar",Calendar);
+
+app.component("pv-rating",Rating);
+
 app.component("nav-bar-cyber",NavBarCyber);
 app.component("nav-bar-coach",NavbarCoach);
 app.component("nav-bar-student",NavBarStudent)
+
 app.mount("#app");
 
