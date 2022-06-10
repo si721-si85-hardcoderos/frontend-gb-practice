@@ -201,8 +201,8 @@ export default {
       <pv-column field="hour" header="Hour" sortable="true"/>
       <pv-column field="studentName" header="Student Name" sortable="true"/>
       <pv-column field="discordServer" header="Discord Server" sortable="true"/>
-      <pv-column field="cyberImage" header="Cyber Place" sortable="true"/>
-      <pv-column field="urlToImage" header="Thumbnail" sortable="true"/>
+      <pv-column class="shortened" field="cyberImage" header="Cyber Place" sortable="true" />
+      <pv-column class="shortened" field="urlToImage" header="Thumbnail" sortable="true"/>
       <pv-column field="coachId" header="Coach ID" sortable="true"/>
       <pv-column :exportable="false">
         <template #body="slotProps">
@@ -336,6 +336,13 @@ export default {
 
 
 <style>
+.pv column{
+  background-color: white;
+}
+.shortened{
+  max-width: 100px;
+  overflow-wrap: anywhere;
+}
 .p-button-lg{
   background-color: #C4C4C4;
   display: block;

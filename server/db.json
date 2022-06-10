@@ -32,6 +32,7 @@
       "urlToImage": "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
       "coachId": 1
     }
+
   ],
   "coaches": [
     {
@@ -186,29 +187,26 @@
       "description": "Los ganadores tendrán premios de hasta 25,000 diamantes del videojuego y la posibilidad de enfrentarse a los campeones de la MLBB Copa Challenger Perú"
     }
   ],
-
-"cybers": [
-{
-"id": 1,
-"password": "asdw233",
-"nickname": "Mapero",
-"name": "Wingo",
-"lastname": "Alvarado",
-
-"bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
-"urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
-  "address": "centro comercial arenales 252"
-},
-  {
-    "id": 2,
-    "password": "ergerge",
-    "nickname": "Wenil",
-    "name": "Wasaberto",
-    "lastname": "Ramirez",
-    "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
-    "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
-    "address": "centro comercial arenales 252"
-  }
-]
-
+  "cybers": [
+    {
+      "id": 1,
+      "password": "asdw233",
+      "nickname": "Mapero",
+      "name": "Wingo",
+      "lastname": "Alvarado",
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+      "address": "centro comercial arenales 252"
+    },
+    {
+      "id": 2,
+      "password": "ergerge",
+      "nickname": "Wenil",
+      "name": "Wasaberto",
+      "lastname": "Ramirez",
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+      "address": "centro comercial arenales 252"
+    }
+  ]
 }
