@@ -84,7 +84,7 @@
         >
           <p class="mb-3">
             <span>Already have an account? </span>
-            <router-link style="display: inline-block" to="/log-in"
+            <router-link style="display: inline-block" to="/student-log-in"
             >Login here.</router-link
             >
           </p>

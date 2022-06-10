@@ -91,7 +91,7 @@
         >
           <p class="mb-3">
             <span>Already have an account? </span>
-            <router-link style="display: inline-block" to="/log-in"
+            <router-link style="display: inline-block" to="/coach-log-in"
             >Login here.</router-link
             >
           </p>
@@ -166,6 +166,7 @@ export default {
           this.user.lastName=this.lastName;
           this.user.email=this.email;
           this.user.password=this.password;
+          this.user.selectedGame=this.selectedGame;
           this.user.nickname=this.nickname;
           CoachesService.create(this.user).then((response)=>{
             this.$router.push("/coach-home");
