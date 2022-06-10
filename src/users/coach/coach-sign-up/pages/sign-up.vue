@@ -59,6 +59,13 @@
               />
               <label for="email">Email</label>
             </span>
+
+            <span class="p-float-label">
+              <p>select your game:</p>
+              <pv-list-box v-model="selectedGame" :options="games" optionLabel="name" listStyle="max-height:150px"/>
+
+            </span>
+
             <span class="p-float-label">
               <pv-input-text
                   class="input-general"
@@ -126,12 +133,25 @@ import  CoachesService  from '../../services/coaches.service';
 export default {
   data() {
     return {
+
+
+      games: [
+        {name: 'DOTA 2', code: 'DOTA'},
+        {name: 'Counter Strike:Global Offensive', code: 'CSGO'},
+        {name: 'Counter Strike:1.6', code: 'CS16'},
+        {name: 'League Of Legends', code: 'LOL'},
+        {name: 'Apex Legends', code: 'APEX'}
+      ],
       user: {
       },
       firstName: '',
       lastName: '',
       email: '',
       password: '',
+
+      ////IMPORTANTE PARA GENERAR EL COACH CON SU JUEGO ELEGIDO
+      selectedGame:'',
+
       confirmPassword: '',
       nickname: '',
     };
@@ -257,6 +277,8 @@ export default {
 
 .formregister{
   width: 500px;
+
+  margin-bottom:500px;
 }
 
 

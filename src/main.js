@@ -32,9 +32,14 @@ import Dialog from "primevue/dialog";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
 import Calendar from 'primevue/calendar';
+
+import Listbox from 'primevue/listbox';
+import Navbar from './users/coach/navbar/views/Nav-bar.vue'
+
 import NavbarCoach from './users/coach/navbar/views/Nav-bar.vue'
 import NavBarStudent from './users/student/navbar/views/Nav-bar.vue';
 import NavBarCyber from './users/cyber/navbar/views/Nav-bar.vue';
+
 const app = createApp(App);
 app. use(VueFlex);
 app.use(VueResponsiveComponents)
@@ -45,6 +50,7 @@ app.use(PrimeVue, { ripple: true });
 app.use(ToastService);
 // PrimeVue Components
 
+app.component("pv-list-box",Listbox)
 app.component("pv-data-table", DataTable);
 app.component("pv-toast", Toast);
 app.component("pv-button", Button);

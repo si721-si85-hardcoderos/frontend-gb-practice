@@ -58,8 +58,11 @@
               />
             </div>
             <div class="flex justify-content-center mt-3">
+
+              <!--@click="submitLogin()"-->
               <pv-button
-                  onclick="location.href='/cyber-home'"
+
+                  onclick="location.href='/cyber-tournaments'"
                   style="width: 200px"
                   label="Login"
                   class="p-button-rounded"
@@ -138,7 +141,7 @@ export default {
     submitLogin() {
       CoachesService.confirmCredentials(this.username,this.password).then((response)=>{
         if(response.data.length>0){
-          this.$router.push("/home")
+          this.$router.push("/cyber-tournaments")
         }
       })
     },
