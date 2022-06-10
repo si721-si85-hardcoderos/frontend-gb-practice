@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
 
 <template >
-  <nav-bar/>
+  <nav-bar-coach/>
   <div class="dv-color">
 
     <h1 style="font-size:40px" >Eventos</h1>

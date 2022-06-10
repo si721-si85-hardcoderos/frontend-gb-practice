@@ -1,12 +1,12 @@
 <template>
-  <nav-bar-coach/>
+  <nav-bar-cyber/>
 
   <div class="container">
     <br><br>
 
     <pv-button
         class="p-button-lg"
-        label="New Tournament"
+        label="Create Tournament"
         icon="pi pi-plus"
         align="Center"
         @click="openNew"
@@ -24,16 +24,14 @@
                   preview/>
       </template>
       <template #title>
-        Road to Major
+        {{ tournament.title }}
       </template>
       <template #subtitle>
-        Cyber: G2-House
+        {{  tournament.name }}
       </template>
       <template #content>
-        <h4 style="font-type: bold">{{tournament.title}}</h4>
         <h4>Schedule: {{tournament.schedule}}</h4>
-        <h4>Chanel: {{tournament.chanel}}</h4>
-        <h4>Media: {{tournament.media}}</h4>
+        <h4>Location: {{tournament.location}}</h4>
       </template>
       <template #footer>
         <pv-button @click="cancelTournament(tournament.id)">Cancel</pv-button>
@@ -44,7 +42,7 @@
     <pv-dialog
         v-model:visible="tournamentDialog"
         :style="{ width: '500px'}"
-        header="Tournaments Information"
+        header="Tournament Information"
         :modal="true"
         class="p-fluid"
     >
@@ -61,6 +59,22 @@
           <label for="tournamentTitle">Title</label>
           <small class="p-error" v-if="submitted && !tournament.title"
           >Title is required</small>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              type="text"
+              id="name"
+              v-model.trim="tournament.name"
+              required="true"
+              autofocus
+              :class="{'p-invalid':submitted && !tournament.name}"
+          />
+          <label for="tournamentTitle">Cyber's name</label>
+          <small class="p-error" v-if="submitted && !tournament.name"
+          >Cyber's name is required</small>
         </span>
       </div>
 
@@ -94,29 +108,14 @@
         <span class="p-float-label">
           <pv-input-text
               id="multiple"
-              v-model="tournament.chanel"
+              v-model="tournament.location"
               selectionMode="multiple"
               required="true"
               :manualInput="false"
           />
-          <label for="tournamentChanel">Channel</label>
-          <small class="p-error" v-if="submitted && !tournament.channel"
-          >Channel is required</small>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="multiple"
-              v-model="tournament.media"
-              selectionMode="multiple"
-              required="true"
-              :manualInput="false"
-          />
-          <label for="tournamentMedia">Media</label>
-          <small class="p-error" v-if="submitted && !tournament.media"
-          >Media is required</small>
+          <label for="tournamentChanel">Location</label>
+          <small class="p-error" v-if="submitted && !tournament.location"
+          >Location is required</small>
         </span>
       </div>
 
@@ -143,12 +142,13 @@
 </template>
 
 <script>
-import TournamentsService from "../services/tournaments.service";
+import TournamentsService from "../../../coach/coach-tournament/services/tournaments.service";
 export default {
-  name: "coach-tournament",
+  name: "cyber-tournament",
   data() {
     return  {
       tournaments: [],
+      students:[],
       tournament: {},
       coachTournaments:[],
       coachId:1,
@@ -171,16 +171,17 @@ export default {
   methods:{
     retrieveTournaments(){
       TournamentsService.getAll().then((response)=>{
-      this.tournaments=response.data;
-    });
+        this.tournaments=response.data;
+      });
     },
-    getStorableAdvisory(advisory){
+    getStorableAdvisory(tournament){
       return {
-        id: advisory.id,
-        title: advisory.title,
-        schedule:advisory.schedule,
-        chanel: advisory.chanel,
-        media: advisory.media
+        id: tournament.id,
+        name: tournament.name,
+        title: tournament.title,
+        schedule:tournament.schedule,
+        location: tournament.location,
+        urlToImage: tournament.urlToImage
       };
     },
     openNew() {
@@ -200,6 +201,7 @@ export default {
       })
     },
     cancelTournament(id){
+      console.log(id);
       TournamentsService.delete(id).then((response)=>{
         this.retrieveTournaments();
       })
@@ -207,32 +209,8 @@ export default {
 
   }
 };
-
 </script>
 
-<style >
-.p-button-lg{
-  background-color: #C4C4C4;
-  display: block;
-  width: 40%;
-  height: 100px;
-  border: none;
-  padding: 200px 200px;
-  font-size: 50px;
-  cursor: pointer;
-  text-align: center;
-  margin:auto;
-}
-.p-card{
-  box-shadow: 0 4px 20px 20px rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
-  width: 70%;
-  padding-left: 20px;
-  margin:auto;
-}
-
-
-
+<style scoped>
 
 </style>

@@ -1,202 +1,48 @@
-<template>
-  <nav-bar/>
-
-  <div class="container">
-    <br><br>
-    <pv-button
-        class="p-button-lg"
-        label="New Advisory"
-        icon="pi pi-plus"
-        align="Center"
-        @click="openNew"
-    />
-    <pv-divider/>
-
-    <pv-card style="width: 43em; margin-bottom: 2em; height: 25em" v-for="advisory of coachAdvisories">
-
-      <template #header>
-        <div style="width: 20%; float:right">
-          <pv-avatar image="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
-                     size= "xlarge" />
-        </div>
-        <div style="width: 80%; float:left">
-          <h3>Coach name {{coachName}}</h3>
-        </div>
-      </template>
-      <template #title>
-        <br><br>
-        {{advisory.title}}
-      </template>
-      <template #subtitle>
-        {{advisory.description}}
-      </template>
-      <template #content>
-        <div style="width: 50%; float:left">
-          <pv-image
-              v-bind:src="advisory.urlToImage"
-              alt="image advisory"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              width="290"
-              height="200"
-              preview
-          />
-        </div>
-        <div style="width: 50%; float:right">
-          <h3>Schedule: {{advisory.date}} | {{advisory.hour}}</h3>
-          <h3>Student: {{advisory.studentName}}</h3>
-          <h3>Chanel: {{advisory.discordServer}}</h3>
-        </div>
-
-        <h3></h3>
-
-      </template>
-      <template #footer>
-        <pv-button label="Delete Advisory" @click="deleteAdvisory(advisory.id)"/>
-      </template>
-
-    </pv-card>
-
-
-    <pv-dialog
-        v-model:visible="advisoryDialog"
-        :style="{ width: '500px'}"
-        header="Advisory Information"
-        :modal="true"
-        class="p-fluid"
-    >
-      <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              type="text"
-              id="title"
-              v-model.trim="advisory.title"
-              required="true"
-              autofocus
-              :class="{'p-invalid':submitted && !advisory.title}"
-          />
-          <label for="advisoryTitle">Title</label>
-          <small class="p-error" v-if="submitted && !advisory.title"
-          >Title is required</small>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-textarea
-              id="description"
-              v-model="advisory.description"
-              required="false"
-              rows="2"
-              cols="2"
-          />
-          <label for="advisoryAttaches">Description</label>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="multiple"
-              v-model="advisory.date"
-              selectionMode="multiple"
-              required="true"
-              :manualInput="false"
-          />
-          <label for="advisoryDate">Date</label>
-          <small class="p-error" v-if="submitted && !advisory.date"
-          >Date is required</small>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="multiple"
-              v-model="advisory.hour"
-              selectionMode="multiple"
-              required="true"
-              :manualInput="false"
-          />
-          <label for="advisoryDate">Hour</label>
-          <small class="p-error" v-if="submitted && !advisory.hour"
-          >Hour is required</small>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="multiple"
-              v-model="advisory.urlToImage"
-              selectionMode="multiple"
-              required="true"
-              :manualInput="false"
-          />
-          <label for="advisoryUrlToImage">Url to Image</label>
-          <small class="p-error" v-if="submitted && !advisory.urlToImage"
-          >Url is required</small>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              type="text"
-              id="title"
-              v-model.trim="advisory.studentName"
-              required="true"
-              autofocus
-              :class="{'p-invalid':submitted && !advisory.studentName}"
-          />
-          <label for="advisoryDiscordServer">StudentName</label>
-          <small class="p-error" v-if="submitted && !advisory.studentName"
-          >DiscordServer is required</small>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              type="text"
-              id="title"
-              v-model.trim="advisory.discordServer"
-              required="true"
-              autofocus
-              :class="{'p-invalid':submitted && !advisory.discordServer}"
-          />
-          <label for="advisoryDiscordServer">Channel</label>
-          <small class="p-error" v-if="submitted && !advisory.discordServer"
-          >DiscordServer is required</small>
-        </span>
-      </div>
-
-
-      <template #footer>
-        <pv-button
-            label="Cancel"
-            icon="pi pi-times"
-            class="p-button-text"
-            @click="hideDialog"
-        />
-        <pv-button
-            label="Save"
-            icon="pi pi-check"
-            class="p-button-text"
-            @click="saveCoachAdvisory"
-        />
-      </template>
-
-    </pv-dialog>
-
-    <br><br>
-  </div>
-
-
-</template>
-
-<script>
+<script >
 import CoachesService from '../../services/coaches.service.js';
 import AdvisoriesService from '../services/advisories.service.js'
+import {ref} from "vue";
+
+const advisories = [
+  {
+    id: 1,
+    title: "Support Itemization",
+    description: "How to build to help your team",
+    date: "21-07-2022",
+    hour: "9:30pm",
+    studentName: "Carlos Choquehuanca",
+    discordServer: "Quasimodo",
+    cyberImage: "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+    urlToImage: "https://staticg.sportskeeda.com/editor/2021/04/45716-16195438439457-800.jpg",
+    coachId: 1
+  },
+  {
+    id: 2,
+    title: "Learn from the pros",
+    description: "Meet a pro-gamer to improve your skills",
+    date: "29-08-2022",
+    hour: "10:00pm",
+    studentName: "Oscar de la Cruz",
+    discordServer: "AS - WILD",
+    cyberImage: "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+    urlToImage: "https://dota2freaks.com/wp-content/uploads/sites/10/2020/02/dota-2-recommended-items.jpg",
+    coachId: 1
+  },
+  {
+    id: 3,
+    title: "Learn from the pros",
+    description: "Meet a pro-gamer to improve your skills",
+    date: "29-08-2022",
+    hour: "11:30pm",
+    studentName: "Juan Rodrigo Solis",
+    discordServer: "AS - WILD",
+    cyberImage: "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+    urlToImage: "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
+    coachId: 1
+  },
+];
+const selection = ref([]);
+
 export default {
   name: "coach-advisory",
   data() {
@@ -304,8 +150,8 @@ export default {
       this.advisory.cyberimage="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg";
       this.advisory.coachId=this.coachId;
       this.advisory=this.getStorableAdvisory(this.advisory);
-        AdvisoriesService.create(this.advisory).then((response)=>{
-          this.hideDialog();
+      AdvisoriesService.create(this.advisory).then((response)=>{
+        this.hideDialog();
         this.retrieveAdvisories();
       })
       /*this.submitted = true;
@@ -322,13 +168,181 @@ export default {
       AdvisoriesService.create(this.advisoryNew).then((response)=>{
         this.retrieveAdvisories();
       })
-      
+
       this.coachDialog = false;*/
     },
   },
 };
 </script>
+
+<template>
+  <nav-bar-coach/>
+  <div class="container">
+    <pv-button
+        class="p-button-lg"
+        label="New Advisory"
+        icon="pi pi-plus"
+        align="Center"
+        @click="openNew"
+    />
+    <pv-button
+        label="Delete"
+        icon="pi pi-trash"
+        class="p-button-danger"
+    />
+    <pv-divider/>
+
+    <pv-data-table ref="dt" v-model:selection="selection" :value="advisories">
+      <pv-column selection-mode="multiple" :exportable="false" />
+      <pv-column field="id" header="ID" sortable="true"/>
+      <pv-column field="title" header="Title" sortable="true" />
+      <pv-column field="description" header="Description" sortable="true"/>
+      <pv-column field="date" header="Date" sortable="true"/>
+      <pv-column field="hour" header="Hour" sortable="true"/>
+      <pv-column field="studentName" header="Student Name" sortable="true"/>
+      <pv-column field="discordServer" header="Discord Server" sortable="true"/>
+      <pv-column class="shortened" field="cyberImage" header="Cyber Place" sortable="true" />
+      <pv-column class="shortened" field="urlToImage" header="Thumbnail" sortable="true"/>
+      <pv-column field="coachId" header="Coach ID" sortable="true"/>
+      <pv-column :exportable="false">
+        <template #body="slotProps">
+          <pv-button icon="pi pi-trash"/>
+        </template>
+      </pv-column>
+
+    </pv-data-table>
+
+    <pv-dialog
+        v-model:visible="advisoryDialog"
+        :style="{ width: '500px'}"
+        header="Advisory Information"
+        :modal="true"
+        class="p-fluid"
+    >
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              type="text"
+              id="title"
+              v-model.trim="advisory.title"
+              required="true"
+              autofocus
+              :class="{'p-invalid':submitted && !advisory.title}"
+          />
+          <label for="advisoryTitle">Title</label>
+          <samll class="p-error" v-if="submitted && !advisory.title"
+          >Title is required</samll>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-textarea
+              id="description"
+              v-model="advisory.description"
+              required="false"
+              rows="2"
+              cols="2"
+          />
+          <label for="advisoryAttaches">Description</label>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              id="multiple"
+              v-model="advisory.date"
+              selectionMode="multiple"
+              required="true"
+              :manualInput="false"
+          />
+          <label for="advisoryDate">Date</label>
+          <samll class="p-error" v-if="submitted && !advisory.date"
+          >Date is required</samll>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              id="multiple"
+              v-model="advisory.hour"
+              selectionMode="multiple"
+              required="true"
+              :manualInput="false"
+          />
+          <label for="advisoryDate">Hour</label>
+          <samll class="p-error" v-if="submitted && !advisory.hour"
+          >Hour is required</samll>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              type="text"
+              id="title"
+              v-model.trim="advisory.studentName"
+              required="true"
+              autofocus
+              :class="{'p-invalid':submitted && !advisory.studentName}"
+          />
+          <label for="advisoryDiscordServer">StudentName</label>
+          <samll class="p-error" v-if="submitted && !advisory.studentName"
+          >DiscordServer is required</samll>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              type="text"
+              id="title"
+              v-model.trim="advisory.discordServer"
+              required="true"
+              autofocus
+              :class="{'p-invalid':submitted && !advisory.discordServer}"
+          />
+          <label for="advisoryDiscordServer">Channel</label>
+          <samll class="p-error" v-if="submitted && !advisory.discordServer"
+          >DiscordServer is required</samll>
+        </span>
+      </div>
+
+
+      <template #footer>
+        <pv-button
+            label="Cancel"
+            icon="pi pi-times"
+            class="p-button-text"
+            @click="hideDialog"
+        />
+        <pv-button
+            label="Save"
+            icon="pi pi-check"
+            class="p-button-text"
+            @click="saveCoachAdvisory"
+        />
+      </template>
+
+    </pv-dialog>
+
+    <br>
+  </div>
+
+
+</template>
+
+
 <style>
+.pv column{
+  background-color: white;
+}
+.shortened{
+  max-width: 100px;
+  overflow-wrap: anywhere;
+}
 .p-button-lg{
   background-color: #C4C4C4;
   display: block;

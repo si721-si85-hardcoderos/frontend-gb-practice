@@ -32,6 +32,7 @@
       "urlToImage": "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
       "coachId": 1
     }
+
   ],
   "coaches": [
     {
@@ -39,13 +40,16 @@
       "nickname": "Nick",
       "name": "Omar",
       "lastname": "Alvar",
+
       "email": "aaaasd",
       "password": "1234",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
       "urlToImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1QDTGY4XAju-jLpJnhADF4QzVjgvV_G5yjfAwiois5O0RKran-exjPaGWgRafp3zXAE&usqp=CAU",
+
       "rate": 4.8,
       "selectedGame": "DOTA",
+
       "studentsId": [
         1,
         2
@@ -56,13 +60,16 @@
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
+
+      "selectedGame": "DOTA",
+      "role": "Rusher",
+      "heroes": "Skyler",
       "email": "asdsadas",
       "password": "abc123",
       "tournaments": "LigaFF",
-      "bibliography": "Former Coach of Elephants Dota 2 team",
-      "urlToImage": "https://estnn.com/wp-content/uploads/2020/09/dota_rotk.jpg",
-      "rate": 5,
-      "selectedGame": "DOTA",
+      "bibliography": "Developer",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+
       "studentsId": [
         1,
         2,
@@ -158,6 +165,23 @@
       "urlToImage": "https://e.rpp-noticias.io/normal/2016/10/29/023202_277176.png"
     }
   ],
+  "coach-students":[
+    {
+      "id": 1,
+      "coachId": 1,
+      "studentId": 1
+    },
+    {
+      "id": 2,
+      "coachId": 1,
+      "studentId": 3
+    },
+    {
+      "id": 3,
+      "coachId": 2,
+      "studentId": 2
+    }
+  ],
   "publications": [
     {
       "id": 1,
@@ -193,27 +217,33 @@
   "tournaments": [
     {
       "id": 1,
+      "name": "Careperro.net",
       "title": "Major Tournament Peru",
       "schedule": "Sab May. 20 - 8:00pm",
-      "chanel": "Youtube",
+      "location": "CC Arenales, Piso 1, #23",
       "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
-      "media": "Av. Arenales"
+      "studentsId": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
     {
-      "title": "asdasd",
-      "schedule": "asdsadasd",
-      "chanel": "sadasdas",
-      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
-      "media": "dasdasdsa",
-      "id": 2
-    },
-    {
-      "title": "asdsadasd",
-      "urlToImage": "https://i0.wp.com/itusers.today/wp-content/uploads/2019/06/En-el-Claro-MasGamers-Festival-2019-AMD-y-ASUS-Republic-Of-Gamers-auspicia-torneo-Dota2.jpg?fit=1024%2C683&ssl=1",
-      "schedule": "dsadsad",
-      "chanel": "sadsadsaa",
-      "media": "dsadsadsadsa",
-      "id": 3
+      "id": 2,
+      "name": "GG Cyber",
+      "title": "Major Tournament Peru Vol 2",
+      "schedule": "Monday June 6 - 5:00pm",
+      "location": "CC Arenales, Piso 1, #23",
+      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
+      "studentsId": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
     }
   ],
   "events": [
@@ -231,5 +261,28 @@
       "title": "Mobile Legends: Bang Bang organiza su primer campeonato oficial en el Perú ",
       "description": "Los ganadores tendrán premios de hasta 25,000 diamantes del videojuego y la posibilidad de enfrentarse a los campeones de la MLBB Copa Challenger Perú"
     }
+  ],
+  "cybers": [
+    {
+      "id": 1,
+      "password": "asdw233",
+      "nickname": "Mapero",
+      "name": "Wingo",
+      "lastname": "Alvarado",
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+      "address": "centro comercial arenales 252"
+    },
+    {
+      "id": 2,
+      "password": "ergerge",
+      "nickname": "Wenil",
+      "name": "Wasaberto",
+      "lastname": "Ramirez",
+      "bibliography": "He is one of the most popular esportsmen of our time. Gabe Newell, creator of Valve, named him World's Most Charismatic Player.",
+      "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg",
+      "address": "centro comercial arenales 252"
+    }
   ]
+
 }
