@@ -132,6 +132,7 @@
 
 <script>
 import  CoachesService  from '../../services/coaches.service';
+
 export default {
   name: "cyber-sign-up",
   data() {

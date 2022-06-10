@@ -277,6 +277,8 @@ export default {
 
 .formregister{
   width: 500px;
+
+  margin-bottom:500px;
 }
 
 
