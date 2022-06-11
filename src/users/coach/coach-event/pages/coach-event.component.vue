@@ -4,7 +4,7 @@
   <nav-bar-coach/>
   <div class="dv-color">
 
-    <h1 style="font-size:40px" >Eventos</h1>
+    <h1 style="font-size:40px" >Events </h1>
     <br>
     <div class="cards">
 

@@ -9,7 +9,7 @@ export default {
         items: [
             { label: "Home", to: "/coach-home" },
             { label: "Events", to: "/coach-events"},
-            { label: "Profile", to: "/coach-profiles" },
+            { label: "Profile", to: "/coach-profile" },
             { label: "Advisory", to: "/coach-advisories" },
             { label: "Students", to: "/coach-students"},
             { label: "Tournaments", to: "/coach-tournaments"},
