@@ -203,6 +203,7 @@ export default {
     cancelTournament(id){
       console.log(id);
       TournamentsService.delete(id).then((response)=>{
+        console.log(response.data);
         this.retrieveTournaments();
       })
     }
