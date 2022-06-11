@@ -12,12 +12,18 @@ export class CoachStudentsService {
     getByStudentId(id){
         return http.get(`${this.endPoint}/?studentId=${id}`);
     } 
+    getByCoachId(id){
+        return http.get(`${this.endPoint}/?coachId=${id}`);
+    } 
+    getByStudentAndCoachId(studentId,coachId){
+        return http.get(`${this.endPoint}/?studentId=${studentId}&coachId=${coachId}`);
+    } 
     create(CreateTutorialDto) {
         return http.post(this.endPoint,CreateTutorialDto)
     }
 
     delete(id) {
-        return http.delete(`${this.endPoint }/${id}`);
+        return http.delete(`${this.endPoint}/${id}`);
     }
 
     update(id,updateTutorialDto) {

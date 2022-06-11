@@ -106,6 +106,16 @@ const router = createRouter({
       path: "/student-sign-up",
       name: "student-sign-up",
       component:()=>import("../users/student/student-sign-up/pages/sign-up.component.vue")
+    },
+    {
+      path: "/student-advisories",
+      name: "student-advisories",
+      component:()=>import("../users/student/student-advisory/pages/student-advisory.component.vue")
+    },
+    {
+      path: "/student-tournaments",
+      name: "student-tournaments",
+      component:()=>import("../users/student/student-tournaments/pages/student-tournaments.component.vue")
     }
   ]
 })
