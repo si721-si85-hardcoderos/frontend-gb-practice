@@ -188,6 +188,7 @@ export default {
     <pv-button
         label="Delete"
         icon="pi pi-trash"
+        align="Center"
         class="p-button-danger"
     />
     <pv-divider/>

@@ -8,12 +8,12 @@ export default {
 
         items: [
             { label: "Home", to: "/student-home" },
-            { label: "Profile", to: "/coach-profile" },
+            { label: "Profile", to: "/student-profile" },
             { label: "Advisory", to: "/coach-advisories" },
             { label: "Tournaments", to: "/coach-tournaments"},
             { label: "Coaches", to: "/student-coaches"},
             { label: "Selected Coaches", to: "/student-selected-coaches"},
-            { label: "Sign Out", to: "/coach-log-in"}
+            { label: "Sign Out", to: "/student-log-in"}
         ],
         };
     }

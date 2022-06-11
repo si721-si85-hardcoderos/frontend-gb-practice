@@ -8,6 +8,11 @@ const router = createRouter({
       redirect: "general-log-in"
     },
     {
+      path: '/general-log-in',
+      name: 'general-log-in',
+      component: () => import("../public/login/pages/login.component.vue")
+    },
+    {
       path: "/coach-profile",
       name: "coach-profile",
       component: () => import("../users/coach/coach-profile/pages/coach-profile.component.vue"),
@@ -47,21 +52,6 @@ const router = createRouter({
       component: () => import("../users/coach/coach-sign-up/pages/sign-up.vue")
     },
     {
-      path: '/general-log-in',
-      name: 'general-log-in',
-      component: () => import("../public/login/pages/login.component.vue")
-    },
-    {
-      path: "/student-log-in",
-      name: "student-log-in",
-      component:()=>import("../users/student/student-log-in/pages/log-in.component.vue")
-    },
-    {
-      path: "/student-sign-up",
-      name: "student-sign-up",
-      component:()=>import("../users/student/student-sign-up/pages/sign-up.component.vue")
-    },
-    {
       path: "/cyber-log-in",
       name: "cyber-log-in",
       component:()=>import("../users/cyber/cyber-log-in/pages/log-in.component.vue")
@@ -83,7 +73,11 @@ const router = createRouter({
       component: () => import("../users/cyber/cyber-profile/pages/cyber-profile.component.vue"),
     },
     {
-
+      path: "/cyber-tournaments",
+      name: "cyber-tournaments",
+      component:()=>import("../users/cyber/cyber-tournament/pages/cyber-tournament.vue")
+    },
+    {
       path: "/student-coaches",
       name: "student-coaches",
       component:()=>import("../users/student/student-coaches/pages/student-coaches.component.vue")
@@ -99,10 +93,19 @@ const router = createRouter({
       component: () => import("../users/student/student-home/pages/student-home.component.vue")
     },
     {
-      path: "/cyber-tournaments",
-      name: "cyber-tournaments",
-      component:()=>import("../users/cyber/cyber-tournament/pages/cyber-tournament.vue")
-
+      path: "/student-profile",
+      name: "student-profile",
+      component: () => import("../users/student/student-profile/pages/student-profile.component.vue")
+    },
+    {
+      path: "/student-log-in",
+      name: "student-log-in",
+      component:()=>import("../users/student/student-log-in/pages/log-in.component.vue")
+    },
+    {
+      path: "/student-sign-up",
+      name: "student-sign-up",
+      component:()=>import("../users/student/student-sign-up/pages/sign-up.component.vue")
     }
   ]
 })
