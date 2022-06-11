@@ -10,7 +10,7 @@ export default {
           { label: "Profile", to: "/cyber-profile" },
           { label: "Events", to: "/cyber-events" },
           { label: "Tournaments", to: "/cyber-tournaments"},
-          { label: "Sign Out", to: "/cyber-log-in"}
+          { label: "Sign Out", to: "/general-log-in"}
         ],
         };
     }

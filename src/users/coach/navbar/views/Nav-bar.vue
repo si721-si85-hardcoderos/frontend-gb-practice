@@ -13,7 +13,7 @@ export default {
             { label: "Advisory", to: "/coach-advisories" },
             { label: "Students", to: "/coach-students"},
             { label: "Tournaments", to: "/coach-tournaments"},
-            { label: "Sign Out", to: "/coach-log-in"}
+            { label: "Sign Out", to: "/general-log-in"}
         ],
         };
     }
