@@ -8,7 +8,7 @@ export default {
 
         items: [
             { label: "Home", to: "/student-home" },
-            { label: "Profile", to: "/coach-profiles" },
+            { label: "Profile", to: "/coach-profile" },
             { label: "Advisory", to: "/coach-advisories" },
             { label: "Tournaments", to: "/coach-tournaments"},
             { label: "Coaches", to: "/student-coaches"},
