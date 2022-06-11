@@ -1,5 +1,5 @@
 <template>
-  <nav-bar-cyber/>
+  <nav-bar-student/>
 
   <div class="container">
     <br><br>
@@ -144,7 +144,7 @@
 <script>
 import TournamentsService from "../../../coach/coach-tournament/services/tournaments.service";
 export default {
-  name: "cyber-tournament",
+  name: "student-tournaments",
   data() {
     return  {
       tournaments: [],

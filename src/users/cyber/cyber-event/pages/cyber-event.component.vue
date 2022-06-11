@@ -42,7 +42,9 @@
               <br>
               <div class="pd-a">
                 <a :href= event.urlPublication class="button">Read More</a>
+                
               </div>
+                <pv-button @click="cancelTournament(event.id)">Cancel</pv-button>
             </div>
           </div>
         </template>
@@ -213,14 +215,21 @@ export default {
     saveTournament(){
       this.tournament.id=0;
       CyberEventsService.create(this.tournament).then((response)=>{
-        this.retrieveTournaments();
+        this.retrieveData();
         this.hideDialog();
+        this.$toast.add({
+          severity: "success",
+          summary: "Successful",
+          detail: "Cyber Profile Updated",
+          life: 3000,
+        });
+        this.eventDialog = false;
       })
     },
     cancelTournament(id){
       console.log(id);
       CyberEventsService.delete(id).then((response)=>{
-        this.retrieveTournaments();
+        this.retrieveData();
       })
     }
 

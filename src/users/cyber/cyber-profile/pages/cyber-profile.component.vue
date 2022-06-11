@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import CoachesService from '../../services/coaches.service.js'
+import CybersService from '../../services/cybers.service.js'
 
 export default {
   name: "cyber-profile",
@@ -77,10 +77,9 @@ export default {
   },
 
   mounted() {
-    CoachesService.getAll().then((response)=>{
-      this.coaches=response.data.map(this.getStorableCoach);
+    CybersService.getAll().then((response)=>{
+      this.coaches=response.data;
       this.coach=this.coaches.find(x=>(x.id==this.coachId));
-      console.log(this.coach);
     });
     /*
     this.coachService = new coachProfileService();
@@ -94,7 +93,7 @@ export default {
   },
   methods: {
     update(){
-      CoachesService.update(this.coachId,this.coach).then((response)=>{
+      CybersService.update(this.coachId,this.coach).then((response)=>{
         //Agregar Notificacion
       })
     },
@@ -120,7 +119,7 @@ export default {
     saveCoachProfile() {
       this.submitted = true;
       this.coach = this.getStorableCoach(this.coach);
-      this.coachService.update(this.coach.id, this.coach).then((response) => {
+      CybersService.update(this.coach.id, this.coach).then((response) => {
         this.profiles[this.findIndexById(response.data.id)] =
             this.response.data;
         this.$toast.add({

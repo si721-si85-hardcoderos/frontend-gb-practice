@@ -26,8 +26,9 @@
         </template>
         <template #footer v-if="coach">
           <h4>{{coach.tournaments}} | {{coach.heroes}} | {{coach.role}}</h4>
-
+          
         </template>
+
       </pv-card>
     </div>
     <br><br>
@@ -45,7 +46,7 @@ export default {
   name: "student-selected-coaches",
   data: () => ({
 
-    id:2,
+    id:1,
     students: [],
     studentsCoach: [],
     coaches: [],
@@ -56,16 +57,27 @@ export default {
     this.retrieveCoaches();
   },
   methods:{
+    unsubscribe(id){
+      CoachStudentsService.getByStudentAndCoachId(this.id,id).then((response)=>{
+        let coachStudentAux={};
+        coachStudentAux=response.data
+        console.log(coachStudentAux[0].id);
+        console.log(coachStudentAux.length,"length");
+        CoachStudentsService.delete(coachStudentAux[0].id).then((response2)=>{
+          console.log('a');
+          this.retrieveCoaches();
+        });
+      })
+    },
 
     retrieveCoaches(){
       this.coachesSelected = [];
 
       CoachStudentsService.getByStudentId(this.id).then((response)=>{
         this.coach_students=response.data;
-        CoachesService.getAll().then((response)=>{
-          this.coaches=response.data;
+        CoachesService.getAll().then((response2)=>{
+          this.coaches=response2.data;
           for(let coach_student of this.coach_students){
-            console.log(coach_student);
             this.coachesSelected.push(this.coaches.find(x=>(x.id==coach_student.coachId)));
           }
         })
