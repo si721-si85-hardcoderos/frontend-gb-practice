@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import CybersService from '../services/cybers.service.js'
+import CybersService from '../../services/cybers.service.js'
 
 export default {
   name: "cyber-profile",

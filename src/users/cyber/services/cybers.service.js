@@ -1,4 +1,4 @@
-import http from "../../../../core/services/http-common.js"
+import http from "../../../core/services/http-common.js"
 export class CybersService {
     endPoint='/cybers';
 

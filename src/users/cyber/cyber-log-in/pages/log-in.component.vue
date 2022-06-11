@@ -119,7 +119,7 @@
 </template>
 
 <script>
-import CoachesService from '../../services/coaches.service'
+import CybersService from '../../services/cybers.service.js'
 
 
 export default {
@@ -139,7 +139,7 @@ export default {
   created() {},
   methods: {
     submitLogin() {
-      CoachesService.confirmCredentials(this.username,this.password).then((response)=>{
+      CybersService.confirmCredentials(this.username,this.password).then((response)=>{
         if(response.data.length>0){
           this.$router.push("/cyber-tournaments")
         }

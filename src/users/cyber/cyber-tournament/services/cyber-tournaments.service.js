@@ -1,5 +1,5 @@
-import http from "../../../core/services/http-common.js"
-import {TournamentsService} from "../../coach/coach-tournament/services/tournaments.service";
+import http from "../../../../core/services/http-common.js"
+import {TournamentsService} from "../../../coach/coach-tournament/services/tournaments.service";
 export class CyberTournamentsService {
     endPoint='/cyber-tournaments';
 
