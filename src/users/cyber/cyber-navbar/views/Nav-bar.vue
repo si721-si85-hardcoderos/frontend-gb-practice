@@ -8,11 +8,10 @@ export default {
 
         items: [
 
-            { label: "Profile", to: "/profiles" },
-            { label: "Advisory", to: "/advisories" },
-            { label: "Students", to: "/students"},
-            { label: "Tournaments", to: "/cyber-tournaments"},
-            { label: "Sign Out", to: "/cyber-log-in"}
+          { label: "Profile", to: "/profiles" },
+          { label: "Events", to: "/cyber-events" },
+          { label: "Tournaments", to: "/cyber-tournaments"},
+          { label: "Sign Out", to: "/cyber-log-in"}
         ],
         };
     }

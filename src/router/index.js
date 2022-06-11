@@ -8,8 +8,8 @@ const router = createRouter({
       redirect: "general-log-in"
     },
     {
-      path: "/coach-profiles",
-      name: "coach-profiles",
+      path: "/coach-profile",
+      name: "coach-profile",
       component: () => import("../users/coach/coach-profile/pages/coach-profile.component.vue"),
     },
     {
@@ -70,6 +70,17 @@ const router = createRouter({
       path: "/cyber-sign-up",
       name: "cyber-sign-up",
       component:()=>import("../users/cyber/cyber-sign-up/pages/sign-up.component.vue")
+    },
+    {
+      path: "/cyber-events",
+      name: "cyber-events",
+      component:()=>import("../users/cyber/cyber-event/pages/cyber-event.component.vue")
+    },
+
+    {
+      path: "/cyber-profile",
+      name: "cyber-profile",
+      component: () => import("../users/cyber/cyber-profile/pages/cyber-profile.component.vue"),
     },
     {
 

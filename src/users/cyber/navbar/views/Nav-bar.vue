@@ -7,12 +7,10 @@ export default {
         return {
 
         items: [
-            { label: "Home", to: "/coach-home" },
-            { label: "Profile", to: "/coach-profiles" },
-            { label: "Advisory", to: "/coach-advisories" },
-            { label: "Students", to: "/coach-students"},
-            { label: "Tournaments", to: "/coach-tournaments"},
-            { label: "Sign Out", to: "/coach-log-in"}
+          { label: "Profile", to: "/cyber-profile" },
+          { label: "Events", to: "/cyber-events" },
+          { label: "Tournaments", to: "/cyber-tournaments"},
+          { label: "Sign Out", to: "/cyber-log-in"}
         ],
         };
     }
