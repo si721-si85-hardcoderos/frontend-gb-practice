@@ -11,6 +11,7 @@ export default {
             { label: "Profile", to: "/student-profile" },
             { label: "Advisories", to: "/student-advisories" },
             { label: "Tournaments", to: "/student-tournaments"},
+            { label: "Events", to: "/student-events"},
             { label: "Coaches", to: "/student-coaches"},
             { label: "Selected Coaches", to: "/student-selected-coaches"},
             { label: "Sign Out", to: "/general-log-in"}
