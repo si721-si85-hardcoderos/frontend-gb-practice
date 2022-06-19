@@ -4,7 +4,7 @@
     <br><br>
       <h1 style="text-align: center;color: white"> STUDENTS</h1>
     <div class="container-2">
-      <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="student of studentsCoach">
+      <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="student of studentsSelected">
         <template #title v-if="student">
           {{student.lastname}}
           {{student.name}}
@@ -39,6 +39,7 @@
 
 import StudentsService from '../../coach-student/services/students.service.js'
 import CoachesService from '../../../coach/services/coaches.service.js'
+import CoachStudentsService from '../../../student/student-selected-coaches/services/coach-students.service.js';
 
 export default {
     name: "students",
@@ -46,30 +47,28 @@ export default {
 
       id:1,
       students: [],
+      studentsSelected: [],
       studentsCoach: [],
       coaches: [],
+      coach_students: [],
     }),
     mounted() {
       this.retrieveStudents();
     }, 
     methods:{
-      
       retrieveStudents(){
-        
-        StudentsService.getAll().then((response)=>{
-          this.students=response.data;
+        this.studentsSelected = [];
+        CoachStudentsService.getByCoachId(this.id).then((response)=>{
+          this.coach_students=response.data;
+          StudentsService.getAll().then((response2)=>{
+            this.students=response2.data;
+            for(let coach_student of this.coach_students){
+              this.studentsSelected.push(this.students.find(x=>(x.id==coach_student.studentId)));
+            }
+            
+          })
         })
-        CoachesService.getAll().then((response)=>{
-          this.coaches=response.data;
-          console.log(this.coaches);
-          for(let studentId of this.coaches.find(x=>(x.id==this.id)).studentsId){
-            console.log(studentId);
-            this.studentsCoach.push(this.students.find(x=>(x.id==studentId)));
-            /*StudentsService.getById(studentId).then((response2)=>{
-              this.students.push(response2.data.map(this.getDisplayTutorial));
-            })*/
-          }
-        })
+  
         
 
       },
