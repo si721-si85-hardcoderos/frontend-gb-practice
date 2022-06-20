@@ -7,7 +7,7 @@
 
     <pv-divider/>
 
-    <pv-card v-for="tournament of tournamentsSelected" style="width: 395px">
+    <pv-card v-for="tournament of tournaments" style="width: 395px">
       <template #header>
         <pv-image v-bind:src="tournament.urlToImage"
                   size= "xlarge"
@@ -24,11 +24,19 @@
         {{  tournament.name }}
       </template>
       <template #content>
+        <pv-tag v-bind:severity="tournament.isRegistered?'success':'danger'" 
+        v-bind:icon="tournament.isRegistered?'pi pi-check':'pi pi-times'">
+        {{tournament.isRegistered?'Registered':'Not Registered'}}</pv-tag>
         <h4>Schedule: {{tournament.schedule}}</h4>
         <h4>Location: {{tournament.location}}</h4>
+        <br>
+        <br>
+        <pv-button v-bind:class="tournament.isRegistered?'p-button-danger':'p-button-success'"
+         @click="toggleRegisterButton(tournament.isRegistered, tournament.id)">
+        {{tournament.isRegistered?'Cancel Register':'Register to Tournament'}}</pv-button>
       </template>
+      
       <template #footer>
-        <pv-button @click="cancelTournament(tournament.id)">Cancel</pv-button>
       </template>
 
     </pv-card>
@@ -170,12 +178,19 @@ export default {
     retrieveTournaments(){
       this.tournamentsSelected = [];
 
+      /*TournamentsService.getAll().then((response)=>{
+        this.tournaments=response.data;
+      })*/
+
       TournamentStudentsService.getByStudentId(this.id).then((response)=>{
         this.tournament_students = response.data;
         TournamentsService.getAll().then((response2)=>{
           this.tournaments = response2.data;
+          for(let tournament of this.tournaments){
+            tournament.isRegistered=false;
+          }
           for(let tournament_student of this.tournament_students){
-            this.tournamentsSelected.push(this.tournaments.find(x=>(x.id==tournament_student.tournamentId)));
+            this.tournaments.find(x=>(x.id==tournament_student.tournamentId)).isRegistered=true;
           }
         })
       });
@@ -205,6 +220,26 @@ export default {
         this.retrieveTournaments();
         this.hideDialog();
       })
+    },
+    toggleRegisterButton(isRegistered, id){
+      if(isRegistered){
+        TournamentStudentsService.getByTournamentIdAndStudentId(id,this.id).then((response)=>{
+        let tournament_student = response.data;
+          TournamentStudentsService.delete(tournament_student[0].id).then(()=>{
+            this.retrieveTournaments();
+          })
+        })
+        return;
+      }
+      if(!isRegistered){
+        let tournamentStudentsModel={};
+        tournamentStudentsModel.id=0;
+        tournamentStudentsModel.tournamentId=id;
+        tournamentStudentsModel.studentId=this.id;
+        TournamentStudentsService.create(tournamentStudentsModel).then(()=>{
+          this.retrieveTournaments();
+        })
+      }
     },
     cancelTournament(id){
       console.log(id);
