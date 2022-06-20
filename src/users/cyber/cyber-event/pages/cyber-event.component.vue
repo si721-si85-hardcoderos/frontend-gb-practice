@@ -2,11 +2,10 @@
 
 <template >
   <nav-bar-cyber/>
-  <div class="dv-color">
-
-    <h1 style="font-size:40px" >Events</h1>
+  <div class="container">
     <br>
-
+    <h1 style="text-align: center;color: white"> EVENTS </h1>
+    <br>
     <pv-button
         class="p-button-lg"
         label="Create Event"
@@ -15,20 +14,13 @@
         @click="openNew"
     />
     <pv-divider/>
-
-
     <div class="cards">
-
       <pv-card class="p-card" v-for="event of events">
-
         <template #header>
           <div class="card-headboard">
-
             <h2>{{event.title }} </h2>
-
           </div>
           <div class="content">
-
             <div class="card-description">
               <h5>{{event.description}}</h5>
               <pv-image
@@ -41,15 +33,13 @@
               />
               <br>
               <div class="pd-a">
-                <a :href= event.urlPublication class="button">Read More</a>
-                
+                <a :href= event.urlPublication class="button">Read More</a>               
               </div>
                 <pv-button @click="cancelTournament(event.id)">Cancel</pv-button>
             </div>
           </div>
         </template>
       </pv-card>
-
       <pv-dialog
           v-model:visible="eventDialog"
           :style="{ width: '500px'}"
@@ -302,5 +292,10 @@ export default {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+.container{
+  background-color: #2455A5;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 </style>
