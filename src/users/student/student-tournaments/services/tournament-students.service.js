@@ -1,5 +1,5 @@
 import http from "../../../../core/services/http-common.js"
-export class CoachStudentsService {
+export class TournamentStudentService {
     endPoint='/tournament-students';
 
     getAll() {
@@ -15,6 +15,9 @@ export class CoachStudentsService {
     getByTournamentId(id){
         return http.get(`${this.endPoint}/?tournamentId=${id}`);
     } 
+    getByTournamentIdAndStudentId(tournamentId, studentId){
+        return http.get(`${this.endPoint}/?tournamentId=${tournamentId}&studentId=${studentId}`);
+    }
     create(CreateTutorialDto) {
         return http.post(this.endPoint,CreateTutorialDto)
     }
@@ -29,4 +32,4 @@ export class CoachStudentsService {
     }
 }
 
-export default new CoachStudentsService();
+export default new TournamentStudentService();

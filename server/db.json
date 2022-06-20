@@ -32,7 +32,6 @@
       "urlToImage": "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
       "coachId": 1
     }
-
   ],
   "coaches": [
     {
@@ -141,7 +140,7 @@
       "urlToImage": "https://e.rpp-noticias.io/normal/2016/10/29/023202_277176.png"
     }
   ],
-  "coach-students":[
+  "coach-students": [
     {
       "id": 1,
       "coachId": 1,
@@ -273,5 +272,4 @@
       "address": "centro comercial arenales 252"
     }
   ]
-
 }

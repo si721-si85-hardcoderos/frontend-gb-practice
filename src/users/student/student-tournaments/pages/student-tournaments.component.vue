@@ -213,9 +213,11 @@ export default {
     },
     cancelTournament(id){
       console.log(id);
-      TournamentsService.delete(id).then((response)=>{
-        console.log(response.data);
-        this.retrieveTournaments();
+      TournamentStudentsService.getByTournamentIdAndStudentId(id,this.id).then((response)=>{
+        let tournament_student = response.data;
+        TournamentStudentsService.delete(tournament_student[0].id).then(()=>{
+          this.retrieveTournaments();
+        })
       })
     }
 
