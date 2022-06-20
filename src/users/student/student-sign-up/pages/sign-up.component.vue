@@ -123,6 +123,7 @@
 
 <script>
 import  CoachesService  from '../../services/coaches.service';
+import StudentsService from '../../../coach/coach-student/services/students.service';
 export default {
   name: "student-sign-up",
   data() {
@@ -139,8 +140,7 @@ export default {
   },
   methods: {
     submitSignUp(){
-      CoachesService.getByUsername(this.nickname).then((response)=>{
-        console.log(response.data);
+      StudentsService.getByUsername(this.nickname).then((response)=>{
         if(response.data==0){
           this.user.id=0;
           this.user.firstName=this.firstName;
@@ -148,12 +148,11 @@ export default {
           this.user.email=this.email;
           this.user.password=this.password;
           this.user.nickname=this.nickname;
-          CoachesService.create(this.user).then((response)=>{
-            this.$router.push("/home");
+          StudentsService.create(this.user).then((response2)=>{
+            this.$router.push("/student-home");
           })
         }
       })
-      CoachesService.create()
     }
   }
 };

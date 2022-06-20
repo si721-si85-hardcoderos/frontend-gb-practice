@@ -253,6 +253,7 @@
   "cybers": [
     {
       "id": 1,
+      "email": "map233@gmail.com",
       "password": "asdw233",
       "nickname": "Mapero",
       "name": "Wingo",
@@ -263,6 +264,7 @@
     },
     {
       "id": 2,
+      "email": "erwerw@gmail.com",
       "password": "ergerge",
       "nickname": "Wenil",
       "name": "Wasaberto",

@@ -131,8 +131,7 @@
 </template>
 
 <script>
-import  CoachesService  from '../../services/coaches.service';
-
+import CybersService from '../../services/cybers.service';
 export default {
   name: "cyber-sign-up",
   data() {
@@ -150,8 +149,7 @@ export default {
   },
   methods: {
     submitSignUp(){
-      CoachesService.getByUsername(this.nickname).then((response)=>{
-        console.log(response.data);
+      CybersService.getByUsername(this.nickname).then((response)=>{
         if(response.data==0){
           this.user.id=0;
           this.user.firstName=this.firstName;
@@ -159,12 +157,11 @@ export default {
           this.user.email=this.email;
           this.user.password=this.password;
           this.user.nickname=this.nickname;
-          CoachesService.create(this.user).then((response)=>{
-            this.$router.push("/home");
+          CybersService.create(this.user).then((response2)=>{
+            this.$router.push("/cyber-tournaments");
           })
         }
       })
-      CoachesService.create()
     }
   }
 };

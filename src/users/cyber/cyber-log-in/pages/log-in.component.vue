@@ -62,7 +62,7 @@
               <!--@click="submitLogin()"-->
               <pv-button
 
-                  onclick="location.href='/cyber-tournaments'"
+                  @click="submitLogin()"
                   style="width: 200px"
                   label="Login"
                   class="p-button-rounded"

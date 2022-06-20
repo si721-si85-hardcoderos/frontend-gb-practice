@@ -166,7 +166,7 @@ export default {
           this.user.lastName=this.lastName;
           this.user.email=this.email;
           this.user.password=this.password;
-          this.user.selectedGame=this.selectedGame;
+          this.user.selectedGame=this.selectedGame.name;
           this.user.nickname=this.nickname;
           CoachesService.create(this.user).then((response)=>{
             this.$router.push("/coach-home");
