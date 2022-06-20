@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
 
 <template >
   <nav-bar-cyber/>
@@ -68,58 +67,45 @@
         <span class="p-float-label">
           <pv-input-text
               type="text"
-              id="name"
-              v-model.trim="event.name"
+              id="description"
+              v-model.trim="event.description"
               required="true"
               autofocus
-              :class="{'p-invalid':submitted && !event.name}"
+              :class="{'p-invalid':submitted && !event.description}"
           />
-          <label for="eventTitle">Cyber's name</label>
-          <small class="p-error" v-if="submitted && !event.name"
-          >Cyber's name is required</small>
+          <label for="eventTitle">Description</label>
+          <small class="p-error" v-if="submitted && !event.description"
+          >Cyber's description is required</small>
         </span>
         </div>
 
         <div class="field">
         <span class="p-float-label">
           <pv-textarea
-              id="urlToImage"
-              v-model="event.urlToImage"
+              id="imagePublication"
+              v-model="event.imagePublication"
               required="false"
               rows="2"
               cols="2"
           />
-          <label for="tournamentUrlToImage">Url to Image</label>
+          <label for="imagePublication">Image Publication</label>
         </span>
         </div>
 
         <div class="field">
         <span class="p-float-label">
           <pv-textarea
-              id="schedule"
-              v-model="event.schedule"
+              id="urlPublication"
+              v-model="event.urlPublication"
               required="false"
               rows="2"
               cols="2"
           />
-          <label for="eventSchedule">Schedule</label>
+          <label for="eventUrlPublication">Url Publication</label>
         </span>
         </div>
 
-        <div class="field">
-        <span class="p-float-label">
-          <pv-input-text
-              id="multiple"
-              v-model="event.location"
-              selectionMode="multiple"
-              required="true"
-              :manualInput="false"
-          />
-          <label for="tournamentChanel">Location</label>
-          <small class="p-error" v-if="submitted && !event.location"
-          >Location is required</small>
-        </span>
-        </div>
+        
 
 
         <template #footer>
@@ -204,8 +190,9 @@ export default {
       this.submitted = false;
     },
     saveTournament(){
-      this.tournament.id=0;
-      CyberEventsService.create(this.tournament).then((response)=>{
+      if(!this.event.imagePublication||!this.event.urlPublication||!this.event.title||!this.event.description) return;
+      this.event.id=0;
+      CyberEventsService.create(this.event).then((response)=>{
         this.retrieveData();
         this.hideDialog();
         this.$toast.add({
@@ -300,3 +287,4 @@ export default {
   margin-right: 100px;
 }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
