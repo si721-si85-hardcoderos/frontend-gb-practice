@@ -32,7 +32,7 @@
         <br>
         <br>
         <pv-button class="p-button-info" @click="toggleRegisterButton(tournament.isRegistered, tournament.id)">
-        {{checked?'Cancel Register':'Register to Tournament'}}</pv-button>
+        {{tournament.isRegistered?'Cancel Register':'Register to Tournament'}}</pv-button>
       </template>
       
       <template #footer>
