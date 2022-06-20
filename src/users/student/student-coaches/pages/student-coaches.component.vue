@@ -1,8 +1,10 @@
 <template>
   <nav-bar-student/>
   <div class="container">
-    <br><br>
+    <br>
     <h1 style="text-align: center;color: white">AVAILABLE COACHES</h1>
+    <br>
+    
     <div class="card container-2 body">
       <pv-card  style="width: 24.8rem; margin-bottom: 2em" v-for="coach of coachesNotSelected">
         <template #title v-if="coach">

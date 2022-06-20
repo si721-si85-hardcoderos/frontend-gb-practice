@@ -2,11 +2,9 @@
   <nav-bar-student/>
 
   <div class="container">
-    <br><br>
-
-
-    <pv-divider/>
-
+    <br>
+    <h1 style="text-align: center;color: white"> TOURNAMENTS </h1>
+    <br>
     <pv-card v-for="tournament of tournaments" style="width: 395px">
       <template #header>
         <pv-image v-bind:src="tournament.urlToImage"

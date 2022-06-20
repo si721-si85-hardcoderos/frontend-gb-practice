@@ -2,9 +2,10 @@
 
 <template>
   <nav-bar-student/>
-  <div class="dv-color">
+  <div class="container">
 
-    <h1 style="font-size:40px" >Events </h1>
+    <br>
+    <h1 style="text-align: center;color: white"> EVENTS </h1>
     <br>
     <div class="cards">
 
@@ -159,6 +160,11 @@ export default {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+.container{
+  background-color: #2455A5;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 </style>
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
