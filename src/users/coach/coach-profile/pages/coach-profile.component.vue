@@ -2,8 +2,11 @@
 
 <div>
   <nav-bar-coach/>
-  <pv-divider></pv-divider>
-    <pv-card class="p-card">
+  <div class="container">
+    <br>
+    <h1 style="text-align: center;color: white"> PROFILE </h1>
+    <br>
+    <pv-card class="p-card" style="text-align: center">
       <template #header>
           <pv-image
               class="pv-image-holder"
@@ -14,12 +17,7 @@
             height="275"
             preview
           />
-
-
       </template>
-
-
-
       <template #content>
            <i class="pi pi-user"></i>
           <p class="pv-p">First Name:</p>
@@ -34,14 +32,6 @@
       <i class="pi pi-user"></i>
       <p class="pv-p">Last Name:</p>
           <pv-input-text  v-model="coach.lastname"/>
-      <pv-divider></pv-divider>
-      <i class="pi pi-tag"></i>
-      <p class="pv-p">Role:</p>
-          <pv-input-text  v-model="coach.role"/>
-      <pv-divider></pv-divider>
-      <i class="pi pi-star"></i>
-      <p class="pv-p">Heroes:</p>
-      <pv-input-text  v-model="coach.heroes"/>
       <pv-divider></pv-divider>
 
       <i class="pi pi-ticket"></i>
@@ -60,6 +50,8 @@
     </pv-card>
 
     </div>
+  </div>
+  
 </template>
 
 <script>
