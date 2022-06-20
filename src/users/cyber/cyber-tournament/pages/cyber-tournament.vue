@@ -201,6 +201,8 @@ export default {
       this.submitted = false;
     },
     saveTournament(){
+      if(!this.tournament.title||!this.tournament.name||!this.tournament.urlToImage
+          ||!this.tournament.schedule||!this.tournament.location) return;
       this.tournament.id=0;
       this.tournament.cyberId=this.id;
       TournamentsService.create(this.tournament).then((response)=>{
