@@ -228,6 +228,7 @@ export default {
   },
   methods: {
     retrieveAdvisories(){
+      this.studentsCoach = [];
       AdvisoriesService.getByCoachId(this.id).then((response)=>{
         this.advisories=response.data;
         for(let advisory of this.advisories){
@@ -241,7 +242,6 @@ export default {
         for(let coach_student of response.data){
           StudentsService.getById(coach_student.studentId).then((response2)=>{
             this.studentsCoach.push(response2.data[0]);
-            console.log(this.studentsCoach);
           })
         }
       })
