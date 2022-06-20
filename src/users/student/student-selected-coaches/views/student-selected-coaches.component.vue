@@ -28,7 +28,7 @@
         </template>
         <template #footer v-if="coach">
           <h4>{{coach.tournaments}} | {{coach.heroes}} | {{coach.role}}</h4>
-          
+          <pv-button label="Unsubscribe" class="btn" @click="unsubscribe(coach.id)" />
         </template>
 
       </pv-card>
