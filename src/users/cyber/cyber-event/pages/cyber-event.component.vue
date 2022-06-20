@@ -35,6 +35,7 @@
               <div class="pd-a">
                 <a :href= event.urlPublication class="button">Read More</a>               
               </div>
+                <br>
                 <pv-button @click="cancelTournament(event.id)">Cancel</pv-button>
             </div>
           </div>
