@@ -2,7 +2,9 @@
   <nav-bar-cyber/>
 
   <div class="container">
-    <br><br>
+    <br>
+    <h1 style="text-align: center;color: white"> TOURNAMENTS </h1>
+    <br>
 
     <pv-button
         class="p-button-lg"

@@ -1,7 +1,7 @@
 <template>
-
 <div>
   <nav-bar-coach/>
+  
   <div class="container">
     <br>
     <h1 style="text-align: center;color: white"> PROFILE </h1>
@@ -19,32 +19,32 @@
           />
       </template>
       <template #content>
-           <i class="pi pi-user"></i>
-          <p class="pv-p">First Name:</p>
-          <pv-input-text   v-model="coach.name"/>
-          <pv-divider></pv-divider>
+        <i class="pi pi-user"></i>
+        <p class="pv-p">First Name:</p>
+        <pv-input-text   v-model="coach.name"/>
+        <pv-divider></pv-divider>
 
-      <i class="pi pi-user"></i>
-      <p class="pv-p">Nickname:</p>
-          <pv-input-text  v-model="coach.nickname"/>
-      <pv-divider></pv-divider>
+        <i class="pi pi-user"></i>
+        <p class="pv-p">Nickname:</p>
+        <pv-input-text  v-model="coach.nickname"/>
+        <pv-divider></pv-divider>
 
-      <i class="pi pi-user"></i>
-      <p class="pv-p">Last Name:</p>
-          <pv-input-text  v-model="coach.lastname"/>
-      <pv-divider></pv-divider>
+        <i class="pi pi-user"></i>
+        <p class="pv-p">Last Name:</p>
+        <pv-input-text  v-model="coach.lastname"/>
+        <pv-divider></pv-divider>
 
-      <i class="pi pi-ticket"></i>
-      <p class="pv-p">Tournaments:</p>
-      <pv-input-text  v-model="coach.tournaments"/>
-      <pv-divider></pv-divider>
+        <i class="pi pi-ticket"></i>
+        <p class="pv-p">Tournaments:</p>
+        <pv-input-text  v-model="coach.tournaments"/>
+        <pv-divider></pv-divider>
 
-      <i class="pi pi-briefcase"></i>
-      <p class="pv-p">Bibliography:</p>
-      <pv-input-text  v-model="coach.bibliography"/>
-      <pv-divider></pv-divider>
+        <i class="pi pi-briefcase"></i>
+        <p class="pv-p">Bibliography:</p>
+        <pv-input-text  v-model="coach.bibliography"/>
+        <pv-divider></pv-divider>
 
-          <pv-button label="Update Profile" @click="update"/>
+        <pv-button label="Update Profile" @click="update"/>
       </template>
 
     </pv-card>
@@ -157,6 +157,10 @@ export default {
   margin:auto;
   margin-top:20px;
 }
-
+.container{
+  background-color: #2455A5;
+  margin-left: 100px;
+  margin-right: 100px;
+}
 
 </style>
