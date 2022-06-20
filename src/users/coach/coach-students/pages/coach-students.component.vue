@@ -26,7 +26,7 @@
           {{student.bibliography}}
         </template>
         <template #footer v-if="student">
-          <h4>{{student.tournaments}} | {{student.heroes}} | {{student.role}}</h4>
+          <h4>{{student.tournaments}}</h4>
 
         </template>
       </pv-card>
