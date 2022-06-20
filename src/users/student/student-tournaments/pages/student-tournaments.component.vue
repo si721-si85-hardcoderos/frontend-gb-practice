@@ -13,7 +13,7 @@
     />
     <pv-divider/>
 
-    <pv-card v-for="tournament of tournaments" style="width: 395px">
+    <pv-card v-for="tournament of tournamentsSelected" style="width: 395px">
       <template #header>
         <pv-image v-bind:src="tournament.urlToImage"
                   size= "xlarge"
@@ -143,11 +143,15 @@
 
 <script>
 import TournamentsService from "../../../coach/coach-tournament/services/tournaments.service";
+import TournamentStudentsService from "../services/tournament-students.service";
 export default {
   name: "student-tournaments",
   data() {
     return  {
       tournaments: [],
+      tournamentsSelected: [],
+      tournament_students: [],
+      id: 1,
       students:[],
       tournament: {},
       coachTournaments:[],
@@ -170,8 +174,15 @@ export default {
   },
   methods:{
     retrieveTournaments(){
-      TournamentsService.getAll().then((response)=>{
-        this.tournaments=response.data;
+
+      TournamentStudentsService.getByStudentId(this.id).then((response)=>{
+        this.tournament_students = response.data;
+        TournamentsService.getAll().then((response2)=>{
+          this.tournaments = response2.data;
+          for(let tournament_student of this.tournament_students){
+            this.tournamentsSelected.push(this.tournaments.find(x=>(x.id==tournament_student.tournamentId)));
+          }
+        })
       });
     },
     getStorableAdvisory(tournament){
