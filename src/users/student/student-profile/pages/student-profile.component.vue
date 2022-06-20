@@ -3,8 +3,7 @@
   <div>
     <nav-bar-student/>
 
-    <pv-divider></pv-divider>
-    <pv-card class="p-card">
+    <pv-card class="container" style="text-align: center">
       <template #header>
         <pv-image
             class="pv-image-holder"
@@ -15,11 +14,7 @@
             height="275"
             preview
         />
-
-
       </template>
-
-
 
       <template #content>
         <i class="pi pi-user"></i>
@@ -167,6 +162,11 @@ export default {
   padding-top: 20px;
   margin:auto;
   margin-top:20px;
+}
+.container{
+  background-color: #2455A5;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 
