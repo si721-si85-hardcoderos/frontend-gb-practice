@@ -176,7 +176,7 @@ export default {
 
       TournamentsService.getAll().then((response)=>{
         this.tournaments=response.data;
-        this.tournamentsCreated.push(this.tournaments.find(x=>(x.cyberId==this.id)));
+        this.tournamentsCreated=(this.tournaments.filter(x=>(x.cyberId==this.id)));
       });
     },
     getStorableAdvisory(tournament){
