@@ -8,7 +8,6 @@
         class="p-button-lg"
         label="Create Tournament"
         icon="pi pi-plus"
-        align="Center"
         @click="openNew"
     />
     <pv-divider/>
@@ -174,6 +173,7 @@ export default {
   },
   methods:{
     retrieveTournaments(){
+      this.tournamentsSelected = [];
 
       TournamentStudentsService.getByStudentId(this.id).then((response)=>{
         this.tournament_students = response.data;
