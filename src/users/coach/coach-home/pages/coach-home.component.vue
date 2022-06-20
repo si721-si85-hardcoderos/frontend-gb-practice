@@ -3,7 +3,6 @@
 <template >
   <nav-bar-coach/>
   <div class="container">
-
     <br>
     <h1 style="text-align: center;color: white"> ANNOUNCEMENTS </h1>
     <br>
@@ -118,7 +117,6 @@ export default {
   cursor: pointer;
   text-align: center;
   margin:auto;
-
 }
 .p-card{
   margin-left: auto;
@@ -128,8 +126,6 @@ export default {
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
   width: 600px;
-
-
 }
 .p-card-title{
   background-color: white;

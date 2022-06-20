@@ -1,62 +1,55 @@
 <template>
-
   <div>
     <nav-bar-student/>
 
-    <pv-card class="container" style="text-align: center">
-      <template #header>
-        <pv-image
-            class="pv-image-holder"
-            imageClass="pv-image-circle"
-            src="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
-            alt="Image Coach"
-            width="275"
-            height="275"
-            preview
-        />
-      </template>
+    <div class ="container">
+      <br>
+      <h1 style="text-align: center;color: white"> PROFILE </h1>
+      <br>
+      <pv-card class="p-card" style="text-align: center">
+        <template #header>
+          <pv-image
+              class="pv-image-holder"
+              imageClass="pv-image-circle"
+              src="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
+              alt="Image Coach"
+              width="275"
+              height="275"
+              preview
+          />
+        </template>
 
-      <template #content>
-        <i class="pi pi-user"></i>
-        <p class="pv-p">Nickname:</p>
-        <pv-input-text  v-model="student.nickname"/>
-        <pv-divider></pv-divider>
+        <template #content>
+          <i class="pi pi-user"></i>
+          <p class="pv-p">Nickname:</p>
+          <pv-input-text  v-model="student.nickname"/>
+          <pv-divider></pv-divider>
 
-        <i class="pi pi-user"></i>
-        <p class="pv-p">First Name:</p>
-        <pv-input-text   v-model="student.name"/>
-        <pv-divider></pv-divider>
+          <i class="pi pi-user"></i>
+          <p class="pv-p">First Name:</p>
+          <pv-input-text   v-model="student.name"/>
+          <pv-divider></pv-divider>
 
-        <i class="pi pi-user"></i>
-        <p class="pv-p">Last Name:</p>
-        <pv-input-text  v-model="student.lastname"/>
-        <pv-divider></pv-divider>
+          <i class="pi pi-user"></i>
+          <p class="pv-p">Last Name:</p>
+          <pv-input-text  v-model="student.lastname"/>
+          <pv-divider></pv-divider>
 
-        <i class="pi pi-tag"></i>
-        <p class="pv-p">Role:</p>
-        <pv-input-text  v-model="student.role"/>
-        <pv-divider></pv-divider>
+          <i class="pi pi-ticket"></i>
+          <p class="pv-p">Tournaments:</p>
+          <pv-input-text  v-model="student.tournaments"/>
+          <pv-divider></pv-divider>
 
-        <i class="pi pi-star"></i>
-        <p class="pv-p">Heroes:</p>
-        <pv-input-text  v-model="student.heroes"/>
-        <pv-divider></pv-divider>
+          <i class="pi pi-briefcase"></i>
+          <p class="pv-p">Bibliography:</p>
+          <pv-input-text  v-model="student.bibliography"/>
+          <pv-divider></pv-divider>
 
-        <i class="pi pi-ticket"></i>
-        <p class="pv-p">Tournaments:</p>
-        <pv-input-text  v-model="student.tournaments"/>
-        <pv-divider></pv-divider>
+          <pv-button label="Update Profile" @click="update"/>
+        </template>
 
-        <i class="pi pi-briefcase"></i>
-        <p class="pv-p">Bibliography:</p>
-        <pv-input-text  v-model="student.bibliography"/>
-        <pv-divider></pv-divider>
-
-        <pv-button label="Update Profile" @click="update"/>
-      </template>
-
-    </pv-card>
-
+      </pv-card>
+    </div>
   </div>
 </template>
 

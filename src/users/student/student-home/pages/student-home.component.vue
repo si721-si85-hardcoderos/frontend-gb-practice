@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
 
 <template >
-
   <nav-bar-student/>
   <div class="container">
     <br>
@@ -130,8 +129,6 @@ export default {
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
   width: 600px;
-
-
 }
 .p-card-title{
   background-color: white;
@@ -140,7 +137,6 @@ export default {
   text-align: center;
   background-color: white;
 }
-
 .content{
   text-align: center;
   background-color: white;
