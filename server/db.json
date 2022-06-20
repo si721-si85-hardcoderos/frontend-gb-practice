@@ -106,6 +106,7 @@
   "students": [
     {
       "id": 1,
+      "email": "estoicoasd1@gmail.com",
       "password": "asdw233",
       "nickname": "Estoico",
       "name": "Omar",
@@ -117,6 +118,8 @@
       "urlToImage": "https://esports.eldesmarque.com/wp-content/uploads/2016/10/17431372369_b85998e8a6_k.jpg"
     },
     {
+      "email": "carlos123@gmail.com",
+      "password": "sab123",
       "id": 2,
       "nickname": "saber_Z",
       "name": "Carlos",
@@ -129,6 +132,8 @@
     },
     {
       "id": 3,
+      "email": "duckdG@gmail.com",
+      "password": "1234a",
       "nickname": "duckfield",
       "name": "Diego",
       "lastname": "Cespedes",
