@@ -32,6 +32,10 @@ import Dialog from "primevue/dialog";
 import InputText from "primevue/inputtext";
 import Textarea from "primevue/textarea";
 import Calendar from 'primevue/calendar';
+import ToggleButton from 'primevue/togglebutton';
+import Tag from 'primevue/tag';
+
+
 
 import Listbox from 'primevue/listbox';
 import Navbar from './users/coach/navbar/views/Nav-bar.vue'
@@ -66,6 +70,8 @@ app.component("pv-textarea",Textarea);
 app.component("pv-calendar",Calendar);
 
 app.component("pv-rating",Rating);
+app.component("pv-toggle-button",ToggleButton);
+app.component("pv-tag",Tag);
 
 app.component("nav-bar-cyber",NavBarCyber);
 app.component("nav-bar-coach",NavbarCoach);
