@@ -6,6 +6,12 @@ export class AdvisoriesService {
         return http.get(`${this.endPoint}`);
 
     }
+    getByStudentId(id){
+        return http.get(`${this.endPoint}/?studentId=${id}`);
+    }
+    getByCoachId(id){
+        return http.get(`${this.endPoint}/?coachId=${id}`);
+    }
      getById(id){
         return http.get(`${this.endPoint}/?id=${id}`);
     } 

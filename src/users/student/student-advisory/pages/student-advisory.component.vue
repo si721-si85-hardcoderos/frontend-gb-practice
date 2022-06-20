@@ -27,7 +27,7 @@
                     preview/>
         </template>
         <template #content v-if="advisory">
-          Student Name: {{advisory.studentName}}
+          Coach Name: {{advisory.coachNickname}}
         </template>
         <template #footer v-if="advisory">
           <h4>Discord Server: {{advisory.discordServer}} </h4>
@@ -44,6 +44,7 @@
 <script>
 
 import AdvisoriesService from '../../../coach/coach-advisory/services/advisories.service.js'
+import CoachesService from '../../services/coaches.service.js';
 export default {
     name: "students",
     data: () => ({
@@ -60,8 +61,13 @@ export default {
     methods:{
       
       retrieveAdvisories(){
-        AdvisoriesService.getAll().then((response)=>{
+        AdvisoriesService.getByStudentId(this.id).then((response)=>{
           this.advisories=response.data;
+          for(let advisory of this.advisories){
+            CoachesService.getById(advisory.coachId).then((response2)=>{
+              advisory.coachNickname=(response2.data[0].nickname);
+            })
+          }
         })
         
 

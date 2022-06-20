@@ -40,7 +40,7 @@
           <br>
           Hour: {{advisory.hour}}
           <br>
-          <h4>Student Name: {{advisory.studentName}}</h4>
+          <h4>Student Name: {{advisory.studentNickname}}</h4>
           <h4>Discord Server: {{advisory.discordServer}} </h4>
         </template>
 
@@ -134,12 +134,11 @@
 
       <div class="field">
         <span class="p-float-label">
-          <pv-dropdown v-model="selectedCity" :options="students_" optionLabel="name" placeholder="Select a Student" />
+          <pv-dropdown v-model="advisory.studentSelected" :options="studentsCoach" optionLabel="nickname" placeholder="Select a Student" />
           <small class="p-error" v-if="submitted && !advisory.studentName"
           >DiscordServer is required</small>
         </span>
       </div>
-
       <div class="field">
         <span class="p-float-label">
           <pv-input-text
@@ -181,12 +180,15 @@
 
 <script>
 import CoachesService from '../../services/coaches.service.js';
-import AdvisoriesService from '../services/advisories.service.js'
+import AdvisoriesService from '../services/advisories.service.js';
+import StudentsService from '../../coach-student/services/students.service.js';
+import CoachStudentsService from '../../../student/student-selected-coaches/services/coach-students.service.js';
 export default {
   name: "coach-advisory",
   data() {
     return {
       advisories: [],
+      id: 1,
       coachAdvisories: [],
       coachId:1,
       advisoryTitle: '',
@@ -199,6 +201,8 @@ export default {
       coach: {},
       coaches:[],
       coachName: '',
+      studentsCoach: [],
+      coach_students: [],
 
       coachDialog: false,
       submitted: false,
@@ -220,32 +224,28 @@ export default {
   },
   mounted() {
     this.retrieveAdvisories();
-    CoachesService.getById(this.coachId).then((response)=>{
 
-      this.coaches=response.data.map(this.getStorableCoach);
-      this.coachName=this.coaches[0].name;
-    })
-
-    /*
-    this.advisoryService.getById()
-    this.advisoryService.getAll().then((response) => {
-      this.advisoryes = response.data;
-      this.advisory = response.data;
-
-      console.log(this.advisoryes);
-    });*/
   },
   methods: {
     retrieveAdvisories(){
-      AdvisoriesService.getAll().then((response)=>{
+      AdvisoriesService.getByCoachId(this.id).then((response)=>{
         this.advisories=response.data;
-        this.coachAdvisories=[];
-        for(let Advisory of this.advisories){
-          if(Advisory.coachId==this.coachId){
-            this.coachAdvisories.push(Advisory);
-          }
+        for(let advisory of this.advisories){
+          StudentsService.getById(advisory.studentId).then((response2)=>{
+            advisory.studentNickname = response2.data[0].nickname;
+          })
         }
       })
+      CoachStudentsService.getByCoachId(this.id).then((response)=>{
+        this.coach_students=response.data
+        for(let coach_student of response.data){
+          StudentsService.getById(coach_student.studentId).then((response2)=>{
+            this.studentsCoach.push(response2.data[0]);
+            console.log(this.studentsCoach);
+          })
+        }
+      })
+
     },
     deleteAdvisory(advisoryId){
       AdvisoriesService.delete((advisoryId)).then(()=>{
@@ -299,27 +299,13 @@ export default {
       this.advisory.id=0;
       this.advisory.cyberimage="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg";
       this.advisory.coachId=this.coachId;
-      this.advisory=this.getStorableAdvisory(this.advisory);
+      this.advisory.studentId=this.advisory.studentSelected.id;
+      delete this.advisory.studentSelected;
+
       AdvisoriesService.create(this.advisory).then((response)=>{
         this.hideDialog();
         this.retrieveAdvisories();
       })
-      /*this.submitted = true;
-      this.advisoryNew={
-        id:0,
-        title: this.advisoryTitle,
-        date: this.advisoryDate,
-        discordServer: this.advisoryDiscordServer,
-        attaches: this.advisoryAtacches,
-        cyberimage: "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
-        coachId: this.coachId
-      }
-      this.advisoryNew = this.getStorableCoach(this.advisoryNew);
-      AdvisoriesService.create(this.advisoryNew).then((response)=>{
-        this.retrieveAdvisories();
-      })
-
-      this.coachDialog = false;*/
     },
   },
 };

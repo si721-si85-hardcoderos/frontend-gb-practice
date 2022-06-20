@@ -6,7 +6,7 @@
       "description": "Meet a pro-gamer to improve your skills",
       "date": "21-07-2022",
       "hour": "9:30pm",
-      "studentName": "Carlos Choquehuanca",
+      "studentId": 2,
       "discordServer": "Quasimodo",
       "urlToImage": "https://staticg.sportskeeda.com/editor/2021/04/45716-16195438439457-800.jpg",
       "coachId": 1
@@ -17,7 +17,7 @@
       "description": "How to build to help your team",
       "date": "29-08-2022",
       "hour": "10:30pm",
-      "studentName": "Omar alvarado",
+      "studentId": 1,
       "discordServer": "AS - WILD",
       "urlToImage": "https://dota2freaks.com/wp-content/uploads/sites/10/2020/02/dota-2-recommended-items.jpg",
       "coachId": 1
@@ -28,10 +28,10 @@
       "description": "Learn how to set a good configuration for your matches",
       "date": "15-09-2022",
       "hour": "11:30pm",
-      "studentName": "Pepe Segarra",
+      "studentId": 1,
       "discordServer": "YTS",
       "urlToImage": "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
-      "coachId": 1
+      "coachId": 2
     }
   ],
   "coaches": [
