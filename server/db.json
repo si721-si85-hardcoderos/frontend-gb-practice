@@ -39,13 +39,11 @@
       "nickname": "Nick",
       "name": "Omar",
       "lastname": "Alvar",
-
       "email": "aaaasd",
       "password": "1234",
       "tournaments": "LigaFF",
       "bibliography": "Developer",
       "urlToImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1QDTGY4XAju-jLpJnhADF4QzVjgvV_G5yjfAwiois5O0RKran-exjPaGWgRafp3zXAE&usqp=CAU",
-
       "rate": 4.8,
       "selectedGame": "DOTA"
     },
@@ -54,7 +52,6 @@
       "nickname": "Estoico",
       "name": "Omar",
       "lastname": "Alvarado",
-
       "selectedGame": "DOTA",
       "role": "Rusher",
       "heroes": "Skyler",
