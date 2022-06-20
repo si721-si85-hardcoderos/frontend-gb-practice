@@ -2,33 +2,34 @@
   "advisories": [
     {
       "id": 1,
-      "title": "Support Itemization",
-      "description": "How to build to help your team",
+      "title": "(DOTA 2) Learn from the pros",
+      "description": "Meet a pro-gamer to improve your skills",
       "date": "21-07-2022",
       "hour": "9:30pm",
       "studentName": "Carlos Choquehuanca",
       "discordServer": "Quasimodo",
-      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "urlToImage": "https://staticg.sportskeeda.com/editor/2021/04/45716-16195438439457-800.jpg",
       "coachId": 1
     },
     {
       "id": 2,
-      "title": "Learn from the pros",
-      "description": "Meet a pro-gamer to improve your skills",
+      "title": "(DOTA 2) Support Itemization",
+      "description": "How to build to help your team",
       "date": "29-08-2022",
+      "hour": "10:30pm",
+      "studentName": "Omar alvarado",
       "discordServer": "AS - WILD",
-      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
       "urlToImage": "https://dota2freaks.com/wp-content/uploads/sites/10/2020/02/dota-2-recommended-items.jpg",
       "coachId": 1
     },
     {
       "id": 3,
-      "title": "Learn from the pros",
-      "description": "Meet a pro-gamer to improve your skills",
-      "date": "29-08-2022",
-      "discordServer": "AS - WILD",
-      "cyberImage": "https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg",
+      "title": "(COD) Sensibility is the Key",
+      "description": "Learn how to set a good configuration for your matches",
+      "date": "15-09-2022",
+      "hour": "11:30pm",
+      "studentName": "Pepe Segarra",
+      "discordServer": "YTS",
       "urlToImage": "http://clutchround.com/wp-content/uploads/2015/08/csgo_corners_and_angles_dust2_T_CT.png",
       "coachId": 1
     }

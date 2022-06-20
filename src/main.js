@@ -34,6 +34,7 @@ import Textarea from "primevue/textarea";
 import Calendar from 'primevue/calendar';
 import ToggleButton from 'primevue/togglebutton';
 import Tag from 'primevue/tag';
+import Dropdown from "primevue/dropdown";
 
 
 
@@ -72,6 +73,8 @@ app.component("pv-calendar",Calendar);
 app.component("pv-rating",Rating);
 app.component("pv-toggle-button",ToggleButton);
 app.component("pv-tag",Tag);
+app.component("pv-dropdown",Dropdown);
+
 
 app.component("nav-bar-cyber",NavBarCyber);
 app.component("nav-bar-coach",NavbarCoach);
