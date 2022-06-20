@@ -28,11 +28,6 @@ const router = createRouter({
       component: () => import("../users/coach/coach-students/pages/coach-students.component.vue")
     },
     {
-      path: "/coach-tournaments",
-      name: "coach-tournaments",
-      component: () => import("../users/coach/coach-tournament/pages/coach-tournaments.component.vue")
-    },
-    {
       path: '/coach-home',
       name: 'coach-home',
       component: () => import("../users/coach/coach-home/pages/coach-home.component.vue")
