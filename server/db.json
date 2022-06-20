@@ -193,7 +193,8 @@
       "title": "Major Tournament Peru",
       "schedule": "Sab May. 20 - 8:00pm",
       "location": "CC Arenales, Piso 1, #23",
-      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg"
+      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
+      "cyberId": 1
     },
     {
       "id": 2,
@@ -201,7 +202,8 @@
       "title": "Major Tournament Peru Vol 2",
       "schedule": "Monday June 6 - 5:00pm",
       "location": "CC Arenales, Piso 1, #23",
-      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg"
+      "urlToImage": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg",
+      "cyberId": 2
     }
   ],
   "tournament-students": [

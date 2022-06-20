@@ -13,7 +13,7 @@
     />
     <pv-divider/>
 
-    <pv-card v-for="tournament of tournaments" style="width: 395px">
+    <pv-card v-for="tournament of tournamentsCreated" style="width: 395px">
       <template #header>
         <pv-image v-bind:src="tournament.urlToImage"
                   size= "xlarge"
@@ -148,8 +148,10 @@ export default {
   data() {
     return  {
       tournaments: [],
+      tournamentsCreated: [],
       students:[],
       tournament: {},
+      id:1,
       coachTournaments:[],
       coachId:1,
       tournamentTitle:'',
@@ -170,8 +172,11 @@ export default {
   },
   methods:{
     retrieveTournaments(){
+      this.tournamentsCreated = [];
+
       TournamentsService.getAll().then((response)=>{
         this.tournaments=response.data;
+        this.tournamentsCreated.push(this.tournaments.find(x=>(x.cyberId==this.id)));
       });
     },
     getStorableAdvisory(tournament){
@@ -195,6 +200,7 @@ export default {
     },
     saveTournament(){
       this.tournament.id=0;
+      this.tournament.cyberId=this.id;
       TournamentsService.create(this.tournament).then((response)=>{
         this.retrieveTournaments();
         this.hideDialog();

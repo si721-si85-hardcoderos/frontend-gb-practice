@@ -144,11 +144,15 @@
 
 <script>
 import TournamentsService from "../services/tournaments.service";
+import TournamentStudentsService from "../../../student/student-tournaments/services/tournament-students.service";
 export default {
   name: "coach-tournament",
   data() {
     return  {
       tournaments: [],
+      tournamentsSelected: [],
+      tournament_students: [],
+      id: 1,
       tournament: {},
       coachTournaments:[],
       coachId:1,
@@ -170,6 +174,8 @@ export default {
   },
   methods:{
     retrieveTournaments(){
+      this.tournamentsSelected = [],
+
       TournamentsService.getAll().then((response)=>{
       this.tournaments=response.data;
     });
