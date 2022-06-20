@@ -2,9 +2,10 @@
 
 <template >
   <nav-bar-coach/>
-  <div class="dv-color">
+  <div class="container">
 
-    <h1 style="font-size:40px" >Anuncios</h1>
+    <br>
+    <h1 style="text-align: center;color: white"> ANNOUNCEMENTS </h1>
     <br>
     <div class="cards">
 
@@ -166,5 +167,10 @@ export default {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+.container{
+  background-color: #2455A5;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 </style>
