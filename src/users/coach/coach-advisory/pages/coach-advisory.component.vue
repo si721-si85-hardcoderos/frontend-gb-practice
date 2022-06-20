@@ -296,6 +296,8 @@ export default {
       this.submitted = false;
     },
     saveCoachAdvisory() {
+      if(!this.advisory.studentSelected||!this.advisory.title||!this.advisory.description||
+          !this.advisory.date|| !this.advisory.hour||!this.advisory.urlToImage||!this.advisory.discordServer) return;
       this.advisory.id=0;
       this.advisory.cyberimage="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg";
       this.advisory.coachId=this.coachId;
