@@ -31,7 +31,8 @@
         <h4>Location: {{tournament.location}}</h4>
         <br>
         <br>
-        <pv-button class="p-button-info" @click="toggleRegisterButton(tournament.isRegistered, tournament.id)">
+        <pv-button v-bind:class="tournament.isRegistered?'p-button-danger':'p-button-success'"
+         @click="toggleRegisterButton(tournament.isRegistered, tournament.id)">
         {{tournament.isRegistered?'Cancel Register':'Register to Tournament'}}</pv-button>
       </template>
       
