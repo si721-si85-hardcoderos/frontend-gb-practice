@@ -21,17 +21,17 @@
       <template #content>
         <i class="pi pi-user"></i>
         <p class="pv-p">First Name:</p>
-        <pv-input-text   v-model="coach.name"/>
+        <pv-input-text   v-model="coach.firstName"/>
         <pv-divider></pv-divider>
 
         <i class="pi pi-user"></i>
         <p class="pv-p">Nickname:</p>
-        <pv-input-text  v-model="coach.nickname"/>
+        <pv-input-text  v-model="coach.nickName"/>
         <pv-divider></pv-divider>
 
         <i class="pi pi-user"></i>
         <p class="pv-p">Last Name:</p>
-        <pv-input-text  v-model="coach.lastname"/>
+        <pv-input-text  v-model="coach.lastName"/>
         <pv-divider></pv-divider>
 
         <i class="pi pi-ticket"></i>
@@ -67,13 +67,13 @@ export default {
       coachService: null,
       coaches: [],
       coach:{},
-      coachId: 1,
+      coachId: 3,
     };
   },
 
   mounted() {
     CoachesService.getAll().then((response)=>{
-      this.coaches=response.data.map(this.getStorableCoach);
+      this.coaches=response.data;
       this.coach=this.coaches.find(x=>(x.id==this.coachId));
       console.log(this.coach);
     });
@@ -114,7 +114,6 @@ export default {
     },
     saveCoachProfile() {
       this.submitted = true;
-      this.coach = this.getStorableCoach(this.coach);
       this.coachService.update(this.coach.id, this.coach).then((response) => {
         this.profiles[this.findIndexById(response.data.id)] =
           this.response.data;

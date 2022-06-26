@@ -229,16 +229,16 @@ export default {
   methods: {
     retrieveAdvisories(){
       this.studentsCoach = [];
-      AdvisoriesService.getByCoachId(this.id).then((response)=>{
-        this.advisories=response.data;
+      AdvisoriesService.getAll().then((response)=>{
+        this.advisories=response.data.find(x=>(x.coachId==this.id));;
         for(let advisory of this.advisories){
           StudentsService.getById(advisory.studentId).then((response2)=>{
             advisory.studentNickname = response2.data[0].nickname;
           })
         }
       })
-      CoachStudentsService.getByCoachId(this.id).then((response)=>{
-        this.coach_students=response.data
+      CoachStudentsService.getAll().then((response)=>{
+        this.coach_students=response.data.find(x=>(x.coachId==this.id));
         for(let coach_student of response.data){
           StudentsService.getById(coach_student.studentId).then((response2)=>{
             this.studentsCoach.push(response2.data[0]);

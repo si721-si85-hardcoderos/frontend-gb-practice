@@ -59,8 +59,8 @@ export default {
     methods:{
       retrieveStudents(){
         this.studentsSelected = [];
-        CoachStudentsService.getByCoachId(this.id).then((response)=>{
-          this.coach_students=response.data;
+        CoachStudentsService.getAll().then((response)=>{
+          this.coach_students=response.data.find(x=>(x.coachId==this.id));
           StudentsService.getAll().then((response2)=>{
             this.students=response2.data;
             for(let coach_student of this.coach_students){

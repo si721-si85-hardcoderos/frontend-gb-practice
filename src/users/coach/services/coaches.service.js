@@ -26,7 +26,7 @@ export class CoachesService {
     }
 
     update(id,updateTutorialDto) {
-        return http.put(`${this.endPoint }/${id}`,updateTutorialDto);
+        return http.put(`${this.endPoint}/${id}`,updateTutorialDto);
     
     }
 }
