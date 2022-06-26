@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import StudentsService from '../../services/students.service.js'
+import StudentsService from '../../../coach/coach-student/services/students.service'
 
 export default {
   name: "student-profile",
@@ -73,7 +73,7 @@ export default {
   mounted() {
     this.coachId=localStorage.getItem("id");
     StudentsService.getAll().then((response)=>{
-      this.students=response.data.map(this.getStorableCoach);
+      this.students=response.data;
       this.student=this.students.find(x=>(x.id==this.coachId));
       console.log(this.student);
     });

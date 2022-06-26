@@ -45,7 +45,7 @@
                     class="input-name"
                     id="nickname"
                     type="text"
-                    v-model="nickname"
+                    v-model="nickName"
                 />
                 <label for="lastname">Nickname</label>
               </span>
