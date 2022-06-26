@@ -22,17 +22,17 @@
         <template #content>
           <i class="pi pi-user"></i>
           <p class="pv-p">Nickname:</p>
-          <pv-input-text  v-model="student.nickname"/>
+          <pv-input-text  v-model="student.nickName"/>
           <pv-divider></pv-divider>
 
           <i class="pi pi-user"></i>
           <p class="pv-p">First Name:</p>
-          <pv-input-text   v-model="student.name"/>
+          <pv-input-text   v-model="student.firstName"/>
           <pv-divider></pv-divider>
 
           <i class="pi pi-user"></i>
           <p class="pv-p">Last Name:</p>
-          <pv-input-text  v-model="student.lastname"/>
+          <pv-input-text  v-model="student.lastName"/>
           <pv-divider></pv-divider>
 
           <i class="pi pi-ticket"></i>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import CoachesService from '../../services/coaches.service.js'
+import StudentsService from '../../services/students.service.js'
 
 export default {
   name: "student-profile",
@@ -71,7 +71,8 @@ export default {
   },
 
   mounted() {
-    CoachesService.getAll().then((response)=>{
+    this.coachId=localStorage.getItem("id");
+    StudentsService.getAll().then((response)=>{
       this.students=response.data.map(this.getStorableCoach);
       this.student=this.students.find(x=>(x.id==this.coachId));
       console.log(this.student);
@@ -88,7 +89,7 @@ export default {
   },
   methods: {
     update(){
-      CoachesService.update(this.coachId,this.student).then((response)=>{
+      StudentsService.update(this.coachId,this.student).then((response)=>{
         //Agregar Notificacion
       })
     },

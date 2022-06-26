@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">
 
 <template >
   <nav-bar-coach/>
@@ -166,3 +165,4 @@ export default {
   margin-right: 100px;
 }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.0/primeflex.css">

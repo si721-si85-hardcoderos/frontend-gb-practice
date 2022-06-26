@@ -21,17 +21,17 @@
       <template #content>
         <i class="pi pi-user"></i>
         <p class="pv-p">First Name:</p>
-        <pv-input-text   v-model="coach.name"/>
+        <pv-input-text   v-model="coach.firstName"/>
         <pv-divider></pv-divider>
 
         <i class="pi pi-user"></i>
-        <p class="pv-p">Nickname:</p>
-        <pv-input-text  v-model="coach.nickname"/>
+        <p class="pv-p">Cyber Name:</p>
+        <pv-input-text  v-model="coach.cyberName"/>
         <pv-divider></pv-divider>
 
         <i class="pi pi-user"></i>
         <p class="pv-p">Last Name:</p>
-        <pv-input-text  v-model="coach.lastname"/>
+        <pv-input-text  v-model="coach.lastName"/>
         <pv-divider></pv-divider>
 
         <i class="pi pi-briefcase"></i>
@@ -64,6 +64,7 @@ export default {
   },
 
   mounted() {
+    this.coachId=localStorage.getItem("id");
     CybersService.getAll().then((response)=>{
       this.coaches=response.data;
       this.coach=this.coaches.find(x=>(x.id==this.coachId));

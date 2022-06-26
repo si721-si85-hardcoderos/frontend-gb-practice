@@ -67,11 +67,12 @@ export default {
       coachService: null,
       coaches: [],
       coach:{},
-      coachId: 3,
+      coachId: 1,
     };
   },
 
   mounted() {
+    this.coachId=localStorage.getItem("id");
     CoachesService.getAll().then((response)=>{
       this.coaches=response.data;
       this.coach=this.coaches.find(x=>(x.id==this.coachId));

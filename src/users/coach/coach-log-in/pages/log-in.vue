@@ -139,19 +139,13 @@ export default {
       CoachesService.getAll().then((response)=>{
         let userFound=response.data.find(x=>(x.email==this.username&&x.password==this.password));
         if(userFound!=undefined){
+          localStorage.setItem('id',userFound.id);
           this.$router.push("/coach-home");
         }
         else{
-          console.log("NOt");
+          console.log("Bad Credentials");
         }
         
-      })
-      return;
-      CoachesService.confirmCredentials(this.username,this.password).then((response)=>{
-
-        if(response.data.length>0){
-          this.$router.push("/coach-home")
-        }
       })
     },
 

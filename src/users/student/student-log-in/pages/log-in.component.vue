@@ -135,10 +135,16 @@ export default {
   created() {},
   methods: {
     submitLogin() {
-      StudentsService.confirmCredentials(this.username,this.password).then((response)=>{
-        if(response.data.length>0){
-          this.$router.push("/student-home")
+      StudentsService.getAll().then((response)=>{
+        let userFound=response.data.find(x=>(x.email==this.username&&x.password==this.password));
+        if(userFound!=undefined){
+          localStorage.setItem('id',userFound.id);
+          this.$router.push("/student-home");
         }
+        else{
+          console.log("Bad Credentials");
+        }
+        
       })
     },
 

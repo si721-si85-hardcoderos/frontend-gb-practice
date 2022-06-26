@@ -223,6 +223,7 @@ export default {
     };
   },
   mounted() {
+    this.id = localStorage.getItem("id");
     this.retrieveAdvisories();
 
   },

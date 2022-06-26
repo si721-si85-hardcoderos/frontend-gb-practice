@@ -54,6 +54,7 @@ export default {
       coach_students: [],
     }),
     mounted() {
+      this.id = localStorage.getItem("id");
       this.retrieveStudents();
     }, 
     methods:{
