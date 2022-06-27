@@ -18,7 +18,7 @@
       <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="advisory of advisories">
 
         <template #header v-if="advisory">
-          <pv-image v-bind:src="advisory.urlToImage"
+          <pv-image v-bind:src="advisory.advisoryImage"
                     size= "large"
                     alt="image advisory"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -121,20 +121,20 @@
         <span class="p-float-label">
           <pv-input-text
               id="multiple"
-              v-model="advisory.urlToImage"
+              v-model="advisory.advisoryImage"
               selectionMode="multiple"
               required="true"
               :manualInput="false"
           />
-          <label for="advisoryUrlToImage">Url to Image</label>
-          <small class="p-error" v-if="submitted && !advisory.urlToImage"
+          <label for="advisoryUrlToImage">Advisory to Image</label>
+          <small class="p-error" v-if="submitted && !advisory.advisoryImage"
           >Url is required</small>
         </span>
       </div>
 
       <div class="field">
         <span class="p-float-label">
-          <pv-dropdown v-model="advisory.studentSelected" :options="studentsCoach" optionLabel="nickname" placeholder="Select a Student" />
+          <pv-dropdown v-model="advisory.studentSelected" :options="studentsCoach" optionLabel="nickName" placeholder="Select a Student" />
           <small class="p-error" v-if="submitted && !advisory.studentName"
           >DiscordServer is required</small>
         </span>
@@ -144,13 +144,13 @@
           <pv-input-text
               type="text"
               id="title"
-              v-model.trim="advisory.discordServer"
+              v-model.trim="advisory.discorServer"
               required="true"
               autofocus
-              :class="{'p-invalid':submitted && !advisory.discordServer}"
+              :class="{'p-invalid':submitted && !advisory.discorServer}"
           />
           <label for="advisoryDiscordServer">Discord Server</label>
-          <small class="p-error" v-if="submitted && !advisory.discordServer"
+          <small class="p-error" v-if="submitted && !advisory.discorServer"
           >DiscordServer is required</small>
         </span>
       </div>
@@ -233,16 +233,16 @@ export default {
       AdvisoriesService.getAll().then((response)=>{
         this.advisories=response.data.filter(x=>(x.coach.id==this.id));
         for(let advisory of this.advisories){
-          StudentsService.getById(advisory.studentId).then((response2)=>{
-            advisory.studentNickname = response2.data[0].nickname;
+          StudentsService.getAll().then((response2)=>{
+            advisory.studentNickname = response2.data.find(x=>x.id==advisory.student.id).nickname;
           })
         }
       })
       CoachStudentsService.getAll().then((response)=>{
-        this.coach_students=response.data.filter(x=>(x.coachId==this.id));
-        for(let coach_student of response.data){
-          StudentsService.getById(coach_student.studentId).then((response2)=>{
-            this.studentsCoach.push(response2.data[0]);
+        this.coach_students=response.data.filter(x=>(x.coach.id==this.id));
+        for(let coach_student of this.coach_students){
+          StudentsService.getAll().then((response2)=>{
+            this.studentsCoach.push(response2.data.find(x=>x.id==coach_student.student.id));
           })
         }
       })
@@ -298,10 +298,9 @@ export default {
     },
     saveCoachAdvisory() {
       if(!this.advisory.studentSelected||!this.advisory.title||!this.advisory.description||
-          !this.advisory.date|| !this.advisory.hour||!this.advisory.urlToImage||!this.advisory.discordServer) return;
+          !this.advisory.date|| !this.advisory.hour||!this.advisory.advisoryImage||!this.advisory.discorServer) return;
       this.advisory.id=0;
-      this.advisory.cyberimage="https://d37b96571lewzk.cloudfront.net/assets/image/92/5fbd041a0c9c6/top_games_for_cyber_cafe_o.jpg";
-      this.advisory.coachId=this.coachId;
+      this.advisory.coachId=this.id;
       this.advisory.studentId=this.advisory.studentSelected.id;
       delete this.advisory.studentSelected;
 

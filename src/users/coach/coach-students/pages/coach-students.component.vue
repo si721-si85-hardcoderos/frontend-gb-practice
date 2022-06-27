@@ -7,14 +7,14 @@
     <div class="container-2">
       <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="student of studentsSelected">
         <template #title v-if="student">
-          {{student.lastname}}
-          {{student.name}}
+          a{{student.firstName}}
+          {{student.lastName}}
         </template>
         <template #subtitle v-if="student">
-          {{student.nickname}}
+          {{student.nickName}}
         </template>
         <template #header v-if="student">
-          <pv-image v-bind:src="student.urlToImage"
+          <pv-image v-bind:src="student.userImage"
                     size= "large"
                     alt="image student"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -23,12 +23,9 @@
                     preview/>
         </template>
         <template #content v-if="student">
-          {{student.bibliography}}
+          {{student.email}}
         </template>
-        <template #footer v-if="student">
-          <h4>{{student.tournaments}}</h4>
 
-        </template>
       </pv-card>
     </div>
       <br><br>
@@ -65,7 +62,7 @@ export default {
           StudentsService.getAll().then((response2)=>{
             this.students=response2.data;
             for(let coach_student of this.coach_students){
-              this.studentsSelected.push(this.students.filter(x=>(x.id==coach_student.student.id)));
+              this.studentsSelected.push(this.students.find(x=>(x.id==coach_student.student.id)));
             }
             
           })

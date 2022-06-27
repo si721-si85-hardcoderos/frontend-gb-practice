@@ -43,11 +43,11 @@
               <span class="p-float-label">
                 <pv-input-text
                     class="input-name"
-                    id="nickname"
+                    id="cyberName"
                     type="text"
-                    v-model="nickname"
+                    v-model="cyberName"
                 />
-                <label for="lastname">Nickname</label>
+                <label for="lastname">Cyber Name</label>
               </span>
             </div>
             <span class="p-float-label">
@@ -71,21 +71,31 @@
             <span class="p-float-label">
               <pv-input-text
                   class="input-general"
+                  id="bibliography"
+                  type="bibliography"
+                  v-model="bibliography"
+              />
+              <label for="bibliography">Bibliography</label>
+            </span>
+            <span class="p-float-label">
+              <pv-input-text
+                  class="input-general"
+                  id="cyberImage"
+                  type="cyberImage"
+                  v-model="cyberImage"
+              />
+              <label for="cyberImage">Cyber Image</label>
+            </span>
+            <span class="p-float-label">
+              <pv-input-text
+                  class="input-general"
                   id="password"
                   type="password"
                   v-model="password"
               />
               <label for="password">Password</label>
             </span>
-            <span class="p-float-label">
-              <pv-input-text
-                  class="input-general"
-                  id="confirm-password"
-                  type="password"
-                  v-model="confirmPassword"
-              />
-              <label for="confirm-password">Confirm Password</label>
-            </span>
+
           </div>
         </div>
         <div
@@ -145,19 +155,26 @@ export default {
       password: '',
       confirmPassword: '',
       nickname: '',
+      cyberName: '',
+      bibliography: '',
+      cyberImage: '',
     };
   },
   methods: {
     submitSignUp(){
-      CybersService.getByUsername(this.nickname).then((response)=>{
-        if(response.data==0){
+      CybersService.getAll().then((response)=>{
+        if(response.data.find(x=>x.email==this.email)==undefined){
           this.user.id=0;
           this.user.firstName=this.firstName;
           this.user.lastName=this.lastName;
           this.user.email=this.email;
           this.user.password=this.password;
-          this.user.nickname=this.nickname;
+          this.user.cyberName=this.cyberName;
+          this.user.address=this.address;
+          this.user.cyberImage=this.cyberImage;
+          this.user.bibliography=this.bibliography;
           CybersService.create(this.user).then((response2)=>{
+            localStorage.setItem("id",response2.data.id);
             this.$router.push("/cyber-tournaments");
           })
         }

@@ -49,6 +49,15 @@
                 />
                 <label for="lastname">Nickname</label>
               </span>
+              <span class="p-float-label">
+                <pv-input-text
+                    class="input-name"
+                    id="userImage"
+                    type="text"
+                    v-model="userImage"
+                />
+                <label for="userImage">User Image</label>
+              </span>
             </div>
             <span class="p-float-label">
               <pv-input-text
@@ -136,19 +145,22 @@ export default {
       password: '',
       confirmPassword: '',
       nickname: '',
+      userImage: '',
     };
   },
   methods: {
     submitSignUp(){
-      StudentsService.getByUsername(this.nickname).then((response)=>{
-        if(response.data==0){
+      StudentsService.getAll().then((response)=>{
+        if(response.data.find(x=>x.email==this.email)==undefined){
           this.user.id=0;
           this.user.firstName=this.firstName;
           this.user.lastName=this.lastName;
           this.user.email=this.email;
           this.user.password=this.password;
-          this.user.nickname=this.nickname;
+          this.user.nickName=this.nickname;
+          this.user.userImage=this.userImage;
           StudentsService.create(this.user).then((response2)=>{
+            localStorage.setItem("id",response2.data.id);
             this.$router.push("/student-home");
           })
         }

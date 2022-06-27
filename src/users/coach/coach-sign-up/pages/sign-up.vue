@@ -190,7 +190,8 @@ export default {
           this.user.selectedGame=this.selectedGame.name;
           this.user.nickName=this.nickName;
           this.user.userImage=this.userImage;
-          CoachesService.create(this.user).then((response)=>{
+          CoachesService.create(this.user).then((response2)=>{
+            localStorage.setItem("id",response2.data.id);
             this.$router.push("/coach-home");
           })
         }

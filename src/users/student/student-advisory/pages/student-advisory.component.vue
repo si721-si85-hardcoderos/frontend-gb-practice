@@ -68,7 +68,7 @@ export default {
           console.log(this.advisories);
           for(let advisory of this.advisories){
             CoachesService.getAll().then((response2)=>{
-              console.log(response2.data.filter(x=>x.id==advisory.coach.id));
+              console.log(response2.data.find(x=>x.id==advisory.coach.id));
               advisory.coachNickname=(response2.data[0].nickName);
             })
           }
