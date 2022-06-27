@@ -170,6 +170,7 @@ export default {
     };
   },
   mounted(){
+    this.id=localStorage.getItem("id");
     this.retrieveTournaments();
   },
   methods:{
@@ -180,15 +181,16 @@ export default {
         this.tournaments=response.data;
       })*/
 
-      TournamentStudentsService.getByStudentId(this.id).then((response)=>{
-        this.tournament_students = response.data;
+      TournamentStudentsService.getAll().then((response)=>{
+        this.tournament_students = response.data.filter(x=>x.student.id==this.id);
         TournamentsService.getAll().then((response2)=>{
           this.tournaments = response2.data;
+          console.log(this.tournaments);
           for(let tournament of this.tournaments){
             tournament.isRegistered=false;
           }
           for(let tournament_student of this.tournament_students){
-            this.tournaments.find(x=>(x.id==tournament_student.tournamentId)).isRegistered=true;
+            this.tournaments.find(x=>(x.id==tournament_student.tournament.id)).isRegistered=true;
           }
         })
       });
@@ -221,8 +223,9 @@ export default {
     },
     toggleRegisterButton(isRegistered, id){
       if(isRegistered){
-        TournamentStudentsService.getByTournamentIdAndStudentId(id,this.id).then((response)=>{
-        let tournament_student = response.data;
+        TournamentStudentsService.getAll().then((response)=>{
+          let tournament_student = response.data.filter(x=>x.tournament.id==id&&x.student.id==this.id);
+          console.log(tournament_student);
           TournamentStudentsService.delete(tournament_student[0].id).then(()=>{
             this.retrieveTournaments();
           })

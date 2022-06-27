@@ -35,15 +35,7 @@
           <pv-input-text  v-model="student.lastName"/>
           <pv-divider></pv-divider>
 
-          <i class="pi pi-ticket"></i>
-          <p class="pv-p">Tournaments:</p>
-          <pv-input-text  v-model="student.tournaments"/>
-          <pv-divider></pv-divider>
 
-          <i class="pi pi-briefcase"></i>
-          <p class="pv-p">Bibliography:</p>
-          <pv-input-text  v-model="student.bibliography"/>
-          <pv-divider></pv-divider>
 
           <pv-button label="Update Profile" @click="update"/>
         </template>
@@ -90,7 +82,7 @@ export default {
   methods: {
     update(){
       StudentsService.update(this.coachId,this.student).then((response)=>{
-        //Agregar Notificacion
+        
       })
     },
     getStorableCoach(coach) {

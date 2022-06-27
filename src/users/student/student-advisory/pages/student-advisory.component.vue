@@ -30,7 +30,7 @@
           Coach Name: {{advisory.coachNickname}}
         </template>
         <template #footer v-if="advisory">
-          <h4>Discord Server: {{advisory.discordServer}} </h4>
+          <h4>Discord Server: {{advisory.discorServer}} </h4>
           
 
         </template>
@@ -56,16 +56,20 @@ export default {
       advisories: [],
     }),
     mounted() {
+      this.id=localStorage.getItem("id");
       this.retrieveAdvisories();
     }, 
     methods:{
       
       retrieveAdvisories(){
-        AdvisoriesService.getByStudentId(this.id).then((response)=>{
+        AdvisoriesService.getAll().then((response)=>{
           this.advisories=response.data;
+          this.advisories = this.advisories.filter(x=>x.student.id==this.id);
+          console.log(this.advisories);
           for(let advisory of this.advisories){
-            CoachesService.getById(advisory.coachId).then((response2)=>{
-              advisory.coachNickname=(response2.data[0].nickname);
+            CoachesService.getAll().then((response2)=>{
+              console.log(response2.data.filter(x=>x.id==advisory.coach.id));
+              advisory.coachNickname=(response2.data[0].nickName);
             })
           }
         })

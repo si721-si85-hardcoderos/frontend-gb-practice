@@ -7,7 +7,7 @@ export class AdvisoriesService {
 
     }
     getByStudentId(id){
-        return http.get(`${this.endPoint}/?studentId=${id}`);
+        return http.get(`${this.endPoint}/?student.id=${id}`);
     }
     getByCoachId(id){
         return http.get(`${this.endPoint}/?coachId=${id}`);

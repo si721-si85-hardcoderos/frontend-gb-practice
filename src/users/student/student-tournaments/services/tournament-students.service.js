@@ -1,6 +1,6 @@
 import http from "../../../../core/services/http-common.js"
 export class TournamentStudentService {
-    endPoint='/tournament-students';
+    endPoint='/registertournaments';
 
     getAll() {
         return http.get(`${this.endPoint}`);

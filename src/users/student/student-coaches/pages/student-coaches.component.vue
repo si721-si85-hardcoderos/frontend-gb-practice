@@ -66,6 +66,7 @@ export default {
     return { val1}
   },
   mounted() {
+    this.id=localStorage.getItem("id");
     this.retrieveStudents();
   },
   methods:{
@@ -73,14 +74,14 @@ export default {
     retrieveStudents(){
       this.coachesNotSelected= [];
 
-      CoachStudentsService.getByStudentId(this.id).then((response)=>{
-        this.coach_students=response.data;
+      CoachStudentsService.getAll().then((response)=>{
+        this.coach_students=response.data.filter(x=>x.student.id==this.id);
         CoachesService.getAll().then((response2)=>{
           this.coaches=response2.data;
           this.coachesNotSelected=this.coaches;
           for(let coach_student of this.coach_students){
             console.log(coach_student);
-            this.coachesNotSelected=this.coachesNotSelected.filter(x=>(x.id!=coach_student.coachId));
+            this.coachesNotSelected=this.coachesNotSelected.filter(x=>(x.id!=coach_student.coach.id));
           }
           console.log(this.coachesNotSelected);
         })

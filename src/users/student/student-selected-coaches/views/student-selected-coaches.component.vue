@@ -56,13 +56,14 @@ export default {
     coach_students: [],
   }),
   mounted() {
+    this.id=localStorage.getItem("id");
     this.retrieveCoaches();
   },
   methods:{
     unsubscribe(id){
-      CoachStudentsService.getByStudentAndCoachId(this.id,id).then((response)=>{
+      CoachStudentsService.getAll().then((response)=>{
         let coachStudentAux={};
-        coachStudentAux=response.data
+        coachStudentAux=response.data.filter(x=>x.student.id==this.id&&x.coach.id==id);
         console.log(coachStudentAux[0].id);
         console.log(coachStudentAux.length,"length");
         CoachStudentsService.delete(coachStudentAux[0].id).then((response2)=>{
@@ -75,12 +76,12 @@ export default {
     retrieveCoaches(){
       this.coachesSelected = [];
 
-      CoachStudentsService.getByStudentId(this.id).then((response)=>{
-        this.coach_students=response.data;
+      CoachStudentsService.getAll().then((response)=>{
+        this.coach_students=response.data.filter(x=>x.student.id==this.id);
         CoachesService.getAll().then((response2)=>{
           this.coaches=response2.data;
           for(let coach_student of this.coach_students){
-            this.coachesSelected.push(this.coaches.find(x=>(x.id==coach_student.coachId)));
+            this.coachesSelected.push(this.coaches.find(x=>(x.id==coach_student.coach.id)));
           }
         })
       })

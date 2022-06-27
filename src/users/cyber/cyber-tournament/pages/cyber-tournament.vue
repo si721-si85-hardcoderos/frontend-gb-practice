@@ -68,13 +68,13 @@
         <span class="p-float-label">
           <pv-input-text
               type="text"
-              id="name"
-              v-model.trim="tournament.name"
+              id="description"
+              v-model.trim="tournament.description"
               required="true"
               autofocus
-              :class="{'p-invalid':submitted && !tournament.name}"
+              :class="{'p-invalid':submitted && !tournament.description}"
           />
-          <label for="tournamentTitle">Cyber's name</label>
+          <label for="tournamentTitle">Cyber's Description</label>
           <small class="p-error" v-if="submitted && !tournament.name"
           >Cyber's name is required</small>
         </span>
@@ -96,13 +96,13 @@
       <div class="field">
         <span class="p-float-label">
           <pv-textarea
-              id="schedule"
-              v-model="tournament.schedule"
+              id="date"
+              v-model="tournament.date"
               required="false"
               rows="2"
               cols="2"
           />
-          <label for="tournamentSchedule">Schedule</label>
+          <label for="tournamentSchedule">Date</label>
         </span>
       </div>
 
@@ -110,13 +110,13 @@
         <span class="p-float-label">
           <pv-input-text
               id="multiple"
-              v-model="tournament.location"
+              v-model="tournament.addres"
               selectionMode="multiple"
               required="true"
               :manualInput="false"
           />
-          <label for="tournamentChanel">Location</label>
-          <small class="p-error" v-if="submitted && !tournament.location"
+          <label for="tournamentChanel">Address</label>
+          <small class="p-error" v-if="submitted && !tournament.addres"
           >Location is required</small>
         </span>
       </div>
@@ -170,6 +170,7 @@ export default {
     };
   },
   mounted(){
+    this.coachId=localStorage.getItem("id");
     this.retrieveTournaments();
   },
   methods:{
@@ -178,7 +179,7 @@ export default {
 
       TournamentsService.getAll().then((response)=>{
         this.tournaments=response.data;
-        this.tournamentsCreated=(this.tournaments.filter(x=>(x.cyberId==this.id)));
+        this.tournamentsCreated=(this.tournaments.filter(x=>(x.cyber.id==this.id)));
       });
     },
     getStorableAdvisory(tournament){
@@ -186,7 +187,7 @@ export default {
         id: tournament.id,
         name: tournament.name,
         title: tournament.title,
-        schedule:tournament.schedule,
+        schedule:tournament.date,
         location: tournament.location,
         urlToImage: tournament.urlToImage
       };
@@ -201,8 +202,8 @@ export default {
       this.submitted = false;
     },
     saveTournament(){
-      if(!this.tournament.title||!this.tournament.name||!this.tournament.urlToImage
-          ||!this.tournament.schedule||!this.tournament.location) return;
+      if(!this.tournament.title||!this.tournament.description||!this.tournament.urlToImage
+          ||!this.tournament.date||!this.tournament.addres) return;
       this.tournament.id=0;
       this.tournament.cyberId=this.id;
       TournamentsService.create(this.tournament).then((response)=>{

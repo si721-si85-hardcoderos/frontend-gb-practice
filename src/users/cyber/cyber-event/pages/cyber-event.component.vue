@@ -23,7 +23,7 @@
             <div class="card-description">
               <h5>{{event.description}}</h5>
               <pv-image
-                  v-bind:src="event.imagePublication"
+                  v-bind:src="event.imageEvent"
                   alt="image announcement"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   width="275"
@@ -83,12 +83,12 @@
         <span class="p-float-label">
           <pv-textarea
               id="imagePublication"
-              v-model="event.imagePublication"
+              v-model="event.imageEvent"
               required="false"
               rows="2"
               cols="2"
           />
-          <label for="imagePublication">Image Publication</label>
+          <label for="imagePublication">Image Event</label>
         </span>
         </div>
 
@@ -147,12 +147,13 @@ export default {
     };
   },
   mounted() {
+    this.id=localStorage.getItem("id");
     this.retrieveData();
   },
   methods: {
     retrieveData(){
       CyberEventsService.getAll().then((response)=>{
-        this.events=response.data.map(this.getStorableEvent);
+        this.events=response.data;
       })
     },
 
@@ -190,8 +191,10 @@ export default {
       this.submitted = false;
     },
     saveTournament(){
-      if(!this.event.imagePublication||!this.event.urlPublication||!this.event.title||!this.event.description) return;
+      if(!this.event.imageEvent||!this.event.urlPublication||!this.event.title||!this.event.description) return;
       this.event.id=0;
+      this.event.address="x";
+      this.event.cyberId=this.id;
       CyberEventsService.create(this.event).then((response)=>{
         this.retrieveData();
         this.hideDialog();

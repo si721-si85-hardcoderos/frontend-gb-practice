@@ -15,7 +15,7 @@ export class CoachesService {
 
     }
      getById(id){
-        return http.get(`${this.endPoint}/?id=${id}`);
+        return http.get(`${this.endPoint}/${id}`);
     } 
     create(CreateTutorialDto) {
         return http.post(this.endPoint,CreateTutorialDto)

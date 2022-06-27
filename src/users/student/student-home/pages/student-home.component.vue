@@ -62,13 +62,14 @@ export default {
     };
   },
   mounted() {
+    this.id=localStorage.getItem("id");
     this.retrieveData();
 
   },
   methods: {
     retrieveData(){
       CoachHomeService.getAll().then((response)=>{
-        this.publications=response.data.map(this.getStorableAdvisory);
+        this.publications=response.data;
       })
     },
     getStorableAdvisory(advisory) {
