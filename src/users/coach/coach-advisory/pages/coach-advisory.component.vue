@@ -40,8 +40,8 @@
           <br>
           Hour: {{advisory.hour}}
           <br>
-          <h4>Student Name: {{advisory.studentNickname}}</h4>
-          <h4>Discord Server: {{advisory.discordServer}} </h4>
+          <h4>Student Name: {{advisory.student.nickName}}</h4>
+          <h4>Discord Server: {{advisory.discorServer}} </h4>
         </template>
 
         <template #footer v-if="advisory">
@@ -231,7 +231,7 @@ export default {
     retrieveAdvisories(){
       this.studentsCoach = [];
       AdvisoriesService.getAll().then((response)=>{
-        this.advisories=response.data.find(x=>(x.coachId==this.id));;
+        this.advisories=response.data.filter(x=>(x.coach.id==this.id));
         for(let advisory of this.advisories){
           StudentsService.getById(advisory.studentId).then((response2)=>{
             advisory.studentNickname = response2.data[0].nickname;
@@ -239,7 +239,7 @@ export default {
         }
       })
       CoachStudentsService.getAll().then((response)=>{
-        this.coach_students=response.data.find(x=>(x.coachId==this.id));
+        this.coach_students=response.data.filter(x=>(x.coachId==this.id));
         for(let coach_student of response.data){
           StudentsService.getById(coach_student.studentId).then((response2)=>{
             this.studentsCoach.push(response2.data[0]);

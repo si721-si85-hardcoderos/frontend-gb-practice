@@ -1,6 +1,6 @@
 import http from "../../../../core/services/http-common.js"
 export class CoachHomeService {
-    endPoint='/publications';
+    endPoint='/advertisements';
 
     getAll() {
         return http.get(`${this.endPoint}`);

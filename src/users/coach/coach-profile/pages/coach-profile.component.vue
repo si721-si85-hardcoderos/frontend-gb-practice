@@ -35,8 +35,8 @@
         <pv-divider></pv-divider>
 
         <i class="pi pi-ticket"></i>
-        <p class="pv-p">Tournaments:</p>
-        <pv-input-text  v-model="coach.tournaments"/>
+        <p class="pv-p">Selected Game:</p>
+        <pv-input-text  v-model="coach.selectedGame"/>
         <pv-divider></pv-divider>
 
         <i class="pi pi-briefcase"></i>
