@@ -11,7 +11,7 @@
         <pv-image
             class="pv-image-holder"
             imageClass="pv-image-circle"
-            src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/26/15562666815994.jpg"
+            v-bind:src="coach.cyberImage"
             alt="Image Coach"
             width="275"
             height="275"
@@ -37,6 +37,11 @@
         <i class="pi pi-briefcase"></i>
         <p class="pv-p">Bibliography:</p>
         <pv-input-text  v-model="coach.bibliography"/>
+        <pv-divider></pv-divider>
+
+        <i class="pi pi-briefcase"></i>
+        <p class="pv-p">Cyber Image:</p>
+        <pv-input-text  v-model="coach.cyberImage"/>
         <pv-divider></pv-divider>
 
         <pv-button label="Update Profile" @click="update"/>

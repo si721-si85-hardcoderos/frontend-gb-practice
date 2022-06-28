@@ -8,14 +8,14 @@
     <div class="container-2">
       <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="coach of coachesSelected">
         <template #title v-if="coach">
-          {{coach.lastname}}
-          {{coach.name}}
+          {{coach.firstName}}
+          {{coach.lastName}}
         </template>
         <template #subtitle v-if="coach">
           {{coach.nickname}}
         </template>
         <template #header v-if="coach">
-          <pv-image v-bind:src="coach.urlToImage"
+          <pv-image v-bind:src="coach.userImage"
                     size= "large"
                     alt="image student"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"

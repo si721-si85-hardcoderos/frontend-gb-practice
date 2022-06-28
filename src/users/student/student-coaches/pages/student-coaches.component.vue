@@ -8,16 +8,16 @@
     <div class="card container-2 body">
       <pv-card  style="width: 24.8rem; margin-bottom: 2em" v-for="coach of coachesNotSelected">
         <template #title v-if="coach">
-          {{coach.lastname}}
-          {{coach.name}}
+          {{coach.firstName}}
+          {{coach.lastName}}
         </template>
         <template #subtitle v-if="coach">
-          {{coach.nickname}}
+          {{coach.nickName}}
         </template>
         <template #header v-if="coach">
-          <pv-image v-bind:src="coach.urlToImage"
+          <pv-image v-bind:src="coach.userImage"
                     size= "large"
-                    alt="image student"
+                    alt="image coach"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                     width="275"
                     height="200"
@@ -27,10 +27,8 @@
           {{coach.bibliography}}
         </template>
         <template #footer v-if="coach">
-          <h4>{{coach.tournaments}} | {{coach.selectedGame}}</h4>
+          <h4>{{coach.selectedGame}}</h4>
           <div >
-            <h5 class ="rate-sz">Rate {{coach.rate}}</h5>
-            <pv-rating :modelValue= coach.rate :readonly="true" :stars="5" :cancel="false"/>
             <pv-button label="Choose" class="btn" @click="chooseCoach(coach.id)" />
 
           </div>

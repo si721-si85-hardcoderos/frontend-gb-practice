@@ -20,7 +20,7 @@
             <div class="card-description">
               <h5>{{event.description}}</h5>
               <pv-image
-                  v-bind:src="event.imagePublication"
+                  v-bind:src="event.imageEvent"
                   alt="image announcement"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   width="275"
@@ -55,12 +55,13 @@ export default {
     };
   },
   mounted() {
+    
     this.retrieveData();
   },
   methods: {
     retrieveData(){
       CoachEventsService.getAll().then((response)=>{
-        this.events=response.data.map(this.getStorableAdvisory);
+        this.events=response.data;
       })
     },
 

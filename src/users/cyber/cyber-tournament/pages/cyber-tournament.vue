@@ -17,7 +17,7 @@
 
     <pv-card v-for="tournament of tournamentsCreated" style="width: 395px">
       <template #header>
-        <pv-image v-bind:src="tournament.urlToImage"
+        <pv-image v-bind:src="tournament.cyber.cyberImage"
                   size= "xlarge"
                   alt="image tournaments"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -29,11 +29,11 @@
         {{ tournament.title }}
       </template>
       <template #subtitle>
-        {{  tournament.name }}
+        {{  tournament.description }}
       </template>
       <template #content>
-        <h4>Schedule: {{tournament.schedule}}</h4>
-        <h4>Location: {{tournament.location}}</h4>
+        <h4>Schedule: {{tournament.date}}</h4>
+        <h4>Location: {{tournament.addres}}</h4>
       </template>
       <template #footer>
         <pv-button @click="cancelTournament(tournament.id)">Cancel</pv-button>
@@ -83,43 +83,30 @@
       <div class="field">
         <span class="p-float-label">
           <pv-textarea
-              id="urlToImage"
-              v-model="tournament.urlToImage"
-              required="false"
-              rows="2"
-              cols="2"
-          />
-          <label for="tournamentUrlToImage">Url to Image</label>
-        </span>
-      </div>
-
-      <div class="field">
-        <span class="p-float-label">
-          <pv-textarea
               id="date"
               v-model="tournament.date"
               required="false"
               rows="2"
               cols="2"
           />
-          <label for="tournamentSchedule">Date</label>
+          <label for="tournamentdate">Date</label>
         </span>
       </div>
 
       <div class="field">
         <span class="p-float-label">
-          <pv-input-text
-              id="multiple"
+          <pv-textarea
+              id="addres"
               v-model="tournament.addres"
-              selectionMode="multiple"
-              required="true"
-              :manualInput="false"
+              required="false"
+              rows="2"
+              cols="2"
           />
-          <label for="tournamentChanel">Address</label>
-          <small class="p-error" v-if="submitted && !tournament.addres"
-          >Location is required</small>
+          <label for="tournamentaddres">Address</label>
         </span>
       </div>
+
+      
 
 
       <template #footer>
@@ -170,7 +157,7 @@ export default {
     };
   },
   mounted(){
-    this.coachId=localStorage.getItem("id");
+    this.id=localStorage.getItem("id");
     this.retrieveTournaments();
   },
   methods:{
@@ -202,7 +189,7 @@ export default {
       this.submitted = false;
     },
     saveTournament(){
-      if(!this.tournament.title||!this.tournament.description||!this.tournament.urlToImage
+      if(!this.tournament.title||!this.tournament.description
           ||!this.tournament.date||!this.tournament.addres) return;
       this.tournament.id=0;
       this.tournament.cyberId=this.id;

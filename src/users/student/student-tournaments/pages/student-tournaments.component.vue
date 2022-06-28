@@ -7,7 +7,7 @@
     <br>
     <pv-card v-for="tournament of tournaments" style="width: 395px">
       <template #header>
-        <pv-image v-bind:src="tournament.urlToImage"
+        <pv-image v-bind:src="tournament.cyber.cyberImage"
                   size= "xlarge"
                   alt="image tournaments"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -19,14 +19,14 @@
         {{ tournament.title }}
       </template>
       <template #subtitle>
-        {{  tournament.name }}
+        {{  tournament.description }}
       </template>
       <template #content>
         <pv-tag v-bind:severity="tournament.isRegistered?'success':'danger'" 
         v-bind:icon="tournament.isRegistered?'pi pi-check':'pi pi-times'">
         {{tournament.isRegistered?'Registered':'Not Registered'}}</pv-tag>
-        <h4>Schedule: {{tournament.schedule}}</h4>
-        <h4>Location: {{tournament.location}}</h4>
+        <h4>Date: {{tournament.date}}</h4>
+        <h4>Address: {{tournament.addres}}</h4>
         <br>
         <br>
         <pv-button v-bind:class="tournament.isRegistered?'p-button-danger':'p-button-success'"

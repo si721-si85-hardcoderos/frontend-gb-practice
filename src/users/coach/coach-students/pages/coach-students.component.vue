@@ -7,7 +7,7 @@
     <div class="container-2">
       <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="student of studentsSelected">
         <template #title v-if="student">
-          a{{student.firstName}}
+          {{student.firstName}}
           {{student.lastName}}
         </template>
         <template #subtitle v-if="student">
@@ -23,7 +23,6 @@
                     preview/>
         </template>
         <template #content v-if="student">
-          {{student.email}}
         </template>
 
       </pv-card>

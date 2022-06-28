@@ -13,7 +13,7 @@
           <div class="card-headboard">
 
             <img
-                v-bind:src="publication.imageAvatar"
+                src="src/assets/logo3.jpeg"
                 alt="image user"
             />{{publication.title}}
 
@@ -25,7 +25,7 @@
             <div class="card-description">
               <h5>{{publication.description}}</h5>
               <pv-image
-                  v-bind:src="publication.imagePublication"
+                  v-bind:src="publication.imageAdvertisement"
                   alt="image announcement"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   width="275"

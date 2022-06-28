@@ -18,7 +18,7 @@
           
         </template>
         <template #header v-if="advisory">
-          <pv-image v-bind:src="advisory.urlToImage"
+          <pv-image v-bind:src="advisory.advisoryImage"
                     size= "large"
                     alt="image advisory"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
@@ -27,7 +27,7 @@
                     preview/>
         </template>
         <template #content v-if="advisory">
-          Coach Name: {{advisory.coachNickname}}
+          Coach Name: {{advisory.coach.nickName}}
         </template>
         <template #footer v-if="advisory">
           <h4>Discord Server: {{advisory.discorServer}} </h4>

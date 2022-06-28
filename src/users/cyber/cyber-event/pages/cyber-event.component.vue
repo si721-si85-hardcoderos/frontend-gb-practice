@@ -201,7 +201,7 @@ export default {
         this.$toast.add({
           severity: "success",
           summary: "Successful",
-          detail: "Cyber Profile Updated",
+          detail: "Cyber Event Created",
           life: 3000,
         });
         this.eventDialog = false;
@@ -211,6 +211,12 @@ export default {
       console.log(id);
       CyberEventsService.delete(id).then((response)=>{
         this.retrieveData();
+        this.$toast.add({
+          severity: "success",
+          summary: "Successful",
+          detail: "Cyber Event Deleted",
+          life: 3000,
+        });
       })
     }
 

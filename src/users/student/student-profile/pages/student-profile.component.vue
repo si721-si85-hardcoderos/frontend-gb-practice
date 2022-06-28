@@ -11,7 +11,7 @@
           <pv-image
               class="pv-image-holder"
               imageClass="pv-image-circle"
-              src="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
+              v-bind:src="student.userImage"
               alt="Image Coach"
               width="275"
               height="275"
@@ -35,6 +35,10 @@
           <pv-input-text  v-model="student.lastName"/>
           <pv-divider></pv-divider>
 
+          <i class="pi pi-user"></i>
+          <p class="pv-p">User Image:</p>
+          <pv-input-text  v-model="student.userImage"/>
+          <pv-divider></pv-divider>
 
 
           <pv-button label="Update Profile" @click="update"/>

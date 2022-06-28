@@ -11,7 +11,7 @@
           <pv-image
               class="pv-image-holder"
               imageClass="pv-image-circle"
-            src="https://www.infobae.com/new-resizer/MNHmV03_B5YfGxHUoWdlomoS2JQ=/992x558/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/08/09153344/Oxaciano.jpg"
+            v-bind:src="coach.userImage"
             alt="Image Coach"
             width="275"
             height="275"
@@ -44,6 +44,7 @@
         <pv-input-text  v-model="coach.bibliography"/>
         <pv-divider></pv-divider>
 
+
         <pv-button label="Update Profile" @click="update"/>
       </template>
 
@@ -61,21 +62,21 @@ export default {
   name: "coach-profile",
   data() {
     return {
+      id:1,
       profiles: [],
       coachDialog: false,
       submitted: false,
       coachService: null,
       coaches: [],
       coach:{},
-      coachId: 1,
     };
   },
 
   mounted() {
-    this.coachId=localStorage.getItem("id");
+    this.id=localStorage.getItem("id");
     CoachesService.getAll().then((response)=>{
       this.coaches=response.data;
-      this.coach=this.coaches.find(x=>(x.id==this.coachId));
+      this.coach=this.coaches.find(x=>(x.id==this.id));
       console.log(this.coach);
     });
     /*
@@ -90,7 +91,7 @@ export default {
   },
   methods: {
     update(){
-      CoachesService.update(this.coachId,this.coach).then((response)=>{
+      CoachesService.update(this.id,this.coach).then((response)=>{
         //Agregar Notificacion
       })
     },
