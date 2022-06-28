@@ -12,12 +12,12 @@
           {{coach.lastName}}
         </template>
         <template #subtitle v-if="coach">
-          {{coach.nickname}}
+          {{coach.nickName}}
         </template>
         <template #header v-if="coach">
           <pv-image v-bind:src="coach.userImage"
                     size= "large"
-                    alt="image student"
+                    alt="image coach"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                     width="275"
                     height="200"
@@ -27,7 +27,7 @@
           {{coach.bibliography}}
         </template>
         <template #footer v-if="coach">
-          <h4>{{coach.tournaments}} | {{coach.heroes}} | {{coach.role}}</h4>
+          <h4>{{coach.selectedGame}}</h4>
           <pv-button label="Unsubscribe" class="btn" @click="unsubscribe(coach.id)" />
         </template>
 

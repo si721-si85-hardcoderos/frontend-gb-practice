@@ -22,6 +22,7 @@
           <div class="content">
             <div class="card-description">
               <h5>{{event.description}}</h5>
+              <h5>{{event.address}}</h5>
               <pv-image
                   v-bind:src="event.imageEvent"
                   alt="image announcement"

@@ -8,6 +8,7 @@
       <pv-card style="width: 24.8rem; margin-bottom: 2em" v-for="advisory of advisories">
         <template #title v-if="advisory">
           {{advisory.title}}
+          <br>
           {{advisory.description}}
         </template>
         <template #subtitle v-if="advisory">
