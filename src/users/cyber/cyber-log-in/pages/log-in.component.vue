@@ -95,12 +95,12 @@
         <span>Created By </span>
 
       </div>
-      <img
+      <!-- <img
           alt="softweb  logo"
           class="logo"
           src="@/assets/softweb.jpg"
 
-      />
+      /> -->
       <div class="layout-footer-right">
         <a href="https://github.com/Getting-Better" class="mr-3">
           <i class="pi pi-github"></i>

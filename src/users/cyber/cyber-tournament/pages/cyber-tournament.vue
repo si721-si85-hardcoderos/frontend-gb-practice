@@ -34,6 +34,7 @@
       <template #content>
         <h4>Schedule: {{tournament.date}}</h4>
         <h4>Location: {{tournament.addres}}</h4>
+        <h4>Capacity: {{tournament.capacity}}</h4>
       </template>
       <template #footer>
         <pv-button @click="cancelTournament(tournament.id)">Cancel</pv-button>
@@ -103,6 +104,17 @@
               cols="2"
           />
           <label for="tournamentaddres">Address</label>
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <pv-input-text
+              id="capacity"
+              v-model="tournament.capacity"
+              required="true"
+          />
+          <label for="tournamentcapacity">Capacity</label>
         </span>
       </div>
 
@@ -190,7 +202,7 @@ export default {
     },
     saveTournament(){
       if(!this.tournament.title||!this.tournament.description
-          ||!this.tournament.date||!this.tournament.addres) return;
+          ||!this.tournament.date||!this.tournament.addres||!this.tournament.capacity) return;
       this.tournament.id=0;
       this.tournament.cyberId=this.id;
       TournamentsService.create(this.tournament).then((response)=>{

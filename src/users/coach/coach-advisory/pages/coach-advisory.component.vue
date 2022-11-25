@@ -297,6 +297,7 @@ export default {
       this.submitted = false;
     },
     saveCoachAdvisory() {
+      console.log('siuu');
       if(!this.advisory.studentSelected||!this.advisory.title||!this.advisory.description||
           !this.advisory.date|| !this.advisory.hour||!this.advisory.advisoryImage||!this.advisory.discorServer) return;
       this.advisory.id=0;

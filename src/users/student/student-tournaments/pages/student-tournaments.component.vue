@@ -27,9 +27,10 @@
         {{tournament.isRegistered?'Registered':'Not Registered'}}</pv-tag>
         <h4>Date: {{tournament.date}}</h4>
         <h4>Address: {{tournament.addres}}</h4>
+        <h4>Capacity: {{getStudentsRegisteredByTournament(tournament.id)}} / {{tournament.capacity}}</h4>
         <br>
         <br>
-        <pv-button v-bind:class="tournament.isRegistered?'p-button-danger':'p-button-success'"
+        <pv-button v-if="canRegisterToTournament(tournament)" v-bind:class="tournament.isRegistered?'p-button-danger':'p-button-success'"
          @click="toggleRegisterButton(tournament.isRegistered, tournament.id)">
         {{tournament.isRegistered?'Cancel Register':'Register to Tournament'}}</pv-button>
       </template>
@@ -161,6 +162,8 @@ export default {
       tournamentAttacches:'',
       tournamentNew:{},
 
+      all_tournament_students: [],
+
 
       coachDialog: false,
       submitted:false,
@@ -177,15 +180,12 @@ export default {
     retrieveTournaments(){
       this.tournamentsSelected = [];
 
-      /*TournamentsService.getAll().then((response)=>{
-        this.tournaments=response.data;
-      })*/
-
       TournamentStudentsService.getAll().then((response)=>{
+        this.all_tournament_students=response.data;
         this.tournament_students = response.data.filter(x=>x.student.id==this.id);
         TournamentsService.getAll().then((response2)=>{
           this.tournaments = response2.data;
-          console.log(this.tournaments);
+          // console.log(this.tournaments);
           for(let tournament of this.tournaments){
             tournament.isRegistered=false;
           }
@@ -250,8 +250,16 @@ export default {
           this.retrieveTournaments();
         })
       })
+    },
+    getStudentsRegisteredByTournament(tournamentId) {
+      const studentsCount = this.all_tournament_students.filter(x => x.tournament.id == tournamentId).length;
+      return studentsCount;
+    },
+    canRegisterToTournament(tournament) {
+      const studentsCount = this.all_tournament_students.filter(x => x.tournament.id == tournament.id).length;
+      const studentRegisteredInThisTournament = this.all_tournament_students.filter(x => x.tournament.id == tournament.id && x.student.id == this.id).length > 0;
+      return (studentsCount < tournament.capacity) || studentRegisteredInThisTournament;
     }
-
   }
 };
 </script>
